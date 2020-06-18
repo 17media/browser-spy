@@ -1599,5 +1599,7 @@ var halfSectionObserver = new SectionObserver(false, Threshold.HALF);
 var minSectionObserver = new SectionObserver(false, Threshold.MIN);
 var rankSectionObserver = new SectionObserver(true, Threshold.FULL);
 
-export { Agent, DefaultSource, FirebaseAgent, MatomoAgent, Threshold, completeSectionObserver, halfSectionObserver, minSectionObserver, rankSectionObserver };
+var Test = 'test';
+
+export { Agent, DefaultSource, FirebaseAgent, MatomoAgent, Test, Threshold, completeSectionObserver, halfSectionObserver, minSectionObserver, rankSectionObserver };
 //# sourceMappingURL=index.esm.js.map

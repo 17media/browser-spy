@@ -152,4 +152,5 @@ declare const completeSectionObserver: SectionObserver;
 declare const halfSectionObserver: SectionObserver;
 declare const minSectionObserver: SectionObserver;
 declare const rankSectionObserver: SectionObserver;
-export { Agent, FirebaseAgent, MatomoAgentConfig, MatomoAgent, Source, DefaultSource, Threshold, Scene, TransitionEvent, TrackingEventParams, TrackingEvent, DefaultEventParams, LoginEvent, RefinedEventPathname, ElementMap, SpyEvent, EventCallback, EventListener, completeSectionObserver, halfSectionObserver, minSectionObserver, rankSectionObserver };
+declare const Test = "test";
+export { Agent, FirebaseAgent, MatomoAgentConfig, MatomoAgent, Source, DefaultSource, Threshold, Scene, TransitionEvent, TrackingEventParams, TrackingEvent, DefaultEventParams, LoginEvent, RefinedEventPathname, ElementMap, SpyEvent, EventCallback, EventListener, completeSectionObserver, halfSectionObserver, minSectionObserver, rankSectionObserver, Test };
