@@ -7,8 +7,7 @@
   "scripts": {
     "build": "rm -rf dist && rollup -c",
     "watch": "rollup -c -w",
-    "test": "jest --runInBand",
-    "test:watch": "jest --watch"
+    "prettier": "prettier --write src/*.ts src/**/*.ts"
   },
   "peerDependencies": {
     "firebase": "^7.14.1",
@@ -16,6 +15,11 @@
     "intersection-observer": "^0.10.0",
     "typescript": "^3.8.3",
     "react": "^16.13.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
@@ -26,7 +30,10 @@
     "@wessberg/rollup-plugin-ts": "^1.2.21",
     "firebase": "^7.14.1",
     "history": "^4.10.1",
+    "husky": "^4.2.5",
     "intersection-observer": "^0.10.0",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
     "react": "^16.13.1",
     "rollup": "^2.1.0",
     "typescript": "^3.8.3"
