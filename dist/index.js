@@ -1620,10 +1620,13 @@ var halfSectionObserver = new SectionObserver(false, exports.Threshold.HALF);
 var minSectionObserver = new SectionObserver(false, exports.Threshold.MIN);
 var rankSectionObserver = new SectionObserver(true, exports.Threshold.FULL);
 
+var Test = 'test';
+
 exports.Agent = Agent;
 exports.DefaultSource = DefaultSource;
 exports.FirebaseAgent = FirebaseAgent;
 exports.MatomoAgent = MatomoAgent;
+exports.Test = Test;
 exports.completeSectionObserver = completeSectionObserver;
 exports.halfSectionObserver = halfSectionObserver;
 exports.minSectionObserver = minSectionObserver;

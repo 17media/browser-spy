@@ -256,9 +256,14 @@
         "signature": "-10396986106",
         "affectsGlobalScope": false
       },
+      "../src/hook.ts": {
+        "version": 2,
+        "signature": "2852792484",
+        "affectsGlobalScope": false
+      },
       "../src/index.ts": {
         "version": 1,
-        "signature": "-1163095186",
+        "signature": "-12617733358",
         "affectsGlobalScope": false
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
@@ -1951,12 +1956,19 @@
         "../src/utils/loadscript.ts",
         "../src/utils/object.ts"
       ],
+      "../src/hook.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
       "../src/index.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../src/agent.ts",
+        "../src/hook.ts",
         "../src/observer.ts",
         "../src/source.ts",
         "../src/types.ts"
@@ -3144,6 +3156,7 @@
       ],
       "../src/index.ts": [
         "../src/agent.ts",
+        "../src/hook.ts",
         "../src/observer.ts",
         "../src/source.ts",
         "../src/types.ts"
@@ -3317,6 +3330,7 @@
       "../node_modules/typescript/lib/lib.es5.d.ts",
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "../src/agent.ts",
+      "../src/hook.ts",
       "../src/index.ts",
       "../src/observer.ts",
       "../src/source.ts",
