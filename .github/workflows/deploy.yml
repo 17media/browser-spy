@@ -21,7 +21,7 @@ jobs:
           git config --global user.name Bruce
           git config --global user.email brucetseng@17.media
           git status
-          git add .
+          git add /dist/*
           git commit -m "Adding builded files."
           git fetch origin master
-          git push origin HEAD:master
+          git push origin HEAD:master -f
