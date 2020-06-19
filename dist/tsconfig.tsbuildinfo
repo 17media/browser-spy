@@ -161,7 +161,7 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../src/utils/loadscript.ts": {
+      "../src/utils/loadScript.ts": {
         "version": 2,
         "signature": "-34798380848",
         "affectsGlobalScope": false
@@ -176,37 +176,37 @@
         "signature": "-8646569027",
         "affectsGlobalScope": false
       },
-      "../src/agent.ts": {
+      "../src/Agent.ts": {
         "version": 2,
         "signature": "-24969054953",
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/history/domutils.d.ts": {
+      "../node_modules/@types/history/DOMUtils.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": true
       },
-      "../node_modules/@types/history/createbrowserhistory.d.ts": {
+      "../node_modules/@types/history/createBrowserHistory.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/history/createhashhistory.d.ts": {
+      "../node_modules/@types/history/createHashHistory.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/history/creatememoryhistory.d.ts": {
+      "../node_modules/@types/history/createMemoryHistory.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/history/locationutils.d.ts": {
+      "../node_modules/@types/history/LocationUtils.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/history/pathutils.d.ts": {
+      "../node_modules/@types/history/PathUtils.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -226,7 +226,7 @@
         "signature": "10025179993",
         "affectsGlobalScope": false
       },
-      "../src/source.ts": {
+      "../src/Source.ts": {
         "version": 2,
         "signature": "-20279765793",
         "affectsGlobalScope": false
@@ -251,19 +251,14 @@
         "signature": 1,
         "affectsGlobalScope": true
       },
-      "../src/observer.ts": {
+      "../src/Observer.ts": {
         "version": 2,
         "signature": "-10396986106",
         "affectsGlobalScope": false
       },
-      "../src/hook.ts": {
-        "version": 2,
-        "signature": "2852792484",
-        "affectsGlobalScope": false
-      },
       "../src/index.ts": {
         "version": 1,
-        "signature": "-12617733358",
+        "signature": "-1163095186",
         "affectsGlobalScope": false
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
@@ -886,56 +881,56 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/history/createbrowserhistory.d.ts": [
-        "../node_modules/@types/history/domutils.d.ts",
+      "../node_modules/@types/history/DOMUtils.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/history/LocationUtils.d.ts": [
         "../node_modules/@types/history/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/history/createhashhistory.d.ts": [
-        "../node_modules/@types/history/domutils.d.ts",
+      "../node_modules/@types/history/PathUtils.d.ts": [
         "../node_modules/@types/history/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/history/creatememoryhistory.d.ts": [
-        "../node_modules/@types/history/domutils.d.ts",
+      "../node_modules/@types/history/createBrowserHistory.d.ts": [
+        "../node_modules/@types/history/DOMUtils.d.ts",
         "../node_modules/@types/history/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/history/domutils.d.ts": [
+      "../node_modules/@types/history/createHashHistory.d.ts": [
+        "../node_modules/@types/history/DOMUtils.d.ts",
+        "../node_modules/@types/history/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/history/createMemoryHistory.d.ts": [
+        "../node_modules/@types/history/DOMUtils.d.ts",
+        "../node_modules/@types/history/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@types/history/index.d.ts": [
-        "../node_modules/@types/history/createbrowserhistory.d.ts",
-        "../node_modules/@types/history/createhashhistory.d.ts",
-        "../node_modules/@types/history/creatememoryhistory.d.ts",
-        "../node_modules/@types/history/locationutils.d.ts",
-        "../node_modules/@types/history/pathutils.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/locationutils.d.ts": [
-        "../node_modules/@types/history/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/pathutils.d.ts": [
-        "../node_modules/@types/history/index.d.ts",
+        "../node_modules/@types/history/LocationUtils.d.ts",
+        "../node_modules/@types/history/PathUtils.d.ts",
+        "../node_modules/@types/history/createBrowserHistory.d.ts",
+        "../node_modules/@types/history/createHashHistory.d.ts",
+        "../node_modules/@types/history/createMemoryHistory.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
@@ -1946,34 +1941,17 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../src/agent.ts": [
+      "../src/Agent.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/firebase/index.d.ts",
         "../src/types.ts",
-        "../src/utils/loadscript.ts",
+        "../src/utils/loadScript.ts",
         "../src/utils/object.ts"
       ],
-      "../src/hook.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
-      ],
-      "../src/index.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../src/agent.ts",
-        "../src/hook.ts",
-        "../src/observer.ts",
-        "../src/source.ts",
-        "../src/types.ts"
-      ],
-      "../src/observer.ts": [
+      "../src/Observer.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
@@ -1982,16 +1960,26 @@
         "../src/types.ts",
         "../src/typings.d.ts"
       ],
-      "../src/source.ts": [
+      "../src/Source.ts": [
         "../node_modules/@types/history/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../src/agent.ts",
+        "../src/Agent.ts",
         "../src/types.ts",
         "../src/utils/dom.ts",
         "../src/utils/param.ts"
+      ],
+      "../src/index.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/Agent.ts",
+        "../src/Observer.ts",
+        "../src/Source.ts",
+        "../src/types.ts"
       ],
       "../src/types.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -2012,7 +2000,7 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../src/utils/loadscript.ts": [
+      "../src/utils/loadScript.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
@@ -2091,56 +2079,56 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/history/createbrowserhistory.d.ts": [
-        "../node_modules/@types/history/domutils.d.ts",
+      "../node_modules/@types/history/DOMUtils.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/history/LocationUtils.d.ts": [
         "../node_modules/@types/history/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/history/createhashhistory.d.ts": [
-        "../node_modules/@types/history/domutils.d.ts",
+      "../node_modules/@types/history/PathUtils.d.ts": [
         "../node_modules/@types/history/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/history/creatememoryhistory.d.ts": [
-        "../node_modules/@types/history/domutils.d.ts",
+      "../node_modules/@types/history/createBrowserHistory.d.ts": [
+        "../node_modules/@types/history/DOMUtils.d.ts",
         "../node_modules/@types/history/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/history/domutils.d.ts": [
+      "../node_modules/@types/history/createHashHistory.d.ts": [
+        "../node_modules/@types/history/DOMUtils.d.ts",
+        "../node_modules/@types/history/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/history/createMemoryHistory.d.ts": [
+        "../node_modules/@types/history/DOMUtils.d.ts",
+        "../node_modules/@types/history/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@types/history/index.d.ts": [
-        "../node_modules/@types/history/createbrowserhistory.d.ts",
-        "../node_modules/@types/history/createhashhistory.d.ts",
-        "../node_modules/@types/history/creatememoryhistory.d.ts",
-        "../node_modules/@types/history/locationutils.d.ts",
-        "../node_modules/@types/history/pathutils.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/locationutils.d.ts": [
-        "../node_modules/@types/history/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/pathutils.d.ts": [
-        "../node_modules/@types/history/index.d.ts",
+        "../node_modules/@types/history/LocationUtils.d.ts",
+        "../node_modules/@types/history/PathUtils.d.ts",
+        "../node_modules/@types/history/createBrowserHistory.d.ts",
+        "../node_modules/@types/history/createHashHistory.d.ts",
+        "../node_modules/@types/history/createMemoryHistory.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
@@ -3151,24 +3139,23 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../src/agent.ts": [
+      "../src/Agent.ts": [
         "../src/types.ts"
       ],
-      "../src/index.ts": [
-        "../src/agent.ts",
-        "../src/hook.ts",
-        "../src/observer.ts",
-        "../src/source.ts",
-        "../src/types.ts"
-      ],
-      "../src/observer.ts": [
+      "../src/Observer.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../src/types.ts",
         "../src/typings.d.ts"
       ],
-      "../src/source.ts": [
+      "../src/Source.ts": [
         "../node_modules/@types/history/index.d.ts",
-        "../src/agent.ts",
+        "../src/Agent.ts",
+        "../src/types.ts"
+      ],
+      "../src/index.ts": [
+        "../src/Agent.ts",
+        "../src/Observer.ts",
+        "../src/Source.ts",
         "../src/types.ts"
       ],
       "../src/typings.d.ts": [
@@ -3191,13 +3178,13 @@
       "../node_modules/@types/babel__traverse/index.d.ts",
       "../node_modules/@types/color-name/index.d.ts",
       "../node_modules/@types/estree/index.d.ts",
-      "../node_modules/@types/history/createbrowserhistory.d.ts",
-      "../node_modules/@types/history/createhashhistory.d.ts",
-      "../node_modules/@types/history/creatememoryhistory.d.ts",
-      "../node_modules/@types/history/domutils.d.ts",
+      "../node_modules/@types/history/DOMUtils.d.ts",
+      "../node_modules/@types/history/LocationUtils.d.ts",
+      "../node_modules/@types/history/PathUtils.d.ts",
+      "../node_modules/@types/history/createBrowserHistory.d.ts",
+      "../node_modules/@types/history/createHashHistory.d.ts",
+      "../node_modules/@types/history/createMemoryHistory.d.ts",
       "../node_modules/@types/history/index.d.ts",
-      "../node_modules/@types/history/locationutils.d.ts",
-      "../node_modules/@types/history/pathutils.d.ts",
       "../node_modules/@types/long/index.d.ts",
       "../node_modules/@types/minimatch/index.d.ts",
       "../node_modules/@types/node/async_hooks.d.ts",
@@ -3329,15 +3316,14 @@
       "../node_modules/typescript/lib/lib.es2020.bigint.d.ts",
       "../node_modules/typescript/lib/lib.es5.d.ts",
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
-      "../src/agent.ts",
-      "../src/hook.ts",
+      "../src/Agent.ts",
+      "../src/Observer.ts",
+      "../src/Source.ts",
       "../src/index.ts",
-      "../src/observer.ts",
-      "../src/source.ts",
       "../src/types.ts",
       "../src/typings.d.ts",
       "../src/utils/dom.ts",
-      "../src/utils/loadscript.ts",
+      "../src/utils/loadScript.ts",
       "../src/utils/object.ts",
       "../src/utils/param.ts"
     ]
