@@ -1,0 +1,20 @@
+name: Browser-Spy CI
+
+on:
+  pull_request:
+    branches: [master]
+
+job:
+  pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@master
+        with:
+          node-version: 12
+      - name: Install
+        run: npm i
+      - name: Build
+        run: npm run build
+      - name: Test
+        run: npm run test
