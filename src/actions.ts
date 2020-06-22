@@ -15,6 +15,8 @@ import {
 import { TrackingEvent } from './types';
 
 type EventAction = Omit<TrackingEvent, 'type'>;
+type SectionName = 'buttons' | 'duration' | 'gifts' | 'searchBar' | 'tabs' | 'description' | 'timeline' | 'topStreamer';
+type ProfileName = 'topavatar' | 'avatar';
 
 export function createButtonClickAction(buttonName: string, link: string): EventAction {
   return {
@@ -65,7 +67,7 @@ export function createTabClickAction(link: string, tabName: string): EventAction
   };
 }
 
-export function createProfileClickAction(userID: string, liveStatus: boolean, profileType: string): EventAction {
+export function createProfileClickAction(userID: string, liveStatus: boolean, profileType: ProfileName): EventAction {
   return {
     eventName: EVENT_NAME_CLICK,
     category: CATEGORY_DEFAULT,
@@ -127,7 +129,7 @@ export function createLinkClickAction(link: string, linkName: string): EventActi
   };
 }
 
-export function createSectionViewAction(section: string): EventAction {
+export function createSectionViewAction(section: SectionName): EventAction {
   return {
     eventName: EVENT_NAME_SECTION_VIEW,
     category: CATEGORY_DEFAULT,

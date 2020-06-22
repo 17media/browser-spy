@@ -41,7 +41,3 @@ export const useRankSectionTracking = (ref: RefObject<any>, callback: Function) 
     };
   });
 };
-
-export function testing() {
-  rankSectionObserver.sectionObserve({} as RefObject<any>, () => {});
-}
