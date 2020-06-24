@@ -659,9 +659,6 @@ const useRankSectionTracking = (ref, callback) => {
     };
   });
 };
-function testing() {
-  rankSectionObserver.sectionObserve({}, () => {});
-}
 
 const EVENT_NAME_CLICK = 'click';
 const EVENT_NAME_ENTER = 'enter';
@@ -783,5 +780,5 @@ function createSectionViewAction(section) {
   };
 }
 
-export { Agent, DefaultSource, FirebaseAgent, MatomoAgent, Threshold, completeSectionObserver, createButtonClickAction, createLeaderboardSectionViewAction, createLinkClickAction, createPageEnterAction, createPageLeaveAction, createProfileClickAction, createSearchAction, createSectionViewAction, createTabClickAction, createVoteAction, halfSectionObserver, minSectionObserver, rankSectionObserver, testing, useCompleteSectionTracking, useHalfSectionTracking, useMinSectionTracking, useRankSectionTracking };
+export { Agent, DefaultSource, FirebaseAgent, MatomoAgent, Threshold, completeSectionObserver, createButtonClickAction, createLeaderboardSectionViewAction, createLinkClickAction, createPageEnterAction, createPageLeaveAction, createProfileClickAction, createSearchAction, createSectionViewAction, createTabClickAction, createVoteAction, halfSectionObserver, minSectionObserver, rankSectionObserver, useCompleteSectionTracking, useHalfSectionTracking, useMinSectionTracking, useRankSectionTracking };
 //# sourceMappingURL=index.esm.js.map

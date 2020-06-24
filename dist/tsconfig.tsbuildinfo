@@ -258,7 +258,7 @@
       },
       "../src/hooks.ts": {
         "version": 2,
-        "signature": "-51344499262",
+        "signature": "-47566750614",
         "affectsGlobalScope": false
       },
       "../src/utils/constants.ts": {
@@ -268,7 +268,7 @@
       },
       "../src/actions.ts": {
         "version": 2,
-        "signature": "-2990278634",
+        "signature": "-61207584267",
         "affectsGlobalScope": false
       },
       "../src/index.ts": {

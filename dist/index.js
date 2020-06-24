@@ -680,9 +680,6 @@ const useRankSectionTracking = (ref, callback) => {
     };
   });
 };
-function testing() {
-  rankSectionObserver.sectionObserve({}, () => {});
-}
 
 const EVENT_NAME_CLICK = 'click';
 const EVENT_NAME_ENTER = 'enter';
@@ -822,7 +819,6 @@ exports.createVoteAction = createVoteAction;
 exports.halfSectionObserver = halfSectionObserver;
 exports.minSectionObserver = minSectionObserver;
 exports.rankSectionObserver = rankSectionObserver;
-exports.testing = testing;
 exports.useCompleteSectionTracking = useCompleteSectionTracking;
 exports.useHalfSectionTracking = useHalfSectionTracking;
 exports.useMinSectionTracking = useMinSectionTracking;
