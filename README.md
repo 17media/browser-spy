@@ -116,25 +116,126 @@ useCompleteSectionTracking(tabsRef, () => {
 
 ## API
 
-**_Action creator_**
+### **_# Action creator_**
+
+<hr/>
 
 All creators return the `EventAction` object.
 
-| Name                                                                 | Parameter                                                                                                            | description                                                                                                                      |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| createButtonClickAction(buttonName, link)                            | **Required:** <br> `buttonName: string` <br> `link: string`                                                          | Passing button name and full-link for tracking.                                                                                  |
-| createPageEnterAction(utmCampaign, utmContent, utmMedium, utmSource) | **Required:** <br> `utmCampaign: string` <br> `utmContent: string` <br> `utmMedium: string` <br> `utmSource: string` | N/A                                                                                                                              |
-| createPageLeaveAction()                                              | **Required:** <br> N/A                                                                                               | N/A                                                                                                                              |
-| createTabClickAction(link, tabName)                                  | **Required:** <br> `link: string` <br> `tabName: string`                                                             | N/A                                                                                                                              |
-| createProfileClickAction(userID, liveStatus, profileType)            | **Required:** <br> `userID: string` <br> `liveStatus: boolean` <br> `profileType: ProfileName`                       | ProfileName only accept the string `topavatar` or `avatar`                                                                       |
-| createSearchAction(keyword, count)                                   | **Required:** <br> `keyword: string` <br> `count: number`                                                            | N/A                                                                                                                              |
-| createVoteAction(voteTopic)                                          | **Required:** <br> `voteTopic: string`                                                                               | N/A                                                                                                                              |
-| createLeaderboardSectionViewAction(rank)                             | **Required:** <br> `rank: number`                                                                                    | N/A                                                                                                                              |
-| createLinkClickAction(link, linkName)                                | **Required:** <br> `link: string` <br> `linkName: string`                                                            | N/A                                                                                                                              |
-| createSectionViewAction(section)                                     | **Required:** <br> `section: SectionName`                                                                            | SectionName only accept the string `buttons`, `duration`, `gifts`, `searchBar`, `tabs`, `description`, `timeline`, `topStreamer` |
+```
+EventAction {
+  eventName: string;
+  category: string;
+  trackingParams?: TrackingEventParams;
+}
+```
 
-**_Hooks_**
+### **createButtonClickAction(buttonName, link)**
 
-| Name                                                                                                          | Parameter                                                          | description                                      |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------ |
-| useCompleteSectionTracking <br> useHalfSectionTracking <br> useMinSectionTracking <br> useRankSectionTracking | **Required:** <br> `ref: RefObject<any>` <br> `callback: Function` | These hooks are used to sending section tracking |
+**Required**
+| Parmeter | Type |
+| - | - |
+| `buttonName` | `string` |
+| `link` | `string` |
+
+### **createPageEnterAction(utmCampaign, utmContent, utmMedium, utmSource)**
+
+The parameter `utm*` is obtained from the quer string, ex: `https://xxxx?utmCampaign=test&utmContent=test2`.
+If the parameter doesn't exist, empty string is passed.
+
+**Required**
+| Parmeter | Type |
+| - | - |
+| `utmCampaign` | `string` |
+| `utmContent` | `string` |
+| `utmMedium` | `string` |
+| `utmSource` | `string` |
+
+### **createPageLeaveAction()**
+
+**Required**
+| Parmeter | Type |
+| - | - |
+| N/A | N/A |
+
+### **createTabClickAction(link, tabName)**
+
+**Required**
+| Parmeter | Type |
+| - | - |
+| `link` | `string` |
+| `tabName` | `string` |
+
+### **createProfileClickAction(userID, liveStatus, profileType)**
+
+**Required**
+| Parmeter | Type |
+| - | - |
+| `userID` | `string` |
+| `liveStatus` | `boolean` |
+| `profileType` | `'topavatar' | 'avatar' as string` |
+
+### **createSearchAction(keyword, count)**
+
+**Required**
+| Parmeter | Type |
+| - | - |
+| `keyword` | `string` |
+| `count` | `number` |
+
+### **createVoteAction(voteTopic)**
+
+**Required**
+| Parmeter | Type |
+| - | - |
+| `voteTopic` | `string` |
+
+### **createLeaderboardSectionViewAction(rank)**
+
+**Required**
+| Parmeter | Type |
+| - | - |
+| `rank` | `number` |
+
+### **createLinkClickAction(link, linkName)**
+
+**Required**
+| Parmeter | Type |
+| - | - |
+| `link` | `string` |
+| `linkName` | `string` |
+
+### **createSectionViewAction(section)**
+
+**Required**
+| Parmeter | Type |
+| - | - |
+| `section` | `'buttons' | 'duration' | 'gifts' | 'searchBar' | 'tabs' | 'description' | 'timeline' | 'topStreamer' as string` |
+
+### **_# Hooks_**
+
+<hr/>
+
+These hooks are used for section tracking.
+
+### **useCompleteSectionTracking(ref, callback)**
+
+### **useHalfSectionTracking(ref, callback)**
+
+### **useMinSectionTracking(ref, callback)**
+
+### **useRankSectionTracking(ref, callback)**
+
+**Required**
+| Parmeter | Type |
+| - | - | - |
+| `ref: RefObject<any>` | `callback: Function` |
+
+### **usePageTransitionListener(trackingSource, history)**
+
+Reset observed items of observer and invoke `trackingSource.spyTransition` to send page_view event when history changing (such as `history.push`, etc).
+
+**Required**
+| Parmeter | Type |
+| - | - | - |
+| `trackingSource: DefaultSource` | `history: History` |
