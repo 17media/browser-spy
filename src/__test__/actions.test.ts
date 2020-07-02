@@ -174,16 +174,18 @@ describe('Tracking actions testing', () => {
   });
 
   test('[createSectionViewAction] Should return the correct action.', () => {
-    const section = 'section';
+    const section = 'buttons';
+    const customPath = undefined;
     const expectResult: EventAction = {
       eventName: EVENT_NAME_SECTION_VIEW,
       category: CATEGORY_DEFAULT,
       trackingParams: {
         action: ACTION_ENTER,
         section,
+        customPath,
       },
     };
 
-    expect(createSectionViewAction(section)).toEqual(expectResult);
+    expect(createSectionViewAction(section, customPath)).toEqual(expectResult);
   });
 });

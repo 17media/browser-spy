@@ -212,6 +212,11 @@ If the parameter doesn't exist, empty string is passed.
 | - | - |
 | `section` | `'buttons' | 'duration' | 'gifts' | 'searchBar' | 'tabs' | 'description' | 'timeline' | 'topStreamer' as string` |
 
+**Option**
+| Parmeter | Type |
+| - | - |
+| `customPath?` | `string | undefined` |
+
 ### **_# Hooks_**
 
 <hr/>
