@@ -173,7 +173,7 @@ If the parameter doesn't exist, empty string is passed.
 | - | - |
 | `userID` | `string` |
 | `liveStatus` | `boolean` |
-| `profileType` | `'topavatar' | 'avatar' as string` |
+| `profileType` | `topavatar` or `avatar` as string |
 
 ### **createSearchAction(keyword, count)**
 
@@ -210,12 +210,12 @@ If the parameter doesn't exist, empty string is passed.
 **Required**
 | Parmeter | Type |
 | - | - |
-| `section` | `'buttons' | 'duration' | 'gifts' | 'searchBar' | 'tabs' | 'description' | 'timeline' | 'topStreamer' as string` |
+| `section` | `buttons` or `duration` or `gifts` or `searchBar` or `tabs` or `description` or `timeline` or `topStreamer` as string |
 
 **Option**
 | Parmeter | Type |
 | - | - |
-| `customPath?` | `string | undefined` |
+| `customPath?` | `string` or `undefined` |
 
 ### **_# Hooks_**
 
