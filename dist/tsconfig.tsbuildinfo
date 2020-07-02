@@ -173,7 +173,7 @@
       },
       "../src/types.ts": {
         "version": 2,
-        "signature": "-8646569027",
+        "signature": "-53954140582",
         "affectsGlobalScope": false
       },
       "../src/Agent.ts": {
@@ -268,7 +268,7 @@
       },
       "../src/actions.ts": {
         "version": 2,
-        "signature": "-61207584267",
+        "signature": "-68477752871",
         "affectsGlobalScope": false
       },
       "../src/index.ts": {

@@ -48,6 +48,7 @@ interface TrackingEventParams {
     from?: string;
     result?: string;
     duration?: number;
+    customPath?: string;
 }
 interface TrackingEvent {
     type: "tracking";
@@ -169,5 +170,5 @@ declare function createSearchAction(keyword: string, count: number): EventAction
 declare function createVoteAction(voteTopic: string): EventAction;
 declare function createLeaderboardSectionViewAction(rank: number): EventAction;
 declare function createLinkClickAction(link: string, linkName: string): EventAction;
-declare function createSectionViewAction(section: SectionName): EventAction;
+declare function createSectionViewAction(section: SectionName, customPath?: string): EventAction;
 export { Agent, FirebaseAgent, MatomoAgentConfig, MatomoAgent, Source, DefaultSource, Threshold, Scene, TransitionEvent, TrackingEventParams, TrackingEvent, DefaultEventParams, LoginEvent, RefinedEventPathname, ElementMap, SpyEvent, EventCallback, EventListener, completeSectionObserver, halfSectionObserver, minSectionObserver, rankSectionObserver, useCompleteSectionTracking, useHalfSectionTracking, useMinSectionTracking, useRankSectionTracking, usePageTransitionListener, createButtonClickAction, createPageEnterAction, createPageLeaveAction, createTabClickAction, createProfileClickAction, createSearchAction, createVoteAction, createLeaderboardSectionViewAction, createLinkClickAction, createSectionViewAction };

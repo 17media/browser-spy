@@ -781,13 +781,15 @@ function createLinkClickAction(link, linkName) {
     }
   };
 }
-function createSectionViewAction(section) {
+function createSectionViewAction(section, customPath) {
   return {
     eventName: EVENT_NAME_SECTION_VIEW,
     category: CATEGORY_DEFAULT,
     trackingParams: {
       action: ACTION_ENTER,
-      section
+      section,
+      // For customized event to use.
+      customPath
     }
   };
 }
