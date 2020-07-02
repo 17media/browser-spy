@@ -129,13 +129,15 @@ export function createLinkClickAction(link: string, linkName: string): EventActi
   };
 }
 
-export function createSectionViewAction(section: SectionName): EventAction {
+export function createSectionViewAction(section: SectionName, customPath?: string): EventAction {
   return {
     eventName: EVENT_NAME_SECTION_VIEW,
     category: CATEGORY_DEFAULT,
     trackingParams: {
       action: ACTION_ENTER,
       section,
+      // For customized event to use.
+      customPath,
     },
   };
 }

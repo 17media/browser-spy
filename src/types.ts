@@ -49,6 +49,7 @@ export interface TrackingEventParams {
   from?: string;
   result?: string;
   duration?: number;
+  customPath?: string;
 }
 export interface TrackingEvent {
   type: 'tracking';
