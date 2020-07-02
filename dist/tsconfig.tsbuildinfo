@@ -258,7 +258,7 @@
       },
       "../src/hooks.ts": {
         "version": 2,
-        "signature": "-47566750614",
+        "signature": "14265818057",
         "affectsGlobalScope": false
       },
       "../src/utils/constants.ts": {
@@ -3297,12 +3297,14 @@
       ],
       "../src/hooks.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/history/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../src/Observer.ts"
+        "../src/Observer.ts",
+        "../src/Source.ts"
       ],
       "../src/index.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -5402,7 +5404,9 @@
         "../src/types.ts"
       ],
       "../src/hooks.ts": [
-        "../node_modules/@types/react/index.d.ts"
+        "../node_modules/@types/history/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../src/Source.ts"
       ],
       "../src/index.ts": [
         "../src/Agent.ts",

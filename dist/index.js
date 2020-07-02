@@ -644,7 +644,7 @@ const halfSectionObserver = new SectionObserver(false, exports.Threshold.HALF);
 const minSectionObserver = new SectionObserver(false, exports.Threshold.MIN);
 const rankSectionObserver = new SectionObserver(true, exports.Threshold.FULL);
 
-const useCompleteSectionTracking = (ref, callback) => {
+function useCompleteSectionTracking(ref, callback) {
   react.useEffect(() => {
     if (ref.current === null) return;
     completeSectionObserver.sectionObserve(ref, callback);
@@ -652,8 +652,8 @@ const useCompleteSectionTracking = (ref, callback) => {
       completeSectionObserver.sectionUnobserve(ref);
     };
   });
-};
-const useHalfSectionTracking = (ref, callback) => {
+}
+function useHalfSectionTracking(ref, callback) {
   react.useEffect(() => {
     if (ref.current === null) return;
     halfSectionObserver.sectionObserve(ref, callback);
@@ -661,8 +661,8 @@ const useHalfSectionTracking = (ref, callback) => {
       halfSectionObserver.sectionUnobserve(ref);
     };
   });
-};
-const useMinSectionTracking = (ref, callback) => {
+}
+function useMinSectionTracking(ref, callback) {
   react.useEffect(() => {
     if (ref.current === null) return;
     minSectionObserver.sectionObserve(ref, callback);
@@ -670,8 +670,8 @@ const useMinSectionTracking = (ref, callback) => {
       minSectionObserver.sectionUnobserve(ref);
     };
   });
-};
-const useRankSectionTracking = (ref, callback) => {
+}
+function useRankSectionTracking(ref, callback) {
   react.useEffect(() => {
     if (ref.current === null) return;
     rankSectionObserver.sectionObserve(ref, callback);
@@ -679,7 +679,19 @@ const useRankSectionTracking = (ref, callback) => {
       rankSectionObserver.sectionUnobserve(ref);
     };
   });
-};
+}
+function usePageTransitionListener(trackingSource, history) {
+  react.useEffect(() => {
+    // Regist history (for page_view & screen_view)
+    trackingSource.spyTransition(history);
+    history.listen(() => {
+      completeSectionObserver.resetSectionObserver();
+      halfSectionObserver.resetSectionObserver();
+      minSectionObserver.resetSectionObserver();
+      rankSectionObserver.resetSectionObserver();
+    });
+  }, [history]);
+}
 
 const EVENT_NAME_CLICK = 'click';
 const EVENT_NAME_ENTER = 'enter';
@@ -822,5 +834,6 @@ exports.rankSectionObserver = rankSectionObserver;
 exports.useCompleteSectionTracking = useCompleteSectionTracking;
 exports.useHalfSectionTracking = useHalfSectionTracking;
 exports.useMinSectionTracking = useMinSectionTracking;
+exports.usePageTransitionListener = usePageTransitionListener;
 exports.useRankSectionTracking = useRankSectionTracking;
 //# sourceMappingURL=index.js.map
