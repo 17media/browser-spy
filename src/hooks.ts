@@ -1,8 +1,10 @@
 import { RefObject, useEffect } from 'react';
+import { History } from 'history';
+import { DefaultSource } from './Source';
 
 import { completeSectionObserver, halfSectionObserver, minSectionObserver, rankSectionObserver } from './Observer';
 
-export const useCompleteSectionTracking = (ref: RefObject<any>, callback: Function) => {
+export function useCompleteSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
     if (ref.current === null) return;
     completeSectionObserver.sectionObserve(ref, callback);
@@ -10,9 +12,9 @@ export const useCompleteSectionTracking = (ref: RefObject<any>, callback: Functi
       completeSectionObserver.sectionUnobserve(ref);
     };
   });
-};
+}
 
-export const useHalfSectionTracking = (ref: RefObject<any>, callback: Function) => {
+export function useHalfSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
     if (ref.current === null) return;
     halfSectionObserver.sectionObserve(ref, callback);
@@ -20,9 +22,9 @@ export const useHalfSectionTracking = (ref: RefObject<any>, callback: Function) 
       halfSectionObserver.sectionUnobserve(ref);
     };
   });
-};
+}
 
-export const useMinSectionTracking = (ref: RefObject<any>, callback: Function) => {
+export function useMinSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
     if (ref.current === null) return;
     minSectionObserver.sectionObserve(ref, callback);
@@ -30,9 +32,9 @@ export const useMinSectionTracking = (ref: RefObject<any>, callback: Function) =
       minSectionObserver.sectionUnobserve(ref);
     };
   });
-};
+}
 
-export const useRankSectionTracking = (ref: RefObject<any>, callback: Function) => {
+export function useRankSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
     if (ref.current === null) return;
     rankSectionObserver.sectionObserve(ref, callback);
@@ -40,4 +42,17 @@ export const useRankSectionTracking = (ref: RefObject<any>, callback: Function) 
       rankSectionObserver.sectionUnobserve(ref);
     };
   });
-};
+}
+
+export function usePageTransitionListener(trackingSource: DefaultSource, history: History) {
+  useEffect(() => {
+    // Regist history (for page_view & screen_view)
+    trackingSource.spyTransition(history);
+    history.listen(() => {
+      completeSectionObserver.resetSectionObserver();
+      halfSectionObserver.resetSectionObserver();
+      minSectionObserver.resetSectionObserver();
+      rankSectionObserver.resetSectionObserver();
+    });
+  }, [history]);
+}
