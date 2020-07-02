@@ -228,7 +228,7 @@ These hooks are used for section tracking.
 
 **Required**
 | Parmeter | Type |
-| - | - | - |
+| - | - |
 | `ref: RefObject<any>` | `callback: Function` |
 
 ### **usePageTransitionListener(trackingSource, history)**
@@ -237,5 +237,5 @@ Reset observed items of observer and invoke `trackingSource.spyTransition` to se
 
 **Required**
 | Parmeter | Type |
-| - | - | - |
+| - | - |
 | `trackingSource: DefaultSource` | `history: History` |
