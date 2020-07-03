@@ -1,5 +1,6 @@
 import { RefObject } from 'react';
 import { ElementMap, Threshold } from './types';
+import { __CLIENT__ } from './utils/constants';
 import 'intersection-observer';
 
 class SectionObserver {
@@ -77,7 +78,34 @@ class SectionObserver {
   };
 }
 
-export const completeSectionObserver = new SectionObserver(false, Threshold.FULL);
-export const halfSectionObserver = new SectionObserver(false, Threshold.HALF);
-export const minSectionObserver = new SectionObserver(false, Threshold.MIN);
-export const rankSectionObserver = new SectionObserver(true, Threshold.FULL);
+export function getCompleteSectionObserver() {
+  if (!__CLIENT__) {
+    console.warn('[getCompleteSectionObserver()] should be invoked on client side.');
+    return;
+  }
+  return new SectionObserver(false, Threshold.FULL);
+}
+
+export function getHalfSectionObserver() {
+  if (!__CLIENT__) {
+    console.warn('[getHalfSectionObserver()] should be invoked on client side.');
+    return;
+  }
+  return new SectionObserver(false, Threshold.HALF);
+}
+
+export function getMinSectionObserver() {
+  if (!__CLIENT__) {
+    console.warn('[getMinSectionObserver()] should be invoked on client side.');
+    return;
+  }
+  return new SectionObserver(false, Threshold.MIN);
+}
+
+export function getRankSectionObserver() {
+  if (!__CLIENT__) {
+    console.warn('[getRankSectionObserver()] should be invoked on client side.');
+    return;
+  }
+  return new SectionObserver(true, Threshold.FULL);
+}

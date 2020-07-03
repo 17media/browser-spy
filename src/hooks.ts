@@ -2,11 +2,21 @@ import { RefObject, useEffect } from 'react';
 import { History } from 'history';
 import { DefaultSource } from './Source';
 
-import { completeSectionObserver, halfSectionObserver, minSectionObserver, rankSectionObserver } from './Observer';
+import {
+  getCompleteSectionObserver,
+  getHalfSectionObserver,
+  getMinSectionObserver,
+  getRankSectionObserver,
+} from './Observer';
+
+const completeSectionObserver = getCompleteSectionObserver();
+const halfSectionObserver = getHalfSectionObserver();
+const minSectionObserver = getMinSectionObserver();
+const rankSectionObserver = getRankSectionObserver();
 
 export function useCompleteSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
-    if (ref.current === null) return;
+    if (ref.current === null || !completeSectionObserver) return;
     completeSectionObserver.sectionObserve(ref, callback);
     return () => {
       completeSectionObserver.sectionUnobserve(ref);
@@ -16,7 +26,7 @@ export function useCompleteSectionTracking(ref: RefObject<any>, callback: Functi
 
 export function useHalfSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
-    if (ref.current === null) return;
+    if (ref.current === null || !halfSectionObserver) return;
     halfSectionObserver.sectionObserve(ref, callback);
     return () => {
       halfSectionObserver.sectionUnobserve(ref);
@@ -26,7 +36,7 @@ export function useHalfSectionTracking(ref: RefObject<any>, callback: Function) 
 
 export function useMinSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
-    if (ref.current === null) return;
+    if (ref.current === null || !minSectionObserver) return;
     minSectionObserver.sectionObserve(ref, callback);
     return () => {
       minSectionObserver.sectionUnobserve(ref);
@@ -36,7 +46,7 @@ export function useMinSectionTracking(ref: RefObject<any>, callback: Function) {
 
 export function useRankSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
-    if (ref.current === null) return;
+    if (ref.current === null || !rankSectionObserver) return;
     rankSectionObserver.sectionObserve(ref, callback);
     return () => {
       rankSectionObserver.sectionUnobserve(ref);
@@ -49,10 +59,10 @@ export function usePageTransitionListener(trackingSource: DefaultSource, history
     // Regist history (for page_view & screen_view)
     trackingSource.spyTransition(history);
     history.listen(() => {
-      completeSectionObserver.resetSectionObserver();
-      halfSectionObserver.resetSectionObserver();
-      minSectionObserver.resetSectionObserver();
-      rankSectionObserver.resetSectionObserver();
+      if (completeSectionObserver) completeSectionObserver.resetSectionObserver();
+      if (halfSectionObserver) halfSectionObserver.resetSectionObserver();
+      if (minSectionObserver) minSectionObserver.resetSectionObserver();
+      if (rankSectionObserver) rankSectionObserver.resetSectionObserver();
     });
   }, [history]);
 }
