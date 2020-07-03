@@ -26,22 +26,34 @@ const mockCallback = () => {};
 
 describe('Test [registCompleteSectionObserver], [registHalfSectionObserver], [registMinSectionObserver], [registRankSectionObserver]', () => {
   test('Should return undefined on server side. [registCompleteSectionObserver]', () => {
-    registCompleteSectionObserver(mockRef, mockCallback);
+    function regist() {
+      registCompleteSectionObserver(mockRef, mockCallback);
+    }
+    expect(regist).toThrowError('[registCompleteSectionObserver()] should be invoked on client side.');
     expect(completeSectionObserver).toEqual(undefined);
   });
 
   test('Should return undefined on server side. [registHalfSectionObserver]', () => {
-    registHalfSectionObserver(mockRef, mockCallback);
+    function regist() {
+      registHalfSectionObserver(mockRef, mockCallback);
+    }
+    expect(regist).toThrowError('[registHalfSectionObserver()] should be invoked on client side.');
     expect(halfSectionObserver).toEqual(undefined);
   });
 
   test('Should return undefined on server side. [registMinSectionObserver]', () => {
-    registMinSectionObserver(mockRef, mockCallback);
+    function regist() {
+      registMinSectionObserver(mockRef, mockCallback);
+    }
+    expect(regist).toThrowError('[registMinSectionObserver()] should be invoked on client side.');
     expect(minSectionObserver).toEqual(undefined);
   });
 
   test('Should return undefined on server side. [registRankSectionObserver]', () => {
-    registRankSectionObserver(mockRef, mockCallback);
+    function regist() {
+      registRankSectionObserver(mockRef, mockCallback);
+    }
+    expect(regist).toThrowError('[registRankSectionObserver()] should be invoked on client side.');
     expect(rankSectionObserver).toEqual(undefined);
   });
 });

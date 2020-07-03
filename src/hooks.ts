@@ -13,40 +13,28 @@ import {
 export function useCompleteSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
     if (ref.current === null) return;
-    const unobserve = registCompleteSectionObserver(ref, callback);
-    return () => {
-      if (unobserve) unobserve();
-    };
+    return registCompleteSectionObserver(ref, callback);
   });
 }
 
 export function useHalfSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
     if (ref.current === null) return;
-    const unobserve = registHalfSectionObserver(ref, callback);
-    return () => {
-      if (unobserve) unobserve();
-    };
+    return registHalfSectionObserver(ref, callback);
   });
 }
 
 export function useMinSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
     if (ref.current === null) return;
-    const unobserve = registMinSectionObserver(ref, callback);
-    return () => {
-      if (unobserve) unobserve();
-    };
+    return registMinSectionObserver(ref, callback);
   });
 }
 
 export function useRankSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
     if (ref.current === null) return;
-    const unobserve = registRankSectionObserver(ref, callback);
-    return () => {
-      if (unobserve) unobserve();
-    };
+    return registRankSectionObserver(ref, callback);
   });
 }
 

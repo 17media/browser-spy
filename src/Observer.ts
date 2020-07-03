@@ -4,9 +4,9 @@ import { __CLIENT__ } from './utils/constants';
 import 'intersection-observer';
 
 class SectionObserver {
-  private observer: IntersectionObserver | undefined;
+  public elementMap: ElementMap;
 
-  private elementMap: ElementMap;
+  private observer: IntersectionObserver | undefined;
 
   private debounceExecute = 0;
 
@@ -78,7 +78,6 @@ class SectionObserver {
   };
 }
 
-// Export for test.
 export let completeSectionObserver: SectionObserver | undefined;
 export let halfSectionObserver: SectionObserver | undefined;
 export let minSectionObserver: SectionObserver | undefined;
@@ -86,8 +85,7 @@ export let rankSectionObserver: SectionObserver | undefined;
 
 export function registCompleteSectionObserver(ref: RefObject<any>, callback: Function) {
   if (!__CLIENT__) {
-    console.error('[registCompleteSectionObserver()] should be invoked on client side.');
-    return;
+    throw new Error('[registCompleteSectionObserver()] should be invoked on client side.');
   }
   if (!completeSectionObserver) completeSectionObserver = new SectionObserver(false, Threshold.FULL);
   completeSectionObserver.sectionObserve(ref, callback);
@@ -98,8 +96,7 @@ export function registCompleteSectionObserver(ref: RefObject<any>, callback: Fun
 
 export function registHalfSectionObserver(ref: RefObject<any>, callback: Function) {
   if (!__CLIENT__) {
-    console.error('[registHalfSectionObserver()] should be invoked on client side.');
-    return;
+    throw new Error('[registHalfSectionObserver()] should be invoked on client side.');
   }
 
   if (!halfSectionObserver) halfSectionObserver = new SectionObserver(false, Threshold.HALF);
@@ -111,8 +108,7 @@ export function registHalfSectionObserver(ref: RefObject<any>, callback: Functio
 
 export function registMinSectionObserver(ref: RefObject<any>, callback: Function) {
   if (!__CLIENT__) {
-    console.error('[registMinSectionObserver()] should be invoked on client side.');
-    return;
+    throw new Error('[registMinSectionObserver()] should be invoked on client side.');
   }
 
   if (!minSectionObserver) minSectionObserver = new SectionObserver(false, Threshold.MIN);
@@ -124,8 +120,7 @@ export function registMinSectionObserver(ref: RefObject<any>, callback: Function
 
 export function registRankSectionObserver(ref: RefObject<any>, callback: Function) {
   if (!__CLIENT__) {
-    console.error('[registRankSectionObserver()] should be invoked on client side.');
-    return;
+    throw new Error('[registRankSectionObserver()] should be invoked on client side.');
   }
 
   if (!rankSectionObserver) rankSectionObserver = new SectionObserver(true, Threshold.FULL);
