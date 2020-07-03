@@ -138,21 +138,6 @@ declare class DefaultSource implements Source {
     transit(toScene: Scene): void;
     track(event: Omit<TrackingEvent, "type">): void;
 }
-declare class SectionObserver {
-    private observer;
-    private elementMap;
-    private debounceExecute;
-    constructor(debounce: boolean, threshold: Threshold);
-    sectionObserve: (ref: RefObject<any>, callback: Function) => void;
-    sectionUnobserve: (ref: RefObject<any>) => void;
-    resetSectionObserver: () => void;
-    private sectionIntersect;
-    private debounceSectionIntersect;
-}
-declare const completeSectionObserver: SectionObserver;
-declare const halfSectionObserver: SectionObserver;
-declare const minSectionObserver: SectionObserver;
-declare const rankSectionObserver: SectionObserver;
 declare function useCompleteSectionTracking(ref: RefObject<any>, callback: Function): void;
 declare function useHalfSectionTracking(ref: RefObject<any>, callback: Function): void;
 declare function useMinSectionTracking(ref: RefObject<any>, callback: Function): void;
@@ -171,4 +156,4 @@ declare function createVoteAction(voteTopic: string): EventAction;
 declare function createLeaderboardSectionViewAction(rank: number): EventAction;
 declare function createLinkClickAction(link: string, linkName: string): EventAction;
 declare function createSectionViewAction(section: SectionName, customPath?: string): EventAction;
-export { Agent, FirebaseAgent, MatomoAgentConfig, MatomoAgent, Source, DefaultSource, Threshold, Scene, TransitionEvent, TrackingEventParams, TrackingEvent, DefaultEventParams, LoginEvent, RefinedEventPathname, ElementMap, SpyEvent, EventCallback, EventListener, completeSectionObserver, halfSectionObserver, minSectionObserver, rankSectionObserver, useCompleteSectionTracking, useHalfSectionTracking, useMinSectionTracking, useRankSectionTracking, usePageTransitionListener, createButtonClickAction, createPageEnterAction, createPageLeaveAction, createTabClickAction, createProfileClickAction, createSearchAction, createVoteAction, createLeaderboardSectionViewAction, createLinkClickAction, createSectionViewAction };
+export { Agent, FirebaseAgent, MatomoAgentConfig, MatomoAgent, Source, DefaultSource, Threshold, Scene, TransitionEvent, TrackingEventParams, TrackingEvent, DefaultEventParams, LoginEvent, RefinedEventPathname, ElementMap, SpyEvent, EventCallback, EventListener, useCompleteSectionTracking, useHalfSectionTracking, useMinSectionTracking, useRankSectionTracking, usePageTransitionListener, createButtonClickAction, createPageEnterAction, createPageLeaveAction, createTabClickAction, createProfileClickAction, createSearchAction, createVoteAction, createLeaderboardSectionViewAction, createLinkClickAction, createSectionViewAction };
