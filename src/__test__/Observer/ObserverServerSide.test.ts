@@ -1,8 +1,12 @@
 import {
-  getCompleteSectionObserver,
-  getHalfSectionObserver,
-  getMinSectionObserver,
-  getRankSectionObserver,
+  registCompleteSectionObserver,
+  registHalfSectionObserver,
+  registMinSectionObserver,
+  registRankSectionObserver,
+  completeSectionObserver,
+  halfSectionObserver,
+  minSectionObserver,
+  rankSectionObserver,
 } from '../../Observer';
 
 jest.mock('../../utils/constants', () => {
@@ -11,24 +15,33 @@ jest.mock('../../utils/constants', () => {
   };
 });
 
-describe('Test [getCompleteSectionObserver], [getHalfSectionObserver], [getMinSectionObserver], [getRankSectionObserver]', () => {
-  test('Should return undefined on server side. [getCompleteSectionObserver]', () => {
-    const completeSectionObserver = getCompleteSectionObserver();
+window.IntersectionObserver = jest.fn().mockImplementation(() => {
+  return {
+    observe: () => null,
+  };
+});
+
+const mockRef = { current: {} };
+const mockCallback = () => {};
+
+describe('Test [registCompleteSectionObserver], [registHalfSectionObserver], [registMinSectionObserver], [registRankSectionObserver]', () => {
+  test('Should return undefined on server side. [registCompleteSectionObserver]', () => {
+    registCompleteSectionObserver(mockRef, mockCallback);
     expect(completeSectionObserver).toEqual(undefined);
   });
 
-  test('Should return undefined on server side. [getHalfSectionObserver]', () => {
-    const halfSectionObserver = getHalfSectionObserver();
+  test('Should return undefined on server side. [registHalfSectionObserver]', () => {
+    registHalfSectionObserver(mockRef, mockCallback);
     expect(halfSectionObserver).toEqual(undefined);
   });
 
-  test('Should return undefined on server side. [getMinSectionObserver]', () => {
-    const minSectionObserver = getMinSectionObserver();
+  test('Should return undefined on server side. [registMinSectionObserver]', () => {
+    registMinSectionObserver(mockRef, mockCallback);
     expect(minSectionObserver).toEqual(undefined);
   });
 
-  test('Should return undefined on server side. [getRankSectionObserver]', () => {
-    const rankSectionObserver = getRankSectionObserver();
+  test('Should return undefined on server side. [registRankSectionObserver]', () => {
+    registRankSectionObserver(mockRef, mockCallback);
     expect(rankSectionObserver).toEqual(undefined);
   });
 });
