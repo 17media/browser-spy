@@ -2,45 +2,39 @@ import { RefObject, useEffect } from 'react';
 import { History } from 'history';
 import { DefaultSource } from './Source';
 
-import { completeSectionObserver, halfSectionObserver, minSectionObserver, rankSectionObserver } from './Observer';
+import {
+  registCompleteSectionObserver,
+  registHalfSectionObserver,
+  registMinSectionObserver,
+  registRankSectionObserver,
+  resetSectionObserverStatus,
+} from './Observer';
 
 export function useCompleteSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
     if (ref.current === null) return;
-    completeSectionObserver.sectionObserve(ref, callback);
-    return () => {
-      completeSectionObserver.sectionUnobserve(ref);
-    };
+    return registCompleteSectionObserver(ref, callback);
   });
 }
 
 export function useHalfSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
     if (ref.current === null) return;
-    halfSectionObserver.sectionObserve(ref, callback);
-    return () => {
-      halfSectionObserver.sectionUnobserve(ref);
-    };
+    return registHalfSectionObserver(ref, callback);
   });
 }
 
 export function useMinSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
     if (ref.current === null) return;
-    minSectionObserver.sectionObserve(ref, callback);
-    return () => {
-      minSectionObserver.sectionUnobserve(ref);
-    };
+    return registMinSectionObserver(ref, callback);
   });
 }
 
 export function useRankSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
     if (ref.current === null) return;
-    rankSectionObserver.sectionObserve(ref, callback);
-    return () => {
-      rankSectionObserver.sectionUnobserve(ref);
-    };
+    return registRankSectionObserver(ref, callback);
   });
 }
 
@@ -49,10 +43,7 @@ export function usePageTransitionListener(trackingSource: DefaultSource, history
     // Regist history (for page_view & screen_view)
     trackingSource.spyTransition(history);
     history.listen(() => {
-      completeSectionObserver.resetSectionObserver();
-      halfSectionObserver.resetSectionObserver();
-      minSectionObserver.resetSectionObserver();
-      rankSectionObserver.resetSectionObserver();
+      resetSectionObserverStatus();
     });
   }, [history]);
 }

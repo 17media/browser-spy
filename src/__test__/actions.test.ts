@@ -92,7 +92,7 @@ describe('Tracking actions testing', () => {
   });
 
   test('[createProfileClickAction] Should return the correct action.', () => {
-    const profileType = 'profileType';
+    const profileType = 'topavatar';
     const userID = 'userID';
     const liveStatus = true;
 
