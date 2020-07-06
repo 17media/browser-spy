@@ -65,6 +65,7 @@ export interface DefaultEventParams {
   eventId: string;
   timestamp: number;
   codename: string;
+  gaSessionId: string;
 }
 
 export interface LoginEvent {
