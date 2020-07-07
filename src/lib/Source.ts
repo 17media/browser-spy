@@ -1,8 +1,8 @@
-import { TransitionEvent, TrackingEvent, TrackingEventParams, Scene } from 'types';
-import { Agent } from 'Agent';
 import { History } from 'history';
-import * as dom from 'utils/dom';
-import { createScene, createDefaultEventParams } from 'utils/param';
+import { TransitionEvent, TrackingEvent, TrackingEventParams, Scene } from '../types';
+import { Agent } from './Agent';
+import * as dom from '../utils/dom';
+import { createScene, createDefaultEventParams } from '../utils/param';
 
 export interface Source {
   addAgent(agent: Agent): void;

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { loadScript, loadScripts } from 'utils/loadScript';
-import * as object from 'utils/object';
-import { TrackingEvent, TransitionEvent, LoginEvent, SpyEvent } from 'types';
+import { loadScript, loadScripts } from '../utils/loadScript';
+import * as object from '../utils/object';
+import { TrackingEvent, TransitionEvent, LoginEvent, SpyEvent } from '../types';
 
 enum AgentState {
   Uninitialized,

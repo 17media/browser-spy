@@ -7,7 +7,7 @@ import {
   halfSectionObserver,
   minSectionObserver,
   rankSectionObserver,
-} from '../../Observer';
+} from '../../helper';
 
 jest.mock('../../utils/constants', () => {
   return {

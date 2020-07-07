@@ -1,6 +1,6 @@
 import { RefObject, useEffect } from 'react';
 import { History } from 'history';
-import { DefaultSource } from './Source';
+import { DefaultSource } from './lib/Source';
 
 import {
   registCompleteSectionObserver,
@@ -8,7 +8,7 @@ import {
   registMinSectionObserver,
   registRankSectionObserver,
   resetSectionObserverStatus,
-} from './Observer';
+} from './helper';
 
 export function useCompleteSectionTracking(ref: RefObject<any>, callback: Function) {
   useEffect(() => {
