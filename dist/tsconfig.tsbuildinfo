@@ -251,19 +251,19 @@
         "signature": 1,
         "affectsGlobalScope": true
       },
+      "../src/utils/constants.ts": {
+        "version": 2,
+        "signature": "7410267138",
+        "affectsGlobalScope": false
+      },
       "../src/Observer.ts": {
         "version": 2,
-        "signature": "-10396986106",
+        "signature": "18362947215",
         "affectsGlobalScope": false
       },
       "../src/hooks.ts": {
         "version": 2,
         "signature": "14265818057",
-        "affectsGlobalScope": false
-      },
-      "../src/utils/constants.ts": {
-        "version": 2,
-        "signature": "-1198181745",
         "affectsGlobalScope": false
       },
       "../src/actions.ts": {
@@ -273,7 +273,7 @@
       },
       "../src/index.ts": {
         "version": 1,
-        "signature": "-10756149015",
+        "signature": "-2292957938",
         "affectsGlobalScope": false
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
@@ -3272,7 +3272,8 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/react/index.d.ts",
         "../src/types.ts",
-        "../src/typings.d.ts"
+        "../src/typings.d.ts",
+        "../src/utils/constants.ts"
       ],
       "../src/Source.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -3313,7 +3314,6 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../src/Agent.ts",
-        "../src/Observer.ts",
         "../src/Source.ts",
         "../src/actions.ts",
         "../src/hooks.ts",
@@ -5410,7 +5410,6 @@
       ],
       "../src/index.ts": [
         "../src/Agent.ts",
-        "../src/Observer.ts",
         "../src/Source.ts",
         "../src/actions.ts",
         "../src/hooks.ts",

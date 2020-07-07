@@ -1,5 +1,5 @@
-import 'intersection-observer';
 import { useEffect } from 'react';
+import 'intersection-observer';
 
 function loadScript(src) {
   const script = document.createElement('script');
@@ -536,6 +536,19 @@ var Threshold;
   Threshold[Threshold["FULL"] = 1] = "FULL";
 })(Threshold || (Threshold = {}));
 
+const EVENT_NAME_CLICK = 'click';
+const EVENT_NAME_ENTER = 'enter';
+const EVENT_NAME_LEAVE = 'leave';
+const EVENT_NAME_SEARCH = 'search';
+const EVENT_NAME_SECTION_VIEW = 'section_view';
+const CATEGORY_DEFAULT = 'default';
+const ACTION_BUTTON_CLICK = 'ButtonClick';
+const ACTION_TAB_CLICK = 'TabClick';
+const ACTION_PROFILE_CLICK = 'ProfileClick';
+const ACTION_LINK_CLICK = 'LinkClick';
+const ACTION_ENTER = 'enter';
+const __CLIENT__ = typeof window !== 'undefined' && typeof window.document !== 'undefined';
+
 class SectionObserver {
   constructor(debounce, threshold) {
     this.debounceExecute = 0;
@@ -618,45 +631,83 @@ class SectionObserver {
 
 }
 
-const completeSectionObserver = new SectionObserver(false, Threshold.FULL);
-const halfSectionObserver = new SectionObserver(false, Threshold.HALF);
-const minSectionObserver = new SectionObserver(false, Threshold.MIN);
-const rankSectionObserver = new SectionObserver(true, Threshold.FULL);
+let completeSectionObserver;
+let halfSectionObserver;
+let minSectionObserver;
+let rankSectionObserver;
+function registCompleteSectionObserver(ref, callback) {
+  if (!__CLIENT__) {
+    throw new Error('[registCompleteSectionObserver()] should be invoked on client side.');
+  }
+
+  if (!completeSectionObserver) completeSectionObserver = new SectionObserver(false, Threshold.FULL);
+  completeSectionObserver.sectionObserve(ref, callback);
+  return () => {
+    completeSectionObserver.sectionUnobserve(ref);
+  };
+}
+function registHalfSectionObserver(ref, callback) {
+  if (!__CLIENT__) {
+    throw new Error('[registHalfSectionObserver()] should be invoked on client side.');
+  }
+
+  if (!halfSectionObserver) halfSectionObserver = new SectionObserver(false, Threshold.HALF);
+  halfSectionObserver.sectionObserve(ref, callback);
+  return () => {
+    halfSectionObserver.sectionUnobserve(ref);
+  };
+}
+function registMinSectionObserver(ref, callback) {
+  if (!__CLIENT__) {
+    throw new Error('[registMinSectionObserver()] should be invoked on client side.');
+  }
+
+  if (!minSectionObserver) minSectionObserver = new SectionObserver(false, Threshold.MIN);
+  minSectionObserver.sectionObserve(ref, callback);
+  return () => {
+    minSectionObserver.sectionUnobserve(ref);
+  };
+}
+function registRankSectionObserver(ref, callback) {
+  if (!__CLIENT__) {
+    throw new Error('[registRankSectionObserver()] should be invoked on client side.');
+  }
+
+  if (!rankSectionObserver) rankSectionObserver = new SectionObserver(true, Threshold.FULL);
+  rankSectionObserver.sectionObserve(ref, callback);
+  return () => {
+    rankSectionObserver.sectionUnobserve(ref);
+  };
+}
+function resetSectionObserverStatus() {
+  if (completeSectionObserver) completeSectionObserver.resetSectionObserver();
+  if (halfSectionObserver) halfSectionObserver.resetSectionObserver();
+  if (minSectionObserver) minSectionObserver.resetSectionObserver();
+  if (rankSectionObserver) rankSectionObserver.resetSectionObserver();
+}
 
 function useCompleteSectionTracking(ref, callback) {
   useEffect(() => {
     if (ref.current === null) return;
-    completeSectionObserver.sectionObserve(ref, callback);
-    return () => {
-      completeSectionObserver.sectionUnobserve(ref);
-    };
+    return registCompleteSectionObserver(ref, callback);
   });
 }
 function useHalfSectionTracking(ref, callback) {
   useEffect(() => {
     if (ref.current === null) return;
-    halfSectionObserver.sectionObserve(ref, callback);
-    return () => {
-      halfSectionObserver.sectionUnobserve(ref);
-    };
+    return registHalfSectionObserver(ref, callback);
   });
 }
 function useMinSectionTracking(ref, callback) {
   useEffect(() => {
     if (ref.current === null) return;
-    minSectionObserver.sectionObserve(ref, callback);
-    return () => {
-      minSectionObserver.sectionUnobserve(ref);
-    };
+    return registMinSectionObserver(ref, callback);
   });
 }
 function useRankSectionTracking(ref, callback) {
   useEffect(() => {
     if (ref.current === null) return;
-    rankSectionObserver.sectionObserve(ref, callback);
-    return () => {
-      rankSectionObserver.sectionUnobserve(ref);
-    };
+    return registRankSectionObserver(ref, callback);
   });
 }
 function usePageTransitionListener(trackingSource, history) {
@@ -664,25 +715,10 @@ function usePageTransitionListener(trackingSource, history) {
     // Regist history (for page_view & screen_view)
     trackingSource.spyTransition(history);
     history.listen(() => {
-      completeSectionObserver.resetSectionObserver();
-      halfSectionObserver.resetSectionObserver();
-      minSectionObserver.resetSectionObserver();
-      rankSectionObserver.resetSectionObserver();
+      resetSectionObserverStatus();
     });
   }, [history]);
 }
-
-const EVENT_NAME_CLICK = 'click';
-const EVENT_NAME_ENTER = 'enter';
-const EVENT_NAME_LEAVE = 'leave';
-const EVENT_NAME_SEARCH = 'search';
-const EVENT_NAME_SECTION_VIEW = 'section_view';
-const CATEGORY_DEFAULT = 'default';
-const ACTION_BUTTON_CLICK = 'ButtonClick';
-const ACTION_TAB_CLICK = 'TabClick';
-const ACTION_PROFILE_CLICK = 'ProfileClick';
-const ACTION_LINK_CLICK = 'LinkClick';
-const ACTION_ENTER = 'enter';
 
 function createButtonClickAction(buttonName, link) {
   return {
@@ -794,5 +830,5 @@ function createSectionViewAction(section, customPath) {
   };
 }
 
-export { Agent, DefaultSource, FirebaseAgent, MatomoAgent, Threshold, completeSectionObserver, createButtonClickAction, createLeaderboardSectionViewAction, createLinkClickAction, createPageEnterAction, createPageLeaveAction, createProfileClickAction, createSearchAction, createSectionViewAction, createTabClickAction, createVoteAction, halfSectionObserver, minSectionObserver, rankSectionObserver, useCompleteSectionTracking, useHalfSectionTracking, useMinSectionTracking, usePageTransitionListener, useRankSectionTracking };
+export { Agent, DefaultSource, FirebaseAgent, MatomoAgent, Threshold, createButtonClickAction, createLeaderboardSectionViewAction, createLinkClickAction, createPageEnterAction, createPageLeaveAction, createProfileClickAction, createSearchAction, createSectionViewAction, createTabClickAction, createVoteAction, useCompleteSectionTracking, useHalfSectionTracking, useMinSectionTracking, usePageTransitionListener, useRankSectionTracking };
 //# sourceMappingURL=index.esm.js.map
