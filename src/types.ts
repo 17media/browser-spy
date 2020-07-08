@@ -17,6 +17,11 @@ export interface TransitionEvent {
   defaultTrackingParams: DefaultEventParams;
 }
 
+export interface TrackingToken {
+  sessionID: string;
+  date: number;
+}
+
 export interface TrackingEventParams {
   userId?: string;
   lang?: string;
@@ -65,6 +70,7 @@ export interface DefaultEventParams {
   eventId: string;
   timestamp: number;
   codename: string;
+  gaSessionId: string;
 }
 
 export interface LoginEvent {
