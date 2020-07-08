@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import firebase from 'firebase/app';
-import 'firebase/analytics';
+// TODO del
+// import firebase from 'firebase/app';
+// import 'firebase/analytics';
 
 import { loadScript, loadScripts } from 'utils/loadScript';
 import * as object from 'utils/object';
@@ -56,8 +57,8 @@ export class FirebaseAgent extends Agent {
     //   'https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js',
     // );
 
-    // const firebase = await import('firebase/app');
-    // await import('firebase/analytics');
+    const firebase = await import('firebase/app');
+    await import('firebase/analytics');
 
     if (!isInit) {
       this.client = firebase.initializeApp(this.config).analytics();

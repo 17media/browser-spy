@@ -17,4 +17,5 @@ export default {
     { file: pkg.main, format: 'cjs', sourcemap: true },
     { file: pkg.module, format: 'es', sourcemap: true },
   ],
+  inlineDynamicImports: true,
 };
