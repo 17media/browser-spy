@@ -161,11 +161,6 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/firebase/empty-import.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
       "../src/utils/loadScript.ts": {
         "version": 2,
         "signature": "-34798380848",
@@ -183,7 +178,7 @@
       },
       "../src/Agent.ts": {
         "version": 2,
-        "signature": "-99893042019",
+        "signature": "-24969054953",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/history/DOMUtils.d.ts": {
@@ -2828,13 +2823,6 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/firebase/empty-import.d.ts": [
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/firebase/index.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -3271,7 +3259,6 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../node_modules/firebase/empty-import.d.ts",
         "../node_modules/firebase/index.d.ts",
         "../src/types.ts",
         "../src/utils/loadScript.ts",
@@ -4970,13 +4957,6 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/firebase/empty-import.d.ts": [
-        "../node_modules/@types/graceful-fs/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/firebase/index.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -5408,7 +5388,6 @@
         "../node_modules/@types/node/util.d.ts"
       ],
       "../src/Agent.ts": [
-        "../node_modules/firebase/empty-import.d.ts",
         "../src/types.ts"
       ],
       "../src/Observer.ts": [
@@ -5622,7 +5601,6 @@
       "../node_modules/chalk/index.d.ts",
       "../node_modules/collect-v8-coverage/index.d.ts",
       "../node_modules/csstype/index.d.ts",
-      "../node_modules/firebase/empty-import.d.ts",
       "../node_modules/firebase/index.d.ts",
       "../node_modules/jest-changed-files/build/index.d.ts",
       "../node_modules/jest-changed-files/build/types.d.ts",
