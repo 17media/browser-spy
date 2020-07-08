@@ -14,6 +14,8 @@ enum AgentState {
   InitializeFail,
 }
 
+declare var firebase: any;
+
 export abstract class Agent {
   protected state = AgentState.Uninitialized;
 
@@ -52,13 +54,13 @@ export class FirebaseAgent extends Agent {
 
   async doInitialize() {
     // TODO del
-    // await loadScripts(
-    //   'https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js',
-    //   'https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js',
-    // );
+    await loadScripts(
+      'https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js',
+      'https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js',
+    );
 
-    const firebase = await import('firebase/app');
-    await import('firebase/analytics');
+    // const firebase = await import('firebase/app');
+    // await import('firebase/analytics');
 
     if (!isInit) {
       this.client = firebase.initializeApp(this.config).analytics();
