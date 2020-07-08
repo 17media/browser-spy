@@ -16,6 +16,10 @@ interface TransitionEvent {
     toScene: Scene;
     defaultTrackingParams: DefaultEventParams;
 }
+interface TrackingToken {
+    sessionID: string;
+    date: number;
+}
 interface TrackingEventParams {
     userId?: string;
     lang?: string;
@@ -63,6 +67,7 @@ interface DefaultEventParams {
     eventId: string;
     timestamp: number;
     codename: string;
+    gaSessionId: string;
 }
 interface LoginEvent {
     type: "login";
@@ -156,4 +161,4 @@ declare function createVoteAction(voteTopic: string): EventAction;
 declare function createLeaderboardSectionViewAction(rank: number): EventAction;
 declare function createLinkClickAction(link: string, linkName: string): EventAction;
 declare function createSectionViewAction(section: SectionName, customPath?: string): EventAction;
-export { Agent, FirebaseAgent, MatomoAgentConfig, MatomoAgent, Source, DefaultSource, Threshold, Scene, TransitionEvent, TrackingEventParams, TrackingEvent, DefaultEventParams, LoginEvent, RefinedEventPathname, ElementMap, SpyEvent, EventCallback, EventListener, useCompleteSectionTracking, useHalfSectionTracking, useMinSectionTracking, useRankSectionTracking, usePageTransitionListener, createButtonClickAction, createPageEnterAction, createPageLeaveAction, createTabClickAction, createProfileClickAction, createSearchAction, createVoteAction, createLeaderboardSectionViewAction, createLinkClickAction, createSectionViewAction };
+export { Agent, FirebaseAgent, MatomoAgentConfig, MatomoAgent, Source, DefaultSource, Threshold, Scene, TransitionEvent, TrackingToken, TrackingEventParams, TrackingEvent, DefaultEventParams, LoginEvent, RefinedEventPathname, ElementMap, SpyEvent, EventCallback, EventListener, useCompleteSectionTracking, useHalfSectionTracking, useMinSectionTracking, useRankSectionTracking, usePageTransitionListener, createButtonClickAction, createPageEnterAction, createPageLeaveAction, createTabClickAction, createProfileClickAction, createSearchAction, createVoteAction, createLeaderboardSectionViewAction, createLinkClickAction, createSectionViewAction };

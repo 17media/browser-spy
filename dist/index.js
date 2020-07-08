@@ -2,6 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var crypto = _interopDefault(require('crypto'));
 var react = require('react');
 require('intersection-observer');
 
@@ -351,6 +354,71 @@ function getContent(element) {
   return element.innerText;
 }
 
+var rnds8 = new Uint8Array(16);
+function rng() {
+  return crypto.randomFillSync(rnds8);
+}
+
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+var byteToHex = [];
+
+for (var i = 0; i < 256; ++i) {
+  byteToHex.push((i + 0x100).toString(16).substr(1));
+}
+
+function bytesToUuid(buf, offset_) {
+  var offset = offset_ || 0; // Note: Be careful editing this code!  It's been tuned for performance
+  // and works in ways you may not expect. See https://github.com/uuidjs/uuid/pull/434
+
+  return (byteToHex[buf[offset + 0]] + byteToHex[buf[offset + 1]] + byteToHex[buf[offset + 2]] + byteToHex[buf[offset + 3]] + '-' + byteToHex[buf[offset + 4]] + byteToHex[buf[offset + 5]] + '-' + byteToHex[buf[offset + 6]] + byteToHex[buf[offset + 7]] + '-' + byteToHex[buf[offset + 8]] + byteToHex[buf[offset + 9]] + '-' + byteToHex[buf[offset + 10]] + byteToHex[buf[offset + 11]] + byteToHex[buf[offset + 12]] + byteToHex[buf[offset + 13]] + byteToHex[buf[offset + 14]] + byteToHex[buf[offset + 15]]).toLowerCase();
+}
+
+function v4(options, buf, offset) {
+  options = options || {};
+  var rnds = options.random || (options.rng || rng)(); // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+
+  rnds[6] = rnds[6] & 0x0f | 0x40;
+  rnds[8] = rnds[8] & 0x3f | 0x80; // Copy bytes to buffer, if provided
+
+  if (buf) {
+    offset = offset || 0;
+
+    for (var i = 0; i < 16; ++i) {
+      buf[offset + i] = rnds[i];
+    }
+
+    return buf;
+  }
+
+  return bytesToUuid(rnds);
+}
+
+function createTrackingToken() {
+  const storageKey = 'trackingToken';
+  const days30 = 60 * 60 * 24 * 30 * 1000;
+  const newTrackingToken = JSON.stringify({
+    sessionID: v4(),
+    date: Date.now()
+  });
+  const trackingToken = localStorage.getItem(storageKey) || '';
+
+  try {
+    const {
+      date
+    } = JSON.parse(trackingToken); // Expired checking (after 30 days)
+
+    if (Date.now() - date < days30) return trackingToken;
+    localStorage.setItem(storageKey, newTrackingToken);
+  } catch (error) {
+    localStorage.setItem(storageKey, newTrackingToken);
+  }
+
+  return newTrackingToken;
+}
+
 function createScene() {
   const {
     title
@@ -393,13 +461,15 @@ function createDefaultEventParams() {
     eventId,
     codename
   } = refineEventPathname(eventPathname);
+  const trackingToken = createTrackingToken();
   return {
     userId: sessionStorage.getItem('userID') || 'guest',
     lang: navigator.language || '',
     os: navigator.userAgent || '',
     timestamp: Date.now(),
     codename,
-    eventId
+    eventId,
+    gaSessionId: trackingToken
   };
 }
 
