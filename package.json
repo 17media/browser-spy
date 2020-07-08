@@ -44,7 +44,5 @@
     "rollup": "^2.1.0",
     "typescript": "^3.8.3"
   },
-  "dependencies": {
-    "firebase": "^7.15.5"
-  }
+  "dependencies": {}
 }
