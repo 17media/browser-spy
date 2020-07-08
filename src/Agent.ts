@@ -47,14 +47,14 @@ export class FirebaseAgent extends Agent {
   }
 
   async doInitialize() {
-    await loadScripts(
-      'https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js',
-      'https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js',
-    );
-
     // TODO del
-    // const firebase = await import('firebase/app');
-    // await import('firebase/analytics');
+    // await loadScripts(
+    //   'https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js',
+    //   'https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js',
+    // );
+
+    const firebase = await import('firebase/app');
+    await import('firebase/analytics');
 
     if (!isInit) {
       this.client = firebase.initializeApp(this.config).analytics();
