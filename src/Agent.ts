@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import firebase from 'firebase/app';
-import 'firebase/analytics';
 
 import { loadScript, loadScripts } from 'utils/loadScript';
 import * as object from 'utils/object';
 import { TrackingEvent, TransitionEvent, LoginEvent, SpyEvent } from 'types';
+import type { analytics } from 'firebase';
 
 enum AgentState {
   Uninitialized,
@@ -12,6 +11,8 @@ enum AgentState {
   Initialized,
   InitializeFail,
 }
+
+declare var firebase: any;
 
 export abstract class Agent {
   protected state = AgentState.Uninitialized;
@@ -38,7 +39,7 @@ export abstract class Agent {
 let isInit = false;
 
 export class FirebaseAgent extends Agent {
-  private client!: firebase.analytics.Analytics;
+  private client!: analytics.Analytics;
 
   private queue: Array<() => void> = [];
 
@@ -50,13 +51,10 @@ export class FirebaseAgent extends Agent {
   }
 
   async doInitialize() {
-    // TODO del
-    // await loadScripts(
-    //   'https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js',
-    //   'https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js',
-    // );
-
-    // const firebase = await import('firebase/app');
+    await loadScripts(
+      'https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js',
+      'https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js',
+    );
 
     if (!isInit) {
       this.client = firebase.initializeApp(this.config).analytics();

@@ -34,7 +34,7 @@
     "@types/react": "^16.9.38",
     "@wessberg/rollup-plugin-ts": "^1.2.21",
     "babel-jest": "^26.0.1",
-    "firebase": "^7.14.1",
+    "firebase": "^7.15.5",
     "history": "^4.10.1",
     "husky": "^4.2.5",
     "intersection-observer": "^0.10.0",
