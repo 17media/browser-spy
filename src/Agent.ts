@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
 // TODO del
-// import firebase from 'firebase/app';
+// import firebaseApp from 'firebase/app';
 // import 'firebase/analytics';
 
 import { loadScript, loadScripts } from 'utils/loadScript';
@@ -41,7 +41,7 @@ export abstract class Agent {
 let isInit = false;
 
 export class FirebaseAgent extends Agent {
-  private client!: firebase.analytics.Analytics;
+  private client!: any;
 
   private queue: Array<() => void> = [];
 
