@@ -1,4 +1,7 @@
 /* eslint-disable @typescript-eslint/camelcase */
+import firebase from 'firebase/app';
+import 'firebase/analytics';
+
 import { loadScript, loadScripts } from 'utils/loadScript';
 import * as object from 'utils/object';
 import { TrackingEvent, TransitionEvent, LoginEvent, SpyEvent } from 'types';
@@ -47,12 +50,13 @@ export class FirebaseAgent extends Agent {
   }
 
   async doInitialize() {
-    await loadScripts(
-      'https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js',
-      'https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js',
-    );
+    // TODO del
+    // await loadScripts(
+    //   'https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js',
+    //   'https://www.gstatic.com/firebasejs/7.14.1/firebase-analytics.js',
+    // );
 
-    const firebase = await import('firebase');
+    // const firebase = await import('firebase/app');
 
     if (!isInit) {
       this.client = firebase.initializeApp(this.config).analytics();
