@@ -1,5 +1,17 @@
+import qs from 'query-string';
 import { v4 } from 'uuid';
 import { Scene, DefaultEventParams, RefinedEventPathname, TrackingToken } from 'types';
+
+function getUserID() {
+  const qsUserID = qs.parse(window.location.search).userID;
+  if (Array.isArray(qsUserID)) {
+    return sessionStorage.getItem('userID') || 'guest';
+  }
+  // The order of checking UserID.
+  // 1. sessionStorage
+  // 2. query string
+  return sessionStorage.getItem('userID') || qsUserID || 'guest';
+}
 
 function createTrackingToken() {
   const storageKey = 'trackingToken';
@@ -46,7 +58,7 @@ export function createDefaultEventParams(): DefaultEventParams {
   const trackingToken = createTrackingToken();
 
   return {
-    userId: sessionStorage.getItem('userID') || 'guest',
+    userId: getUserID(),
     lang: navigator.language || '',
     os: navigator.userAgent || '',
     timestamp: Date.now(),
