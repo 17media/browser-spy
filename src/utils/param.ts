@@ -1,26 +1,25 @@
 import { v4 } from 'uuid';
-import { Scene, DefaultEventParams, RefinedEventPathname, TrackingToken } from '../types';
+import { Scene, DefaultEventParams, RefinedEventPathname, TrackingToken } from 'types';
 
 function createTrackingToken() {
   const storageKey = 'trackingToken';
   const days30 = 60 * 60 * 24 * 30 * 1000;
-  const newTrackingToken = JSON.stringify({
+  const newTrackingToken: TrackingToken = {
     sessionID: v4(),
     date: Date.now(),
-  });
-
-  const trackingToken = localStorage.getItem(storageKey) || '';
+  };
 
   try {
-    const { date } = JSON.parse(trackingToken) as TrackingToken;
+    const trackingToken = JSON.parse(localStorage.getItem(storageKey) || '') as TrackingToken;
+    const { date, sessionID } = trackingToken;
     // Expired checking (after 30 days)
-    if (Date.now() - date < days30) return trackingToken;
+    if (Date.now() - date < days30) return sessionID;
 
-    localStorage.setItem(storageKey, newTrackingToken);
+    localStorage.setItem(storageKey, JSON.stringify(newTrackingToken));
   } catch (error) {
-    localStorage.setItem(storageKey, newTrackingToken);
+    localStorage.setItem(storageKey, JSON.stringify(newTrackingToken));
   }
-  return newTrackingToken;
+  return newTrackingToken.sessionID;
 }
 
 export function createScene(): Scene {
@@ -53,6 +52,6 @@ export function createDefaultEventParams(): DefaultEventParams {
     timestamp: Date.now(),
     codename,
     eventId,
-    gaSessionId: trackingToken,
+    guestSessionId: trackingToken,
   };
 }
