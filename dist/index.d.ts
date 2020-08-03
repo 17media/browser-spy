@@ -67,7 +67,7 @@ interface DefaultEventParams {
     eventId: string;
     timestamp: number;
     codename: string;
-    gaSessionId: string;
+    guestSessionId: string;
 }
 interface LoginEvent {
     type: "login";

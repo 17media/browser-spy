@@ -4,6 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var qs = _interopDefault(require('query-string'));
 var crypto = _interopDefault(require('crypto'));
 var react = require('react');
 require('intersection-observer');
@@ -396,27 +397,41 @@ function v4(options, buf, offset) {
   return bytesToUuid(rnds);
 }
 
+function getUserID() {
+  const qsUserID = qs.parse(window.location.search).userID;
+
+  if (Array.isArray(qsUserID)) {
+    return sessionStorage.getItem('userID') || 'guest';
+  } // The order of checking UserID.
+  // 1. sessionStorage
+  // 2. query string
+
+
+  return sessionStorage.getItem('userID') || qsUserID || 'guest';
+}
+
 function createTrackingToken() {
   const storageKey = 'trackingToken';
   const days30 = 60 * 60 * 24 * 30 * 1000;
-  const newTrackingToken = JSON.stringify({
+  const newTrackingToken = {
     sessionID: v4(),
     date: Date.now()
-  });
-  const trackingToken = localStorage.getItem(storageKey) || '';
+  };
 
   try {
+    const trackingToken = JSON.parse(localStorage.getItem(storageKey) || '');
     const {
-      date
-    } = JSON.parse(trackingToken); // Expired checking (after 30 days)
+      date,
+      sessionID
+    } = trackingToken; // Expired checking (after 30 days)
 
-    if (Date.now() - date < days30) return trackingToken;
-    localStorage.setItem(storageKey, newTrackingToken);
+    if (Date.now() - date < days30) return sessionID;
+    localStorage.setItem(storageKey, JSON.stringify(newTrackingToken));
   } catch (error) {
-    localStorage.setItem(storageKey, newTrackingToken);
+    localStorage.setItem(storageKey, JSON.stringify(newTrackingToken));
   }
 
-  return newTrackingToken;
+  return newTrackingToken.sessionID;
 }
 
 function createScene() {
@@ -463,13 +478,13 @@ function createDefaultEventParams() {
   } = refineEventPathname(eventPathname);
   const trackingToken = createTrackingToken();
   return {
-    userId: sessionStorage.getItem('userID') || 'guest',
+    userId: getUserID(),
     lang: navigator.language || '',
     os: navigator.userAgent || '',
     timestamp: Date.now(),
     codename,
     eventId,
-    gaSessionId: trackingToken
+    guestSessionId: trackingToken
   };
 }
 

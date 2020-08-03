@@ -173,7 +173,7 @@
       },
       "../src/types.ts": {
         "version": 2,
-        "signature": "-70812671927",
+        "signature": "-19348249463",
         "affectsGlobalScope": false
       },
       "../src/Agent.ts": {
@@ -221,6 +221,11 @@
         "signature": "-7731984387",
         "affectsGlobalScope": false
       },
+      "../node_modules/query-string/index.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
       "../node_modules/@types/uuid/interfaces.d.ts": {
         "version": 1,
         "signature": 1,
@@ -233,7 +238,7 @@
       },
       "../src/utils/param.ts": {
         "version": 2,
-        "signature": "5335563684",
+        "signature": "10025179993",
         "affectsGlobalScope": false
       },
       "../src/Source.ts": {
@@ -3068,6 +3073,13 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/jest/node_modules/jest-cli/build/cli/index.d.ts"
       ],
+      "../node_modules/query-string/index.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
       "../node_modules/tslib/tslib.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -3394,6 +3406,7 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/uuid/index.d.ts",
+        "../node_modules/query-string/index.d.ts",
         "../src/types.ts"
       ]
     },
@@ -5218,6 +5231,13 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/jest/node_modules/jest-cli/build/cli/index.d.ts"
       ],
+      "../node_modules/query-string/index.d.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
       "../node_modules/tslib/tslib.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -5667,6 +5687,7 @@
       "../node_modules/jest/build/jest.d.ts",
       "../node_modules/jest/node_modules/jest-cli/build/cli/index.d.ts",
       "../node_modules/jest/node_modules/jest-cli/build/index.d.ts",
+      "../node_modules/query-string/index.d.ts",
       "../node_modules/tslib/tslib.d.ts",
       "../node_modules/typescript/lib/lib.dom.d.ts",
       "../node_modules/typescript/lib/lib.es2015.collection.d.ts",
