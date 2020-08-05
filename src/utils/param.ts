@@ -42,13 +42,14 @@ export function createScene(): Scene {
 
 export function refineEventPathname(pathname: string): RefinedEventPathname {
   const slashCount = pathname.match(/-/g)?.length;
-  if (!slashCount) return { eventId: '', codename: '' };
-  if (slashCount === 1 || slashCount === 2) return { eventId: '', codename: pathname };
-  // slashCount === 3+
-  const pathnameArray = pathname.split('-');
-  const eventId = pathnameArray[0];
-  const codename = pathnameArray.splice(1, pathnameArray.length).join('-');
-  return { eventId, codename };
+  if (slashCount && slashCount >= 3) {
+    // slashCount === 3+
+    const pathnameArray = pathname.split('-');
+    const eventId = pathnameArray[0];
+    const codename = pathnameArray.splice(1, pathnameArray.length).join('-');
+    return { eventId, codename };
+  }
+  return { eventId: '', codename: pathname };
 }
 
 export function createDefaultEventParams(): DefaultEventParams {
