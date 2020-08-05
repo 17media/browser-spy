@@ -452,21 +452,21 @@ function refineEventPathname(pathname) {
   var _pathname$match;
 
   const slashCount = (_pathname$match = pathname.match(/-/g)) === null || _pathname$match === void 0 ? void 0 : _pathname$match.length;
-  if (!slashCount) return {
-    eventId: '',
-    codename: ''
-  };
-  if (slashCount === 1 || slashCount === 2) return {
+
+  if (slashCount && slashCount >= 3) {
+    // slashCount === 3+
+    const pathnameArray = pathname.split('-');
+    const eventId = pathnameArray[0];
+    const codename = pathnameArray.splice(1, pathnameArray.length).join('-');
+    return {
+      eventId,
+      codename
+    };
+  }
+
+  return {
     eventId: '',
     codename: pathname
-  }; // slashCount === 3+
-
-  const pathnameArray = pathname.split('-');
-  const eventId = pathnameArray[0];
-  const codename = pathnameArray.splice(1, pathnameArray.length).join('-');
-  return {
-    eventId,
-    codename
   };
 }
 function createDefaultEventParams() {
