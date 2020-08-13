@@ -1721,20 +1721,15 @@ class SectionObserver {
   }
 
 }
-
-let completeSectionObserver;
-let halfSectionObserver;
-let minSectionObserver;
-let rankSectionObserver;
 function registCompleteSectionObserver(ref, callback) {
   if (!__CLIENT__) {
     throw new Error('[registCompleteSectionObserver()] should be invoked on client side.');
   }
 
-  if (!completeSectionObserver) completeSectionObserver = new SectionObserver(false, exports.Threshold.FULL);
-  completeSectionObserver.sectionObserve(ref, callback);
+  if (!exports.completeSectionObserver) exports.completeSectionObserver = new SectionObserver(false, exports.Threshold.FULL);
+  exports.completeSectionObserver.sectionObserve(ref, callback);
   return () => {
-    completeSectionObserver.sectionUnobserve(ref);
+    exports.completeSectionObserver.sectionUnobserve(ref);
   };
 }
 function registHalfSectionObserver(ref, callback) {
@@ -1742,10 +1737,10 @@ function registHalfSectionObserver(ref, callback) {
     throw new Error('[registHalfSectionObserver()] should be invoked on client side.');
   }
 
-  if (!halfSectionObserver) halfSectionObserver = new SectionObserver(false, exports.Threshold.HALF);
-  halfSectionObserver.sectionObserve(ref, callback);
+  if (!exports.halfSectionObserver) exports.halfSectionObserver = new SectionObserver(false, exports.Threshold.HALF);
+  exports.halfSectionObserver.sectionObserve(ref, callback);
   return () => {
-    halfSectionObserver.sectionUnobserve(ref);
+    exports.halfSectionObserver.sectionUnobserve(ref);
   };
 }
 function registMinSectionObserver(ref, callback) {
@@ -1753,10 +1748,10 @@ function registMinSectionObserver(ref, callback) {
     throw new Error('[registMinSectionObserver()] should be invoked on client side.');
   }
 
-  if (!minSectionObserver) minSectionObserver = new SectionObserver(false, exports.Threshold.MIN);
-  minSectionObserver.sectionObserve(ref, callback);
+  if (!exports.minSectionObserver) exports.minSectionObserver = new SectionObserver(false, exports.Threshold.MIN);
+  exports.minSectionObserver.sectionObserve(ref, callback);
   return () => {
-    minSectionObserver.sectionUnobserve(ref);
+    exports.minSectionObserver.sectionUnobserve(ref);
   };
 }
 function registRankSectionObserver(ref, callback) {
@@ -1764,17 +1759,17 @@ function registRankSectionObserver(ref, callback) {
     throw new Error('[registRankSectionObserver()] should be invoked on client side.');
   }
 
-  if (!rankSectionObserver) rankSectionObserver = new SectionObserver(true, exports.Threshold.FULL);
-  rankSectionObserver.sectionObserve(ref, callback);
+  if (!exports.rankSectionObserver) exports.rankSectionObserver = new SectionObserver(true, exports.Threshold.FULL);
+  exports.rankSectionObserver.sectionObserve(ref, callback);
   return () => {
-    rankSectionObserver.sectionUnobserve(ref);
+    exports.rankSectionObserver.sectionUnobserve(ref);
   };
 }
 function resetSectionObserverStatus() {
-  if (completeSectionObserver) completeSectionObserver.resetSectionObserver();
-  if (halfSectionObserver) halfSectionObserver.resetSectionObserver();
-  if (minSectionObserver) minSectionObserver.resetSectionObserver();
-  if (rankSectionObserver) rankSectionObserver.resetSectionObserver();
+  if (exports.completeSectionObserver) exports.completeSectionObserver.resetSectionObserver();
+  if (exports.halfSectionObserver) exports.halfSectionObserver.resetSectionObserver();
+  if (exports.minSectionObserver) exports.minSectionObserver.resetSectionObserver();
+  if (exports.rankSectionObserver) exports.rankSectionObserver.resetSectionObserver();
 }
 
 function useCompleteSectionTracking(ref, callback) {
@@ -1935,6 +1930,11 @@ exports.createSearchAction = createSearchAction;
 exports.createSectionViewAction = createSectionViewAction;
 exports.createTabClickAction = createTabClickAction;
 exports.createVoteAction = createVoteAction;
+exports.registCompleteSectionObserver = registCompleteSectionObserver;
+exports.registHalfSectionObserver = registHalfSectionObserver;
+exports.registMinSectionObserver = registMinSectionObserver;
+exports.registRankSectionObserver = registRankSectionObserver;
+exports.resetSectionObserverStatus = resetSectionObserverStatus;
 exports.useCompleteSectionTracking = useCompleteSectionTracking;
 exports.useHalfSectionTracking = useHalfSectionTracking;
 exports.useMinSectionTracking = useMinSectionTracking;

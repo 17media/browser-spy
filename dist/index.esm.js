@@ -1917,5 +1917,5 @@ function createSectionViewAction(section, customPath) {
   };
 }
 
-export { Agent, DefaultSource, FirebaseAgent, MatomoAgent, Threshold, createButtonClickAction, createLeaderboardSectionViewAction, createLinkClickAction, createPageEnterAction, createPageLeaveAction, createProfileClickAction, createSearchAction, createSectionViewAction, createTabClickAction, createVoteAction, useCompleteSectionTracking, useHalfSectionTracking, useMinSectionTracking, usePageTransitionListener, useRankSectionTracking };
+export { Agent, DefaultSource, FirebaseAgent, MatomoAgent, Threshold, completeSectionObserver, createButtonClickAction, createLeaderboardSectionViewAction, createLinkClickAction, createPageEnterAction, createPageLeaveAction, createProfileClickAction, createSearchAction, createSectionViewAction, createTabClickAction, createVoteAction, halfSectionObserver, minSectionObserver, rankSectionObserver, registCompleteSectionObserver, registHalfSectionObserver, registMinSectionObserver, registRankSectionObserver, resetSectionObserverStatus, useCompleteSectionTracking, useHalfSectionTracking, useMinSectionTracking, usePageTransitionListener, useRankSectionTracking };
 //# sourceMappingURL=index.esm.js.map
