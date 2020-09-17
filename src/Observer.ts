@@ -8,10 +8,11 @@ class SectionObserver {
 
   private observer: IntersectionObserver | undefined;
 
-  private debounceExecute = 0;
+  private debounceExecute: number;
 
   constructor(debounce: boolean, threshold: Threshold) {
     this.elementMap = new Map();
+    this.debounceExecute = 0;
     try {
       this.observer = new window.IntersectionObserver(
         entries => {
@@ -30,23 +31,23 @@ class SectionObserver {
     }
   }
 
-  sectionObserve = (ref: RefObject<any>, callback: Function) => {
+  sectionObserve(ref: RefObject<any>, callback: Function) {
     if (this.observer) this.observer.observe(ref.current);
     this.elementMap.set(ref.current, callback);
-  };
+  }
 
-  sectionUnobserve = (ref: RefObject<any>) => {
+  sectionUnobserve(ref: RefObject<any>) {
     if (this.observer) this.observer.unobserve(ref.current);
     if (this.elementMap.has(ref.current)) this.elementMap.delete(ref.current);
-  };
+  }
 
-  resetSectionObserver = () => {
+  resetSectionObserver() {
     this.elementMap.forEach((value, key) => {
       if (this.observer) this.observer.observe(key);
     });
-  };
+  }
 
-  private sectionIntersect = (entries: IntersectionObserverEntry[]) => {
+  private sectionIntersect(entries: IntersectionObserverEntry[]) {
     entries.forEach(entry => {
       const { target } = entry;
       if (entry.isIntersecting && this.elementMap.has(target)) {
@@ -58,9 +59,9 @@ class SectionObserver {
         if (this.observer) this.observer.unobserve(target);
       }
     });
-  };
+  }
 
-  private debounceSectionIntersect = (entries: IntersectionObserverEntry[]) => {
+  private debounceSectionIntersect(entries: IntersectionObserverEntry[]) {
     entries.forEach(entry => {
       const { target } = entry;
       if (entry.isIntersecting && this.elementMap.has(target)) {
@@ -75,7 +76,7 @@ class SectionObserver {
         if (this.observer) this.observer.unobserve(target);
       }
     });
-  };
+  }
 }
 
 export let completeSectionObserver: SectionObserver | undefined;
