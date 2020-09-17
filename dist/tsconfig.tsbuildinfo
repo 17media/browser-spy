@@ -211,7 +211,7 @@
         "signature": "-7731984387",
         "affectsGlobalScope": false
       },
-      "../node_modules/query-string/index.d.ts": {
+      "../node_modules/@types/qs/index.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -2628,8 +2628,8 @@
         "../node_modules/firebase/index.d.ts"
       ],
       "../src/utils/param.ts": [
+        "../node_modules/@types/qs/index.d.ts",
         "../node_modules/@types/uuid/index.d.ts",
-        "../node_modules/query-string/index.d.ts",
         "../src/types.ts"
       ]
     },
@@ -3804,6 +3804,7 @@
       "../node_modules/@types/parse-json/index.d.ts",
       "../node_modules/@types/prettier/index.d.ts",
       "../node_modules/@types/prop-types/index.d.ts",
+      "../node_modules/@types/qs/index.d.ts",
       "../node_modules/@types/react/global.d.ts",
       "../node_modules/@types/react/index.d.ts",
       "../node_modules/@types/resolve/index.d.ts",
@@ -3923,7 +3924,6 @@
       "../node_modules/jest/node_modules/@jest/types/build/index.d.ts",
       "../node_modules/jest/node_modules/jest-cli/build/cli/index.d.ts",
       "../node_modules/jest/node_modules/jest-cli/build/index.d.ts",
-      "../node_modules/query-string/index.d.ts",
       "../node_modules/tslib/tslib.d.ts",
       "../node_modules/typescript/lib/lib.dom.d.ts",
       "../node_modules/typescript/lib/lib.es2015.collection.d.ts",

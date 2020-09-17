@@ -2,13 +2,11 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var qs = require('query-string');
 var crypto = require('crypto');
 var react = require('react');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var qs__default = /*#__PURE__*/_interopDefaultLegacy(qs);
 var crypto__default = /*#__PURE__*/_interopDefaultLegacy(crypto);
 
 function _defineProperty(obj, key, value) {
@@ -1301,6 +1299,591 @@ function getContent(element) {
   return element.innerText;
 }
 
+var has = Object.prototype.hasOwnProperty;
+var isArray = Array.isArray;
+
+var hexTable = function () {
+  var array = [];
+
+  for (var i = 0; i < 256; ++i) {
+    array.push('%' + ((i < 16 ? '0' : '') + i.toString(16)).toUpperCase());
+  }
+
+  return array;
+}();
+
+var compactQueue = function compactQueue(queue) {
+  while (queue.length > 1) {
+    var item = queue.pop();
+    var obj = item.obj[item.prop];
+
+    if (isArray(obj)) {
+      var compacted = [];
+
+      for (var j = 0; j < obj.length; ++j) {
+        if (typeof obj[j] !== 'undefined') {
+          compacted.push(obj[j]);
+        }
+      }
+
+      item.obj[item.prop] = compacted;
+    }
+  }
+};
+
+var arrayToObject = function arrayToObject(source, options) {
+  var obj = options && options.plainObjects ? Object.create(null) : {};
+
+  for (var i = 0; i < source.length; ++i) {
+    if (typeof source[i] !== 'undefined') {
+      obj[i] = source[i];
+    }
+  }
+
+  return obj;
+};
+
+var merge = function merge(target, source, options) {
+  /* eslint no-param-reassign: 0 */
+  if (!source) {
+    return target;
+  }
+
+  if (_typeof(source) !== 'object') {
+    if (isArray(target)) {
+      target.push(source);
+    } else if (target && _typeof(target) === 'object') {
+      if (options && (options.plainObjects || options.allowPrototypes) || !has.call(Object.prototype, source)) {
+        target[source] = true;
+      }
+    } else {
+      return [target, source];
+    }
+
+    return target;
+  }
+
+  if (!target || _typeof(target) !== 'object') {
+    return [target].concat(source);
+  }
+
+  var mergeTarget = target;
+
+  if (isArray(target) && !isArray(source)) {
+    mergeTarget = arrayToObject(target, options);
+  }
+
+  if (isArray(target) && isArray(source)) {
+    source.forEach(function (item, i) {
+      if (has.call(target, i)) {
+        var targetItem = target[i];
+
+        if (targetItem && _typeof(targetItem) === 'object' && item && _typeof(item) === 'object') {
+          target[i] = merge(targetItem, item, options);
+        } else {
+          target.push(item);
+        }
+      } else {
+        target[i] = item;
+      }
+    });
+    return target;
+  }
+
+  return Object.keys(source).reduce(function (acc, key) {
+    var value = source[key];
+
+    if (has.call(acc, key)) {
+      acc[key] = merge(acc[key], value, options);
+    } else {
+      acc[key] = value;
+    }
+
+    return acc;
+  }, mergeTarget);
+};
+
+var assign = function assignSingleSource(target, source) {
+  return Object.keys(source).reduce(function (acc, key) {
+    acc[key] = source[key];
+    return acc;
+  }, target);
+};
+
+var decode = function decode(str, decoder, charset) {
+  var strWithoutPlus = str.replace(/\+/g, ' ');
+
+  if (charset === 'iso-8859-1') {
+    // unescape never throws, no try...catch needed:
+    return strWithoutPlus.replace(/%[0-9a-f]{2}/gi, unescape);
+  } // utf-8
+
+
+  try {
+    return decodeURIComponent(strWithoutPlus);
+  } catch (e) {
+    return strWithoutPlus;
+  }
+};
+
+var encode = function encode(str, defaultEncoder, charset) {
+  // This code was originally written by Brian White (mscdex) for the io.js core querystring library.
+  // It has been adapted here for stricter adherence to RFC 3986
+  if (str.length === 0) {
+    return str;
+  }
+
+  var string = str;
+
+  if (_typeof(str) === 'symbol') {
+    string = Symbol.prototype.toString.call(str);
+  } else if (typeof str !== 'string') {
+    string = String(str);
+  }
+
+  if (charset === 'iso-8859-1') {
+    return escape(string).replace(/%u[0-9a-f]{4}/gi, function ($0) {
+      return '%26%23' + parseInt($0.slice(2), 16) + '%3B';
+    });
+  }
+
+  var out = '';
+
+  for (var i = 0; i < string.length; ++i) {
+    var c = string.charCodeAt(i);
+
+    if (c === 0x2D // -
+    || c === 0x2E // .
+    || c === 0x5F // _
+    || c === 0x7E // ~
+    || c >= 0x30 && c <= 0x39 // 0-9
+    || c >= 0x41 && c <= 0x5A // a-z
+    || c >= 0x61 && c <= 0x7A // A-Z
+    ) {
+        out += string.charAt(i);
+        continue;
+      }
+
+    if (c < 0x80) {
+      out = out + hexTable[c];
+      continue;
+    }
+
+    if (c < 0x800) {
+      out = out + (hexTable[0xC0 | c >> 6] + hexTable[0x80 | c & 0x3F]);
+      continue;
+    }
+
+    if (c < 0xD800 || c >= 0xE000) {
+      out = out + (hexTable[0xE0 | c >> 12] + hexTable[0x80 | c >> 6 & 0x3F] + hexTable[0x80 | c & 0x3F]);
+      continue;
+    }
+
+    i += 1;
+    c = 0x10000 + ((c & 0x3FF) << 10 | string.charCodeAt(i) & 0x3FF);
+    out += hexTable[0xF0 | c >> 18] + hexTable[0x80 | c >> 12 & 0x3F] + hexTable[0x80 | c >> 6 & 0x3F] + hexTable[0x80 | c & 0x3F];
+  }
+
+  return out;
+};
+
+var compact = function compact(value) {
+  var queue = [{
+    obj: {
+      o: value
+    },
+    prop: 'o'
+  }];
+  var refs = [];
+
+  for (var i = 0; i < queue.length; ++i) {
+    var item = queue[i];
+    var obj = item.obj[item.prop];
+    var keys = Object.keys(obj);
+
+    for (var j = 0; j < keys.length; ++j) {
+      var key = keys[j];
+      var val = obj[key];
+
+      if (_typeof(val) === 'object' && val !== null && refs.indexOf(val) === -1) {
+        queue.push({
+          obj: obj,
+          prop: key
+        });
+        refs.push(val);
+      }
+    }
+  }
+
+  compactQueue(queue);
+  return value;
+};
+
+var isRegExp = function isRegExp(obj) {
+  return Object.prototype.toString.call(obj) === '[object RegExp]';
+};
+
+var isBuffer = function isBuffer(obj) {
+  if (!obj || _typeof(obj) !== 'object') {
+    return false;
+  }
+
+  return !!(obj.constructor && obj.constructor.isBuffer && obj.constructor.isBuffer(obj));
+};
+
+var combine = function combine(a, b) {
+  return [].concat(a, b);
+};
+
+var maybeMap = function maybeMap(val, fn) {
+  if (isArray(val)) {
+    var mapped = [];
+
+    for (var i = 0; i < val.length; i += 1) {
+      mapped.push(fn(val[i]));
+    }
+
+    return mapped;
+  }
+
+  return fn(val);
+};
+
+var utils = {
+  arrayToObject: arrayToObject,
+  assign: assign,
+  combine: combine,
+  compact: compact,
+  decode: decode,
+  encode: encode,
+  isBuffer: isBuffer,
+  isRegExp: isRegExp,
+  maybeMap: maybeMap,
+  merge: merge
+};
+
+var utils_1 = utils.arrayToObject;
+var utils_2 = utils.assign;
+var utils_3 = utils.combine;
+var utils_4 = utils.compact;
+var utils_5 = utils.decode;
+var utils_6 = utils.encode;
+var utils_7 = utils.isBuffer;
+var utils_8 = utils.isRegExp;
+var utils_9 = utils.maybeMap;
+var utils_10 = utils.merge;
+
+var utils$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  arrayToObject: utils_1,
+  assign: utils_2,
+  combine: utils_3,
+  compact: utils_4,
+  decode: utils_5,
+  encode: utils_6,
+  isBuffer: utils_7,
+  isRegExp: utils_8,
+  maybeMap: utils_9,
+  merge: utils_10
+});
+
+var replace = String.prototype.replace;
+var percentTwenties = /%20/g;
+
+
+
+var Format = {
+  RFC1738: 'RFC1738',
+  RFC3986: 'RFC3986'
+};
+var formats = utils$1.assign({
+  'default': Format.RFC3986,
+  formatters: {
+    RFC1738: function RFC1738(value) {
+      return replace.call(value, percentTwenties, '+');
+    },
+    RFC3986: function RFC3986(value) {
+      return String(value);
+    }
+  }
+}, Format);
+
+var toISO = Date.prototype.toISOString;
+var defaultFormat = formats['default'];
+var defaults = {
+  addQueryPrefix: false,
+  allowDots: false,
+  charset: 'utf-8',
+  charsetSentinel: false,
+  delimiter: '&',
+  encode: true,
+  encoder: utils$1.encode,
+  encodeValuesOnly: false,
+  format: defaultFormat,
+  formatter: formats.formatters[defaultFormat],
+  // deprecated
+  indices: false,
+  serializeDate: function serializeDate(date) {
+    return toISO.call(date);
+  },
+  skipNulls: false,
+  strictNullHandling: false
+};
+
+var stringify = /*#__PURE__*/Object.freeze({
+  __proto__: null
+});
+
+var has$1 = Object.prototype.hasOwnProperty;
+var isArray$1 = Array.isArray;
+var defaults$1 = {
+  allowDots: false,
+  allowPrototypes: false,
+  arrayLimit: 20,
+  charset: 'utf-8',
+  charsetSentinel: false,
+  comma: false,
+  decoder: utils$1.decode,
+  delimiter: '&',
+  depth: 5,
+  ignoreQueryPrefix: false,
+  interpretNumericEntities: false,
+  parameterLimit: 1000,
+  parseArrays: true,
+  plainObjects: false,
+  strictNullHandling: false
+};
+
+var interpretNumericEntities = function interpretNumericEntities(str) {
+  return str.replace(/&#(\d+);/g, function ($0, numberStr) {
+    return String.fromCharCode(parseInt(numberStr, 10));
+  });
+};
+
+var parseArrayValue = function parseArrayValue(val, options) {
+  if (val && typeof val === 'string' && options.comma && val.indexOf(',') > -1) {
+    return val.split(',');
+  }
+
+  return val;
+}; // This is what browsers will submit when the ✓ character occurs in an
+// application/x-www-form-urlencoded body and the encoding of the page containing
+// the form is iso-8859-1, or when the submitted form has an accept-charset
+// attribute of iso-8859-1. Presumably also with other charsets that do not contain
+// the ✓ character, such as us-ascii.
+
+
+var isoSentinel = 'utf8=%26%2310003%3B'; // encodeURIComponent('&#10003;')
+// These are the percent-encoded utf-8 octets representing a checkmark, indicating that the request actually is utf-8 encoded.
+
+var charsetSentinel = 'utf8=%E2%9C%93'; // encodeURIComponent('✓')
+
+var parseValues = function parseQueryStringValues(str, options) {
+  var obj = {};
+  var cleanStr = options.ignoreQueryPrefix ? str.replace(/^\?/, '') : str;
+  var limit = options.parameterLimit === Infinity ? undefined : options.parameterLimit;
+  var parts = cleanStr.split(options.delimiter, limit);
+  var skipIndex = -1; // Keep track of where the utf8 sentinel was found
+
+  var i;
+  var charset = options.charset;
+
+  if (options.charsetSentinel) {
+    for (i = 0; i < parts.length; ++i) {
+      if (parts[i].indexOf('utf8=') === 0) {
+        if (parts[i] === charsetSentinel) {
+          charset = 'utf-8';
+        } else if (parts[i] === isoSentinel) {
+          charset = 'iso-8859-1';
+        }
+
+        skipIndex = i;
+        i = parts.length; // The eslint settings do not allow break;
+      }
+    }
+  }
+
+  for (i = 0; i < parts.length; ++i) {
+    if (i === skipIndex) {
+      continue;
+    }
+
+    var part = parts[i];
+    var bracketEqualsPos = part.indexOf(']=');
+    var pos = bracketEqualsPos === -1 ? part.indexOf('=') : bracketEqualsPos + 1;
+    var key, val;
+
+    if (pos === -1) {
+      key = options.decoder(part, defaults$1.decoder, charset, 'key');
+      val = options.strictNullHandling ? null : '';
+    } else {
+      key = options.decoder(part.slice(0, pos), defaults$1.decoder, charset, 'key');
+      val = utils$1.maybeMap(parseArrayValue(part.slice(pos + 1), options), function (encodedVal) {
+        return options.decoder(encodedVal, defaults$1.decoder, charset, 'value');
+      });
+    }
+
+    if (val && options.interpretNumericEntities && charset === 'iso-8859-1') {
+      val = interpretNumericEntities(val);
+    }
+
+    if (part.indexOf('[]=') > -1) {
+      val = isArray$1(val) ? [val] : val;
+    }
+
+    if (has$1.call(obj, key)) {
+      obj[key] = utils$1.combine(obj[key], val);
+    } else {
+      obj[key] = val;
+    }
+  }
+
+  return obj;
+};
+
+var parseObject = function parseObject(chain, val, options, valuesParsed) {
+  var leaf = valuesParsed ? val : parseArrayValue(val, options);
+
+  for (var i = chain.length - 1; i >= 0; --i) {
+    var obj;
+    var root = chain[i];
+
+    if (root === '[]' && options.parseArrays) {
+      obj = [].concat(leaf);
+    } else {
+      obj = options.plainObjects ? Object.create(null) : {};
+      var cleanRoot = root.charAt(0) === '[' && root.charAt(root.length - 1) === ']' ? root.slice(1, -1) : root;
+      var index = parseInt(cleanRoot, 10);
+
+      if (!options.parseArrays && cleanRoot === '') {
+        obj = {
+          0: leaf
+        };
+      } else if (!isNaN(index) && root !== cleanRoot && String(index) === cleanRoot && index >= 0 && options.parseArrays && index <= options.arrayLimit) {
+        obj = [];
+        obj[index] = leaf;
+      } else {
+        obj[cleanRoot] = leaf;
+      }
+    }
+
+    leaf = obj; // eslint-disable-line no-param-reassign
+  }
+
+  return leaf;
+};
+
+var parseKeys = function parseQueryStringKeys(givenKey, val, options, valuesParsed) {
+  if (!givenKey) {
+    return;
+  } // Transform dot notation to bracket notation
+
+
+  var key = options.allowDots ? givenKey.replace(/\.([^.[]+)/g, '[$1]') : givenKey; // The regex chunks
+
+  var brackets = /(\[[^[\]]*])/;
+  var child = /(\[[^[\]]*])/g; // Get the parent
+
+  var segment = options.depth > 0 && brackets.exec(key);
+  var parent = segment ? key.slice(0, segment.index) : key; // Stash the parent if it exists
+
+  var keys = [];
+
+  if (parent) {
+    // If we aren't using plain objects, optionally prefix keys that would overwrite object prototype properties
+    if (!options.plainObjects && has$1.call(Object.prototype, parent)) {
+      if (!options.allowPrototypes) {
+        return;
+      }
+    }
+
+    keys.push(parent);
+  } // Loop through children appending to the array until we hit depth
+
+
+  var i = 0;
+
+  while (options.depth > 0 && (segment = child.exec(key)) !== null && i < options.depth) {
+    i += 1;
+
+    if (!options.plainObjects && has$1.call(Object.prototype, segment[1].slice(1, -1))) {
+      if (!options.allowPrototypes) {
+        return;
+      }
+    }
+
+    keys.push(segment[1]);
+  } // If there's a remainder, just add whatever is left
+
+
+  if (segment) {
+    keys.push('[' + key.slice(segment.index) + ']');
+  }
+
+  return parseObject(keys, val, options, valuesParsed);
+};
+
+var normalizeParseOptions = function normalizeParseOptions(opts) {
+  if (!opts) {
+    return defaults$1;
+  }
+
+  if (opts.decoder !== null && opts.decoder !== undefined && typeof opts.decoder !== 'function') {
+    throw new TypeError('Decoder has to be a function.');
+  }
+
+  if (typeof opts.charset !== 'undefined' && opts.charset !== 'utf-8' && opts.charset !== 'iso-8859-1') {
+    throw new TypeError('The charset option must be either utf-8, iso-8859-1, or undefined');
+  }
+
+  var charset = typeof opts.charset === 'undefined' ? defaults$1.charset : opts.charset;
+  return {
+    allowDots: typeof opts.allowDots === 'undefined' ? defaults$1.allowDots : !!opts.allowDots,
+    allowPrototypes: typeof opts.allowPrototypes === 'boolean' ? opts.allowPrototypes : defaults$1.allowPrototypes,
+    arrayLimit: typeof opts.arrayLimit === 'number' ? opts.arrayLimit : defaults$1.arrayLimit,
+    charset: charset,
+    charsetSentinel: typeof opts.charsetSentinel === 'boolean' ? opts.charsetSentinel : defaults$1.charsetSentinel,
+    comma: typeof opts.comma === 'boolean' ? opts.comma : defaults$1.comma,
+    decoder: typeof opts.decoder === 'function' ? opts.decoder : defaults$1.decoder,
+    delimiter: typeof opts.delimiter === 'string' || utils$1.isRegExp(opts.delimiter) ? opts.delimiter : defaults$1.delimiter,
+    // eslint-disable-next-line no-implicit-coercion, no-extra-parens
+    depth: typeof opts.depth === 'number' || opts.depth === false ? +opts.depth : defaults$1.depth,
+    ignoreQueryPrefix: opts.ignoreQueryPrefix === true,
+    interpretNumericEntities: typeof opts.interpretNumericEntities === 'boolean' ? opts.interpretNumericEntities : defaults$1.interpretNumericEntities,
+    parameterLimit: typeof opts.parameterLimit === 'number' ? opts.parameterLimit : defaults$1.parameterLimit,
+    parseArrays: opts.parseArrays !== false,
+    plainObjects: typeof opts.plainObjects === 'boolean' ? opts.plainObjects : defaults$1.plainObjects,
+    strictNullHandling: typeof opts.strictNullHandling === 'boolean' ? opts.strictNullHandling : defaults$1.strictNullHandling
+  };
+};
+
+var parse = function (str, opts) {
+  var options = normalizeParseOptions(opts);
+
+  if (str === '' || str === null || typeof str === 'undefined') {
+    return options.plainObjects ? Object.create(null) : {};
+  }
+
+  var tempObj = typeof str === 'string' ? parseValues(str, options) : str;
+  var obj = options.plainObjects ? Object.create(null) : {}; // Iterate over the keys and setup the new object
+
+  var keys = Object.keys(tempObj);
+
+  for (var i = 0; i < keys.length; ++i) {
+    var key = keys[i];
+    var newObj = parseKeys(key, tempObj[key], options, typeof str === 'string');
+    obj = utils$1.merge(obj, newObj, options);
+  }
+
+  return utils$1.compact(obj);
+};
+
+var lib = {
+  formats: formats,
+  parse: parse,
+  stringify: stringify
+};
+
 var rnds8 = new Uint8Array(16);
 function rng() {
   return crypto__default['default'].randomFillSync(rnds8);
@@ -1323,7 +1906,7 @@ for (var i = 0; i < 256; ++i) {
   byteToHex.push((i + 0x100).toString(16).substr(1));
 }
 
-function stringify(arr) {
+function stringify$1(arr) {
   var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   // Note: Be careful editing this code!  It's been tuned for performance
   // and works in ways you may not expect. See https://github.com/uuidjs/uuid/pull/434
@@ -1357,11 +1940,11 @@ function v4(options, buf, offset) {
     return buf;
   }
 
-  return stringify(rnds);
+  return stringify$1(rnds);
 }
 
 function getUserID() {
-  var qsUserID = qs__default['default'].parse(window.location.search).userID;
+  var qsUserID = lib.parse(window.location.search).userID;
 
   if (Array.isArray(qsUserID)) {
     return sessionStorage.getItem('userID') || 'guest';
@@ -1370,7 +1953,7 @@ function getUserID() {
   // 2. query string
 
 
-  return sessionStorage.getItem('userID') || qsUserID || 'guest';
+  return sessionStorage.getItem('userID') || "".concat(qsUserID) || 'guest';
 }
 
 function createTrackingToken() {
