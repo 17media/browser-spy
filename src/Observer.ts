@@ -31,18 +31,18 @@ class SectionObserver {
   }
 
   sectionObserve = (ref: RefObject<any>, callback: Function) => {
-    this.observer?.observe(ref.current);
+    if (this.observer) this.observer.observe(ref.current);
     this.elementMap.set(ref.current, callback);
   };
 
   sectionUnobserve = (ref: RefObject<any>) => {
-    this.observer?.unobserve(ref.current);
+    if (this.observer) this.observer.unobserve(ref.current);
     if (this.elementMap.has(ref.current)) this.elementMap.delete(ref.current);
   };
 
   resetSectionObserver = () => {
     this.elementMap.forEach((value, key) => {
-      this.observer?.observe(key);
+      if (this.observer) this.observer.observe(key);
     });
   };
 
@@ -55,7 +55,7 @@ class SectionObserver {
 
         callback();
 
-        this.observer?.unobserve(target);
+        if (this.observer) this.observer.unobserve(target);
       }
     });
   };
@@ -72,7 +72,7 @@ class SectionObserver {
           callback();
         }, 1000);
 
-        this.observer?.unobserve(target);
+        if (this.observer) this.observer.unobserve(target);
       }
     });
   };
