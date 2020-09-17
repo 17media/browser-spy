@@ -115,8 +115,7 @@ interface MatomoAgentConfig {
 }
 declare class MatomoAgent extends Agent {
     readonly config: MatomoAgentConfig;
-    private client;
-    // eslint-disable-line no-underscore-dangle
+    private client; // eslint-disable-line no-underscore-dangle
     private trackPageViewTimer;
     private intialized;
     constructor(config: MatomoAgentConfig);
@@ -148,9 +147,9 @@ declare class SectionObserver {
     private observer;
     private debounceExecute;
     constructor(debounce: boolean, threshold: Threshold);
-    sectionObserve: (ref: RefObject<any>, callback: Function) => void;
-    sectionUnobserve: (ref: RefObject<any>) => void;
-    resetSectionObserver: () => void;
+    sectionObserve(ref: RefObject<any>, callback: Function): void;
+    sectionUnobserve(ref: RefObject<any>): void;
+    resetSectionObserver(): void;
     private sectionIntersect;
     private debounceSectionIntersect;
 }

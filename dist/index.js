@@ -2,11 +2,14 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var qs = _interopDefault(require('query-string'));
-var crypto = _interopDefault(require('crypto'));
+var qs = require('query-string');
+var crypto = require('crypto');
 var react = require('react');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var qs__default = /*#__PURE__*/_interopDefaultLegacy(qs);
+var crypto__default = /*#__PURE__*/_interopDefaultLegacy(crypto);
 
 function loadScript(src) {
   const script = document.createElement('script');
@@ -356,24 +359,41 @@ function getContent(element) {
 
 var rnds8 = new Uint8Array(16);
 function rng() {
-  return crypto.randomFillSync(rnds8);
+  return crypto__default['default'].randomFillSync(rnds8);
+}
+
+var REGEX = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
+
+function validate(uuid) {
+  return typeof uuid === 'string' && REGEX.test(uuid);
 }
 
 /**
  * Convert array of 16 byte values to UUID string format of the form:
  * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
  */
+
 var byteToHex = [];
 
 for (var i = 0; i < 256; ++i) {
   byteToHex.push((i + 0x100).toString(16).substr(1));
 }
 
-function bytesToUuid(buf, offset_) {
-  var offset = offset_ || 0; // Note: Be careful editing this code!  It's been tuned for performance
+function stringify(arr) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  // Note: Be careful editing this code!  It's been tuned for performance
   // and works in ways you may not expect. See https://github.com/uuidjs/uuid/pull/434
+  var uuid = (byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + '-' + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + '-' + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + '-' + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + '-' + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]]).toLowerCase(); // Consistency check for valid UUID.  If this throws, it's likely due to one
+  // of the following:
+  // - One or more input array values don't map to a hex octet (leading to
+  // "undefined" in the uuid)
+  // - Invalid input values for the RFC `version` or `variant` fields
 
-  return (byteToHex[buf[offset + 0]] + byteToHex[buf[offset + 1]] + byteToHex[buf[offset + 2]] + byteToHex[buf[offset + 3]] + '-' + byteToHex[buf[offset + 4]] + byteToHex[buf[offset + 5]] + '-' + byteToHex[buf[offset + 6]] + byteToHex[buf[offset + 7]] + '-' + byteToHex[buf[offset + 8]] + byteToHex[buf[offset + 9]] + '-' + byteToHex[buf[offset + 10]] + byteToHex[buf[offset + 11]] + byteToHex[buf[offset + 12]] + byteToHex[buf[offset + 13]] + byteToHex[buf[offset + 14]] + byteToHex[buf[offset + 15]]).toLowerCase();
+  if (!validate(uuid)) {
+    throw TypeError('Stringified UUID is invalid');
+  }
+
+  return uuid;
 }
 
 function v4(options, buf, offset) {
@@ -393,11 +413,11 @@ function v4(options, buf, offset) {
     return buf;
   }
 
-  return bytesToUuid(rnds);
+  return stringify(rnds);
 }
 
 function getUserID() {
-  const qsUserID = qs.parse(window.location.search).userID;
+  const qsUserID = qs__default['default'].parse(window.location.search).userID;
 
   if (Array.isArray(qsUserID)) {
     return sessionStorage.getItem('userID') || 'guest';
@@ -1642,68 +1662,8 @@ function _typeof(obj) {
 
 class SectionObserver {
   constructor(debounce, threshold) {
-    this.debounceExecute = 0;
-
-    this.sectionObserve = (ref, callback) => {
-      var _this$observer;
-
-      (_this$observer = this.observer) === null || _this$observer === void 0 ? void 0 : _this$observer.observe(ref.current);
-      this.elementMap.set(ref.current, callback);
-    };
-
-    this.sectionUnobserve = ref => {
-      var _this$observer2;
-
-      (_this$observer2 = this.observer) === null || _this$observer2 === void 0 ? void 0 : _this$observer2.unobserve(ref.current);
-      if (this.elementMap.has(ref.current)) this.elementMap.delete(ref.current);
-    };
-
-    this.resetSectionObserver = () => {
-      this.elementMap.forEach((value, key) => {
-        var _this$observer3;
-
-        (_this$observer3 = this.observer) === null || _this$observer3 === void 0 ? void 0 : _this$observer3.observe(key);
-      });
-    };
-
-    this.sectionIntersect = entries => {
-      entries.forEach(entry => {
-        const {
-          target
-        } = entry;
-
-        if (entry.isIntersecting && this.elementMap.has(target)) {
-          var _this$observer4;
-
-          const callback = this.elementMap.get(target);
-          if (!callback) return;
-          callback();
-          (_this$observer4 = this.observer) === null || _this$observer4 === void 0 ? void 0 : _this$observer4.unobserve(target);
-        }
-      });
-    };
-
-    this.debounceSectionIntersect = entries => {
-      entries.forEach(entry => {
-        const {
-          target
-        } = entry;
-
-        if (entry.isIntersecting && this.elementMap.has(target)) {
-          var _this$observer5;
-
-          const callback = this.elementMap.get(target);
-          if (!callback) return;
-          clearTimeout(this.debounceExecute);
-          this.debounceExecute = window.setTimeout(() => {
-            callback();
-          }, 1000);
-          (_this$observer5 = this.observer) === null || _this$observer5 === void 0 ? void 0 : _this$observer5.unobserve(target);
-        }
-      });
-    };
-
     this.elementMap = new Map();
+    this.debounceExecute = 0;
 
     try {
       this.observer = new window.IntersectionObserver(entries => {
@@ -1718,6 +1678,55 @@ class SectionObserver {
     } catch (error) {
       console.log(`Error occur when creating IntersectionObserver: ${error}`);
     }
+  }
+
+  sectionObserve(ref, callback) {
+    if (this.observer) this.observer.observe(ref.current);
+    this.elementMap.set(ref.current, callback);
+  }
+
+  sectionUnobserve(ref) {
+    if (this.observer) this.observer.unobserve(ref.current);
+    if (this.elementMap.has(ref.current)) this.elementMap.delete(ref.current);
+  }
+
+  resetSectionObserver() {
+    this.elementMap.forEach((value, key) => {
+      if (this.observer) this.observer.observe(key);
+    });
+  }
+
+  sectionIntersect(entries) {
+    entries.forEach(entry => {
+      const {
+        target
+      } = entry;
+
+      if (entry.isIntersecting && this.elementMap.has(target)) {
+        const callback = this.elementMap.get(target);
+        if (!callback) return;
+        callback();
+        if (this.observer) this.observer.unobserve(target);
+      }
+    });
+  }
+
+  debounceSectionIntersect(entries) {
+    entries.forEach(entry => {
+      const {
+        target
+      } = entry;
+
+      if (entry.isIntersecting && this.elementMap.has(target)) {
+        const callback = this.elementMap.get(target);
+        if (!callback) return;
+        clearTimeout(this.debounceExecute);
+        this.debounceExecute = window.setTimeout(() => {
+          callback();
+        }, 1000);
+        if (this.observer) this.observer.unobserve(target);
+      }
+    });
   }
 
 }
