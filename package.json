@@ -11,8 +11,7 @@
     "prettier": "prettier --write src/*.ts src/**/*.ts"
   },
   "peerDependencies": {
-    "react": "^16.13.1",
-    "query-string": "^6.13.1"
+    "react": "^16.13.1"
   },
   "husky": {
     "hooks": {
@@ -29,6 +28,7 @@
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@types/history": "^4.7.6",
     "@types/jest": "^26.0.0",
+    "@types/qs": "^6.9.5",
     "@types/react": "^16.9.38",
     "@types/uuid": "^8.0.0",
     "@wessberg/rollup-plugin-ts": "^1.2.21",
@@ -42,10 +42,10 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "query-string": "^6.13.1",
-    "uuid": "^8.2.0",
     "firebase": "^7.15.5",
+    "history": "^4.10.1",
     "intersection-observer": "^0.10.0",
-    "history": "^4.10.1"
+    "qs": "^6.9.4",
+    "uuid": "^8.2.0"
   }
 }

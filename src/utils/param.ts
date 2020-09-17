@@ -1,4 +1,4 @@
-import qs from 'query-string';
+import qs from 'qs';
 import { v4 } from 'uuid';
 import { Scene, DefaultEventParams, RefinedEventPathname, TrackingToken } from 'types';
 
@@ -10,7 +10,7 @@ function getUserID() {
   // The order of checking UserID.
   // 1. sessionStorage
   // 2. query string
-  return sessionStorage.getItem('userID') || qsUserID || 'guest';
+  return sessionStorage.getItem('userID') || `${qsUserID}` || 'guest';
 }
 
 function createTrackingToken() {
