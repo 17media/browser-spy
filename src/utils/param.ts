@@ -3,7 +3,7 @@ import { v4 } from 'uuid';
 import { Scene, DefaultEventParams, RefinedEventPathname, TrackingToken } from 'types';
 
 function getUserID() {
-  const qsUserID = qs.parse(window.location.search).userID;
+  const qsUserID = qs.parse(window.location.search, { ignoreQueryPrefix: true }).userID;
   if (Array.isArray(qsUserID)) {
     return sessionStorage.getItem('userID') || 'guest';
   }
