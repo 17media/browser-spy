@@ -1944,7 +1944,9 @@ function v4(options, buf, offset) {
 }
 
 function getUserID() {
-  var qsUserID = lib.parse(window.location.search).userID;
+  var qsUserID = lib.parse(window.location.search, {
+    ignoreQueryPrefix: true
+  }).userID;
 
   if (Array.isArray(qsUserID)) {
     return sessionStorage.getItem('userID') || 'guest';
