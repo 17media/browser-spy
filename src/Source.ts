@@ -1,4 +1,4 @@
-import { TransitionEvent, TrackingEvent, TrackingEventParams, Scene } from 'types';
+import { TransitionEvent, TrackingEvent, TrackingEventParams, Scene, SpyEvent } from 'types';
 import { Agent } from 'Agent';
 import { History } from 'history';
 import * as dom from 'utils/dom';
@@ -94,7 +94,7 @@ export class DefaultSource implements Source {
   }
 
   login(userId: string) {
-    this.agents.forEach(agent => agent.report({ type: 'login', userId }));
+    this.report({ type: 'login', userId });
   }
 
   transit(toScene: Scene) {
@@ -105,7 +105,7 @@ export class DefaultSource implements Source {
       toScene,
       defaultTrackingParams: createDefaultEventParams(),
     };
-    this.agents.forEach(agent => agent.report(event));
+    this.report(event);
   }
 
   track(event: Omit<TrackingEvent, 'type'>) {
@@ -116,6 +116,16 @@ export class DefaultSource implements Source {
       ...trackingParams,
     };
     event.trackingParams = mergedTrackingParams;
-    this.agents.forEach(agent => agent.report({ type: 'tracking', ...event }));
+    this.report({ type: 'tracking', ...event });
+  }
+
+  private report(event: SpyEvent) {
+    this.agents.forEach(agent => {
+      try {
+        agent.report(event);
+      } catch (error) {
+        console.error(error);
+      }
+    });
   }
 }
