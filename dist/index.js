@@ -1102,7 +1102,6 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
     _this3.client = window._paq; // eslint-disable-line no-underscore-dangle
 
     _this3.trackPageViewTimer = 0;
-    _this3.intialized = false;
     return _this3;
   }
 
@@ -1110,21 +1109,21 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
     key: "doInitialize",
     value: function () {
       var _doInitialize2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee3() {
-        var url;
         return _regeneratorRuntime.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                url = "//".concat(this.config.endpoint, "/");
-                this.client.push(['setTrackerUrl', "".concat(url, "matomo.php")]);
+                _context3.next = 2;
+                return loadScript("".concat(this.config.endpoint, "piwik.js"));
+
+              case 2:
+                this.client.push(['setTrackerUrl', "".concat(this.config.endpoint, "matomo.php")]);
                 this.client.push(['setSiteId', this.config.siteId]);
                 this.client.push(['trackPageView']);
                 this.client.push(['enableLinkTracking']);
                 this.client.push(['trackAllContentImpressions']);
-                _context3.next = 8;
-                return loadScript("".concat(url, "piwik.js"));
 
-              case 8:
+              case 7:
               case "end":
                 return _context3.stop();
             }

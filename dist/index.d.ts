@@ -117,7 +117,6 @@ declare class MatomoAgent extends Agent {
     readonly config: MatomoAgentConfig;
     private client; // eslint-disable-line no-underscore-dangle
     private trackPageViewTimer;
-    private intialized;
     constructor(config: MatomoAgentConfig);
     doInitialize(): Promise<void>;
     report(event: SpyEvent): void;

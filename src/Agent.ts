@@ -125,21 +125,17 @@ export class MatomoAgent extends Agent {
 
   private trackPageViewTimer = 0;
 
-  private intialized = false;
-
   constructor(readonly config: MatomoAgentConfig) {
     super();
   }
 
   async doInitialize() {
-    const url = `//${this.config.endpoint}/`;
-    this.client.push(['setTrackerUrl', `${url}matomo.php`]);
+    await loadScript(`${this.config.endpoint}piwik.js`);
+    this.client.push(['setTrackerUrl', `${this.config.endpoint}matomo.php`]);
     this.client.push(['setSiteId', this.config.siteId]);
     this.client.push(['trackPageView']);
     this.client.push(['enableLinkTracking']);
     this.client.push(['trackAllContentImpressions']);
-
-    await loadScript(`${url}piwik.js`);
   }
 
   report(event: SpyEvent) {
