@@ -1883,9 +1883,16 @@ var lib = {
   stringify: stringify
 };
 
-var rnds8 = new Uint8Array(16);
+var rnds8Pool = new Uint8Array(256); // # of random values to pre-allocate
+
+var poolPtr = rnds8Pool.length;
 function rng() {
-  return crypto__default['default'].randomFillSync(rnds8);
+  if (poolPtr > rnds8Pool.length - 16) {
+    crypto__default['default'].randomFillSync(rnds8Pool);
+    poolPtr = 0;
+  }
+
+  return rnds8Pool.slice(poolPtr, poolPtr += 16);
 }
 
 var REGEX = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
@@ -2171,7 +2178,7 @@ var DefaultSource = /*#__PURE__*/function () {
     key: "track",
     value: function track(event) {
       var trackingParams = event.trackingParams;
-      var defaultParams = (trackingParams === null || trackingParams === void 0 ? void 0 : trackingParams.hasOwnProperty('productName')) ? {} : createDefaultEventParams();
+      var defaultParams = trackingParams !== null && trackingParams !== void 0 && trackingParams.hasOwnProperty('productName') ? {} : createDefaultEventParams();
 
       var mergedTrackingParams = _objectSpread$1(_objectSpread$1({}, defaultParams), trackingParams);
 
