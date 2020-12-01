@@ -2143,11 +2143,9 @@ var DefaultSource = /*#__PURE__*/function () {
   }, {
     key: "login",
     value: function login(userId) {
-      this.agents.forEach(function (agent) {
-        return agent.report({
-          type: 'login',
-          userId: userId
-        });
+      this.report({
+        type: 'login',
+        userId: userId
       });
     }
   }, {
@@ -2160,9 +2158,7 @@ var DefaultSource = /*#__PURE__*/function () {
         toScene: toScene,
         defaultTrackingParams: createDefaultEventParams()
       };
-      this.agents.forEach(function (agent) {
-        return agent.report(event);
-      });
+      this.report(event);
     }
   }, {
     key: "track",
@@ -2173,10 +2169,19 @@ var DefaultSource = /*#__PURE__*/function () {
       var mergedTrackingParams = _objectSpread$1(_objectSpread$1({}, defaultParams), trackingParams);
 
       event.trackingParams = mergedTrackingParams;
+      this.report(_objectSpread$1({
+        type: 'tracking'
+      }, event));
+    }
+  }, {
+    key: "report",
+    value: function report(event) {
       this.agents.forEach(function (agent) {
-        return agent.report(_objectSpread$1({
-          type: 'tracking'
-        }, event));
+        try {
+          agent.report(event);
+        } catch (error) {
+          console.error(error);
+        }
       });
     }
   }]);

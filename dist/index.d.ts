@@ -140,6 +140,7 @@ declare class DefaultSource implements Source {
     login(userId: string): void;
     transit(toScene: Scene): void;
     track(event: Omit<TrackingEvent, "type">): void;
+    private report;
 }
 declare class SectionObserver {
     elementMap: ElementMap;
