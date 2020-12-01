@@ -121,7 +121,7 @@ export interface MatomoAgentConfig {
 }
 
 export class MatomoAgent extends Agent {
-  private client = window._paq; // eslint-disable-line no-underscore-dangle
+  private client = window._paq || []; // eslint-disable-line no-underscore-dangle
 
   private trackPageViewTimer = 0;
 
@@ -130,12 +130,12 @@ export class MatomoAgent extends Agent {
   }
 
   async doInitialize() {
-    await loadScript(`${this.config.endpoint}piwik.js`);
     this.client.push(['setTrackerUrl', `${this.config.endpoint}matomo.php`]);
     this.client.push(['setSiteId', this.config.siteId]);
     this.client.push(['trackPageView']);
     this.client.push(['enableLinkTracking']);
     this.client.push(['trackAllContentImpressions']);
+    await loadScript(`${this.config.endpoint}piwik.js`);
   }
 
   report(event: SpyEvent) {
