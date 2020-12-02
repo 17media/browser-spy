@@ -121,12 +121,15 @@ export interface MatomoAgentConfig {
 }
 
 export class MatomoAgent extends Agent {
-  private client = window._paq || []; // eslint-disable-line no-underscore-dangle
+  private client = window._paq || [];
 
   private trackPageViewTimer = 0;
 
   constructor(readonly config: MatomoAgentConfig) {
     super();
+
+    window._paq = window._paq || []; // eslint-disable-line no-underscore-dangle
+    this.client = window._paq; // eslint-disable-line no-underscore-dangle
   }
 
   async doInitialize() {
