@@ -168,7 +168,7 @@
       },
       "../src/Agent.ts": {
         "version": 1,
-        "signature": "-47105421878",
+        "signature": "-31951521637",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/history/DOMUtils.d.ts": {
@@ -1243,7 +1243,7 @@
       }
     },
     "options": {
-      "outDir": "../c76136c6",
+      "outDir": "../0b052002",
       "rootDir": "../src",
       "target": 99,
       "module": 99,

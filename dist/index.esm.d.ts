@@ -115,7 +115,7 @@ interface MatomoAgentConfig {
 }
 declare class MatomoAgent extends Agent {
     readonly config: MatomoAgentConfig;
-    private client;
+    private get client();
     private trackPageViewTimer;
     constructor(config: MatomoAgentConfig);
     doInitialize(): Promise<void>;
