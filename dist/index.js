@@ -1099,9 +1099,12 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
 
     _this3 = _super2.call(this);
     _this3.config = config;
-    _this3.client = window._paq || []; // eslint-disable-line no-underscore-dangle
-
+    _this3.client = window._paq || [];
     _this3.trackPageViewTimer = 0;
+    window._paq = window._paq || []; // eslint-disable-line no-underscore-dangle
+
+    _this3.client = window._paq; // eslint-disable-line no-underscore-dangle
+
     return _this3;
   }
 

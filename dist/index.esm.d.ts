@@ -115,7 +115,7 @@ interface MatomoAgentConfig {
 }
 declare class MatomoAgent extends Agent {
     readonly config: MatomoAgentConfig;
-    private client; // eslint-disable-line no-underscore-dangle
+    private client;
     private trackPageViewTimer;
     constructor(config: MatomoAgentConfig);
     doInitialize(): Promise<void>;
