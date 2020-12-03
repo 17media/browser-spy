@@ -151,7 +151,7 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../src/utils/loadScript.ts": {
+      "../src/utils/loadscript.ts": {
         "version": 1,
         "signature": "-34798380848",
         "affectsGlobalScope": false
@@ -166,37 +166,37 @@
         "signature": "-19348249463",
         "affectsGlobalScope": false
       },
-      "../src/Agent.ts": {
+      "../src/agent.ts": {
         "version": 1,
         "signature": "-31951521637",
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/history/DOMUtils.d.ts": {
+      "../node_modules/@types/history/domutils.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": true
       },
-      "../node_modules/@types/history/createBrowserHistory.d.ts": {
+      "../node_modules/@types/history/createbrowserhistory.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/history/createHashHistory.d.ts": {
+      "../node_modules/@types/history/createhashhistory.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/history/createMemoryHistory.d.ts": {
+      "../node_modules/@types/history/creatememoryhistory.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/history/LocationUtils.d.ts": {
+      "../node_modules/@types/history/locationutils.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/history/PathUtils.d.ts": {
+      "../node_modules/@types/history/pathutils.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -226,7 +226,7 @@
         "signature": "10025179993",
         "affectsGlobalScope": false
       },
-      "../src/Source.ts": {
+      "../src/source.ts": {
         "version": 1,
         "signature": "-21059709029",
         "affectsGlobalScope": false
@@ -253,10 +253,10 @@
       },
       "../src/utils/constants.ts": {
         "version": 1,
-        "signature": "7410267138",
+        "signature": "4136853280",
         "affectsGlobalScope": false
       },
-      "../src/Observer.ts": {
+      "../src/observer.ts": {
         "version": 1,
         "signature": "-110472313506",
         "affectsGlobalScope": false
@@ -276,7 +276,7 @@
         "signature": "-15686350711",
         "affectsGlobalScope": false
       },
-      "../node_modules/@babel/types/lib/index-ts3.7.d.ts": {
+      "../node_modules/@babel/types/lib/index.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -302,6 +302,11 @@
         "affectsGlobalScope": false
       },
       "../node_modules/@types/babel__core/index.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/color-name/index.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -339,7 +344,7 @@
       "../node_modules/@types/node/console.d.ts": {
         "version": 1,
         "signature": 1,
-        "affectsGlobalScope": false
+        "affectsGlobalScope": true
       },
       "../node_modules/@types/node/constants.d.ts": {
         "version": 1,
@@ -364,14 +369,19 @@
       "../node_modules/@types/node/domain.d.ts": {
         "version": 1,
         "signature": 1,
-        "affectsGlobalScope": false
+        "affectsGlobalScope": true
       },
       "../node_modules/@types/node/events.d.ts": {
         "version": 1,
         "signature": 1,
-        "affectsGlobalScope": false
+        "affectsGlobalScope": true
       },
       "../node_modules/@types/node/fs.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/node/fs/promises.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -506,7 +516,7 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/node/ts3.3/base.d.ts": {
+      "../node_modules/@types/node/ts3.4/base.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -561,17 +571,12 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/types/build/Global.d.ts": {
+      "../node_modules/@jest/types/build/global.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/types/build/Circus.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@jest/types/node_modules/chalk/index.d.ts": {
+      "../node_modules/@jest/types/build/circus.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -586,17 +591,22 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/types/build/Config.d.ts": {
+      "../node_modules/chalk/index.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/types/build/TestResult.d.ts": {
+      "../node_modules/@jest/types/build/config.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/types/build/Transform.d.ts": {
+      "../node_modules/@jest/types/build/testresult.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@jest/types/build/transform.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -606,17 +616,7 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/jest-changed-files/build/types.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-changed-files/build/index.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/emittery/index.d.ts": {
+      "../node_modules/jest-mock/build/index.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -636,17 +636,12 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/jest-mock/build/index.d.ts": {
+      "../node_modules/@jest/fake-timers/build/legacyfaketimers.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/fake-timers/build/legacyFakeTimers.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@jest/fake-timers/build/modernFakeTimers.d.ts": {
+      "../node_modules/@jest/fake-timers/build/modernfaketimers.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -661,167 +656,12 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/collect-v8-coverage/index.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@jest/console/build/types.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@jest/console/build/BufferedConsole.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@jest/console/build/CustomConsole.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@jest/console/build/NullConsole.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@jest/console/build/getConsoleOutput.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@jest/console/build/index.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@jest/test-result/build/types.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@jest/test-result/build/formatTestResults.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@jest/test-result/build/helpers.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@jest/test-result/build/index.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-haste-map/build/ModuleMap.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-haste-map/build/types.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-haste-map/build/HasteFS.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-haste-map/build/constants.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-haste-map/build/index.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-resolve/build/ModuleNotFoundError.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-resolve/build/shouldLoadAsEsm.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-resolve/build/types.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-resolve/build/index.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-matcher-utils/node_modules/chalk/index.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-diff/build/cleanupSemantic.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-diff/build/types.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-diff/build/diffLines.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-diff/build/printDiffs.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-diff/build/index.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/jest-matcher-utils/build/index.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/expect/build/jestMatchersObject.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/expect/build/types.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/expect/build/index.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@jest/globals/build/index.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
       "../node_modules/callsites/index.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/source-map/build/getCallsite.d.ts": {
+      "../node_modules/@jest/source-map/build/getcallsite.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -836,7 +676,7 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/transform/node_modules/source-map/source-map.d.ts": {
+      "../node_modules/source-map/source-map.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -846,17 +686,17 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/transform/build/ScriptTransformer.d.ts": {
+      "../node_modules/@jest/transform/build/scripttransformer.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/transform/build/shouldInstrument.d.ts": {
+      "../node_modules/@jest/transform/build/shouldinstrument.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/transform/build/enhanceUnexpectedTokenMessage.d.ts": {
+      "../node_modules/@jest/transform/build/enhanceunexpectedtokenmessage.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -866,7 +706,102 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/jest-runtime/build/cli/args.d.ts": {
+      "../node_modules/@jest/console/build/types.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@jest/console/build/bufferedconsole.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@jest/console/build/customconsole.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@jest/console/build/nullconsole.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@jest/console/build/getconsoleoutput.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@jest/console/build/index.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/collect-v8-coverage/index.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@jest/test-result/build/types.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@jest/test-result/build/formattestresults.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@jest/test-result/build/helpers.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@jest/test-result/build/index.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/jest-haste-map/build/modulemap.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/jest-haste-map/build/hastefs.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/jest-haste-map/build/types.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/jest-haste-map/build/constants.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/jest-haste-map/build/index.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/jest-resolve/build/types.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/jest-resolve/build/modulenotfounderror.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/jest-resolve/build/shouldloadasesm.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/jest-resolve/build/index.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -876,7 +811,17 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
+      "../node_modules/jest-runtime/build/cli/args.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
       "../node_modules/jest-runtime/build/index.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/emittery/index.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -891,22 +836,32 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
+      "../node_modules/jest-changed-files/build/types.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/jest-changed-files/build/index.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
       "../node_modules/@jest/core/build/types.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/core/build/SearchSource.d.ts": {
+      "../node_modules/@jest/core/build/searchsource.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/reporters/build/generateEmptyCoverage.d.ts": {
+      "../node_modules/@jest/reporters/build/generateemptycoverage.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/reporters/build/CoverageWorker.d.ts": {
+      "../node_modules/@jest/reporters/build/coverage_worker.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -916,32 +871,32 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/reporters/build/BaseReporter.d.ts": {
+      "../node_modules/@jest/reporters/build/base_reporter.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/reporters/build/CoverageReporter.d.ts": {
+      "../node_modules/@jest/reporters/build/coverage_reporter.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/reporters/build/DefaultReporter.d.ts": {
+      "../node_modules/@jest/reporters/build/default_reporter.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/reporters/build/NotifyReporter.d.ts": {
+      "../node_modules/@jest/reporters/build/notify_reporter.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/reporters/build/SummaryReporter.d.ts": {
+      "../node_modules/@jest/reporters/build/summary_reporter.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/reporters/build/VerboseReporter.d.ts": {
+      "../node_modules/@jest/reporters/build/verbose_reporter.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -951,12 +906,12 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/core/build/TestWatcher.d.ts": {
+      "../node_modules/@jest/core/build/testwatcher.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/@jest/core/build/TestScheduler.d.ts": {
+      "../node_modules/@jest/core/build/testscheduler.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -976,12 +931,12 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/jest/node_modules/jest-cli/build/cli/index.d.ts": {
+      "../node_modules/jest-cli/build/cli/index.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
       },
-      "../node_modules/jest/node_modules/jest-cli/build/index.d.ts": {
+      "../node_modules/jest-cli/build/index.d.ts": {
         "version": 1,
         "signature": 1,
         "affectsGlobalScope": false
@@ -1243,7 +1198,7 @@
       }
     },
     "options": {
-      "outDir": "../0b052002",
+      "outDir": "../da39a3ee",
       "rootDir": "../src",
       "target": 99,
       "module": 99,
@@ -1284,61 +1239,60 @@
     },
     "referencedMap": {
       "../node_modules/@babel/parser/typings/babel-parser.d.ts": [
-        "../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../node_modules/@babel/types/lib/index.d.ts"
       ],
-      "../node_modules/@jest/console/build/BufferedConsole.d.ts": [
+      "../node_modules/@jest/console/build/bufferedconsole.d.ts": [
+        "../node_modules/@jest/console/build/types.d.ts",
+        "../node_modules/@types/node/console.d.ts"
+      ],
+      "../node_modules/@jest/console/build/customconsole.d.ts": [
         "../node_modules/@jest/console/build/types.d.ts",
         "../node_modules/@types/node/console.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
-      "../node_modules/@jest/console/build/CustomConsole.d.ts": [
-        "../node_modules/@jest/console/build/types.d.ts",
-        "../node_modules/@types/node/console.d.ts",
-        "../node_modules/@types/node/index.d.ts"
-      ],
-      "../node_modules/@jest/console/build/NullConsole.d.ts": [
-        "../node_modules/@jest/console/build/CustomConsole.d.ts"
-      ],
-      "../node_modules/@jest/console/build/getConsoleOutput.d.ts": [
+      "../node_modules/@jest/console/build/getconsoleoutput.d.ts": [
         "../node_modules/@jest/console/build/types.d.ts",
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-message-util/build/index.d.ts"
       ],
       "../node_modules/@jest/console/build/index.d.ts": [
-        "../node_modules/@jest/console/build/BufferedConsole.d.ts",
-        "../node_modules/@jest/console/build/CustomConsole.d.ts",
-        "../node_modules/@jest/console/build/NullConsole.d.ts",
-        "../node_modules/@jest/console/build/getConsoleOutput.d.ts",
+        "../node_modules/@jest/console/build/bufferedconsole.d.ts",
+        "../node_modules/@jest/console/build/customconsole.d.ts",
+        "../node_modules/@jest/console/build/getconsoleoutput.d.ts",
+        "../node_modules/@jest/console/build/nullconsole.d.ts",
         "../node_modules/@jest/console/build/types.d.ts"
       ],
-      "../node_modules/@jest/core/build/SearchSource.d.ts": [
-        "../node_modules/@jest/core/build/types.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts",
-        "../node_modules/jest-changed-files/build/index.d.ts",
-        "../node_modules/jest-runner/build/index.d.ts",
-        "../node_modules/jest-runtime/build/index.d.ts"
-      ],
-      "../node_modules/@jest/core/build/TestScheduler.d.ts": [
-        "../node_modules/@jest/core/build/TestWatcher.d.ts",
-        "../node_modules/@jest/reporters/build/index.d.ts",
-        "../node_modules/@jest/test-result/build/index.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts",
-        "../node_modules/jest-runner/build/index.d.ts"
-      ],
-      "../node_modules/@jest/core/build/TestWatcher.d.ts": [
-        "../node_modules/@types/node/events.d.ts",
-        "../node_modules/@types/node/index.d.ts"
+      "../node_modules/@jest/console/build/nullconsole.d.ts": [
+        "../node_modules/@jest/console/build/customconsole.d.ts"
       ],
       "../node_modules/@jest/core/build/cli/index.d.ts": [
         "../node_modules/@jest/test-result/build/index.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
       "../node_modules/@jest/core/build/jest.d.ts": [
-        "../node_modules/@jest/core/build/SearchSource.d.ts",
-        "../node_modules/@jest/core/build/TestScheduler.d.ts",
-        "../node_modules/@jest/core/build/TestWatcher.d.ts",
         "../node_modules/@jest/core/build/cli/index.d.ts",
+        "../node_modules/@jest/core/build/searchsource.d.ts",
+        "../node_modules/@jest/core/build/testscheduler.d.ts",
+        "../node_modules/@jest/core/build/testwatcher.d.ts",
         "../node_modules/@jest/core/build/version.d.ts"
+      ],
+      "../node_modules/@jest/core/build/searchsource.d.ts": [
+        "../node_modules/@jest/core/build/types.d.ts",
+        "../node_modules/@jest/types/build/index.d.ts",
+        "../node_modules/jest-changed-files/build/index.d.ts",
+        "../node_modules/jest-runner/build/index.d.ts",
+        "../node_modules/jest-runtime/build/index.d.ts"
+      ],
+      "../node_modules/@jest/core/build/testscheduler.d.ts": [
+        "../node_modules/@jest/core/build/testwatcher.d.ts",
+        "../node_modules/@jest/reporters/build/index.d.ts",
+        "../node_modules/@jest/test-result/build/index.d.ts",
+        "../node_modules/@jest/types/build/index.d.ts",
+        "../node_modules/jest-runner/build/index.d.ts"
+      ],
+      "../node_modules/@jest/core/build/testwatcher.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/index.d.ts"
       ],
       "../node_modules/@jest/core/build/types.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
@@ -1353,94 +1307,89 @@
         "../node_modules/jest-mock/build/index.d.ts"
       ],
       "../node_modules/@jest/fake-timers/build/index.d.ts": [
-        "../node_modules/@jest/fake-timers/build/legacyFakeTimers.d.ts",
-        "../node_modules/@jest/fake-timers/build/modernFakeTimers.d.ts"
+        "../node_modules/@jest/fake-timers/build/legacyfaketimers.d.ts",
+        "../node_modules/@jest/fake-timers/build/modernfaketimers.d.ts"
       ],
-      "../node_modules/@jest/fake-timers/build/legacyFakeTimers.d.ts": [
+      "../node_modules/@jest/fake-timers/build/legacyfaketimers.d.ts": [
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/jest-message-util/build/index.d.ts",
         "../node_modules/jest-mock/build/index.d.ts"
       ],
-      "../node_modules/@jest/fake-timers/build/modernFakeTimers.d.ts": [
+      "../node_modules/@jest/fake-timers/build/modernfaketimers.d.ts": [
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/jest-message-util/build/index.d.ts"
       ],
-      "../node_modules/@jest/globals/build/index.d.ts": [
-        "../node_modules/@jest/environment/build/index.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts",
-        "../node_modules/expect/build/index.d.ts"
-      ],
-      "../node_modules/@jest/reporters/build/BaseReporter.d.ts": [
+      "../node_modules/@jest/reporters/build/base_reporter.d.ts": [
         "../node_modules/@jest/reporters/build/types.d.ts",
         "../node_modules/@jest/test-result/build/index.d.ts"
       ],
-      "../node_modules/@jest/reporters/build/CoverageReporter.d.ts": [
-        "../node_modules/@jest/reporters/build/BaseReporter.d.ts",
+      "../node_modules/@jest/reporters/build/coverage_reporter.d.ts": [
+        "../node_modules/@jest/reporters/build/base_reporter.d.ts",
         "../node_modules/@jest/reporters/build/types.d.ts",
         "../node_modules/@jest/test-result/build/index.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
-      "../node_modules/@jest/reporters/build/CoverageWorker.d.ts": [
-        "../node_modules/@jest/reporters/build/generateEmptyCoverage.d.ts",
+      "../node_modules/@jest/reporters/build/coverage_worker.d.ts": [
+        "../node_modules/@jest/reporters/build/generateemptycoverage.d.ts",
         "../node_modules/@jest/reporters/build/types.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
-      "../node_modules/@jest/reporters/build/DefaultReporter.d.ts": [
-        "../node_modules/@jest/reporters/build/BaseReporter.d.ts",
-        "../node_modules/@jest/reporters/build/types.d.ts",
-        "../node_modules/@jest/test-result/build/index.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts"
-      ],
-      "../node_modules/@jest/reporters/build/NotifyReporter.d.ts": [
-        "../node_modules/@jest/reporters/build/BaseReporter.d.ts",
+      "../node_modules/@jest/reporters/build/default_reporter.d.ts": [
+        "../node_modules/@jest/reporters/build/base_reporter.d.ts",
         "../node_modules/@jest/reporters/build/types.d.ts",
         "../node_modules/@jest/test-result/build/index.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
-      "../node_modules/@jest/reporters/build/SummaryReporter.d.ts": [
-        "../node_modules/@jest/reporters/build/BaseReporter.d.ts",
-        "../node_modules/@jest/reporters/build/types.d.ts",
-        "../node_modules/@jest/test-result/build/index.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts"
-      ],
-      "../node_modules/@jest/reporters/build/VerboseReporter.d.ts": [
-        "../node_modules/@jest/reporters/build/DefaultReporter.d.ts",
-        "../node_modules/@jest/reporters/build/types.d.ts",
-        "../node_modules/@jest/test-result/build/index.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts"
-      ],
-      "../node_modules/@jest/reporters/build/generateEmptyCoverage.d.ts": [
+      "../node_modules/@jest/reporters/build/generateemptycoverage.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/@types/istanbul-lib-coverage/index.d.ts",
         "../node_modules/collect-v8-coverage/index.d.ts"
       ],
       "../node_modules/@jest/reporters/build/index.d.ts": [
-        "../node_modules/@jest/reporters/build/BaseReporter.d.ts",
-        "../node_modules/@jest/reporters/build/CoverageReporter.d.ts",
-        "../node_modules/@jest/reporters/build/DefaultReporter.d.ts",
-        "../node_modules/@jest/reporters/build/NotifyReporter.d.ts",
-        "../node_modules/@jest/reporters/build/SummaryReporter.d.ts",
-        "../node_modules/@jest/reporters/build/VerboseReporter.d.ts",
+        "../node_modules/@jest/reporters/build/base_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/coverage_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/default_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/notify_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/summary_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/types.d.ts",
+        "../node_modules/@jest/reporters/build/verbose_reporter.d.ts",
+        "../node_modules/@jest/test-result/build/index.d.ts",
+        "../node_modules/@jest/types/build/config.d.ts",
+        "../node_modules/@jest/types/build/index.d.ts"
+      ],
+      "../node_modules/@jest/reporters/build/notify_reporter.d.ts": [
+        "../node_modules/@jest/reporters/build/base_reporter.d.ts",
         "../node_modules/@jest/reporters/build/types.d.ts",
         "../node_modules/@jest/test-result/build/index.d.ts",
-        "../node_modules/@jest/types/build/Config.d.ts",
+        "../node_modules/@jest/types/build/index.d.ts"
+      ],
+      "../node_modules/@jest/reporters/build/summary_reporter.d.ts": [
+        "../node_modules/@jest/reporters/build/base_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/types.d.ts",
+        "../node_modules/@jest/test-result/build/index.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
       "../node_modules/@jest/reporters/build/types.d.ts": [
-        "../node_modules/@jest/reporters/build/CoverageWorker.d.ts",
+        "../node_modules/@jest/reporters/build/coverage_worker.d.ts",
         "../node_modules/@jest/test-result/build/index.d.ts",
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-haste-map/build/index.d.ts",
         "../node_modules/jest-resolve/build/index.d.ts"
       ],
-      "../node_modules/@jest/source-map/build/getCallsite.d.ts": [
+      "../node_modules/@jest/reporters/build/verbose_reporter.d.ts": [
+        "../node_modules/@jest/reporters/build/default_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/types.d.ts",
+        "../node_modules/@jest/test-result/build/index.d.ts",
+        "../node_modules/@jest/types/build/index.d.ts"
+      ],
+      "../node_modules/@jest/source-map/build/getcallsite.d.ts": [
         "../node_modules/callsites/index.d.ts"
       ],
       "../node_modules/@jest/source-map/build/index.d.ts": [
-        "../node_modules/@jest/source-map/build/getCallsite.d.ts",
+        "../node_modules/@jest/source-map/build/getcallsite.d.ts",
         "../node_modules/@jest/source-map/build/types.d.ts"
       ],
-      "../node_modules/@jest/test-result/build/formatTestResults.d.ts": [
+      "../node_modules/@jest/test-result/build/formattestresults.d.ts": [
         "../node_modules/@jest/test-result/build/types.d.ts"
       ],
       "../node_modules/@jest/test-result/build/helpers.d.ts": [
@@ -1448,7 +1397,7 @@
         "../node_modules/@jest/types/build/index.d.ts"
       ],
       "../node_modules/@jest/test-result/build/index.d.ts": [
-        "../node_modules/@jest/test-result/build/formatTestResults.d.ts",
+        "../node_modules/@jest/test-result/build/formattestresults.d.ts",
         "../node_modules/@jest/test-result/build/helpers.d.ts",
         "../node_modules/@jest/test-result/build/types.d.ts"
       ],
@@ -1458,90 +1407,90 @@
         "../node_modules/@types/istanbul-lib-coverage/index.d.ts",
         "../node_modules/collect-v8-coverage/index.d.ts"
       ],
-      "../node_modules/@jest/transform/build/ScriptTransformer.d.ts": [
+      "../node_modules/@jest/transform/build/index.d.ts": [
+        "../node_modules/@jest/transform/build/enhanceunexpectedtokenmessage.d.ts",
+        "../node_modules/@jest/transform/build/scripttransformer.d.ts",
+        "../node_modules/@jest/transform/build/shouldinstrument.d.ts",
+        "../node_modules/@jest/transform/build/types.d.ts"
+      ],
+      "../node_modules/@jest/transform/build/scripttransformer.d.ts": [
         "../node_modules/@jest/transform/build/types.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
-      "../node_modules/@jest/transform/build/index.d.ts": [
-        "../node_modules/@jest/transform/build/ScriptTransformer.d.ts",
-        "../node_modules/@jest/transform/build/enhanceUnexpectedTokenMessage.d.ts",
-        "../node_modules/@jest/transform/build/shouldInstrument.d.ts",
-        "../node_modules/@jest/transform/build/types.d.ts"
-      ],
-      "../node_modules/@jest/transform/build/shouldInstrument.d.ts": [
+      "../node_modules/@jest/transform/build/shouldinstrument.d.ts": [
         "../node_modules/@jest/transform/build/types.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
       "../node_modules/@jest/transform/build/types.d.ts": [
-        "../node_modules/@jest/transform/node_modules/source-map/source-map.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts"
+        "../node_modules/@jest/types/build/index.d.ts",
+        "../node_modules/source-map/source-map.d.ts"
       ],
-      "../node_modules/@jest/types/build/Circus.d.ts": [
-        "../node_modules/@jest/types/build/Global.d.ts",
+      "../node_modules/@jest/types/build/circus.d.ts": [
+        "../node_modules/@jest/types/build/global.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
-      "../node_modules/@jest/types/build/Config.d.ts": [
-        "../node_modules/@jest/types/node_modules/chalk/index.d.ts",
+      "../node_modules/@jest/types/build/config.d.ts": [
         "../node_modules/@types/istanbul-reports/index.d.ts",
         "../node_modules/@types/node/index.d.ts",
-        "../node_modules/@types/yargs/index.d.ts"
+        "../node_modules/@types/yargs/index.d.ts",
+        "../node_modules/chalk/index.d.ts"
       ],
-      "../node_modules/@jest/types/build/Global.d.ts": [
+      "../node_modules/@jest/types/build/global.d.ts": [
         "../node_modules/@types/istanbul-lib-coverage/index.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
       "../node_modules/@jest/types/build/index.d.ts": [
-        "../node_modules/@jest/types/build/Circus.d.ts",
-        "../node_modules/@jest/types/build/Config.d.ts",
-        "../node_modules/@jest/types/build/Global.d.ts",
-        "../node_modules/@jest/types/build/TestResult.d.ts",
-        "../node_modules/@jest/types/build/Transform.d.ts"
+        "../node_modules/@jest/types/build/circus.d.ts",
+        "../node_modules/@jest/types/build/config.d.ts",
+        "../node_modules/@jest/types/build/global.d.ts",
+        "../node_modules/@jest/types/build/testresult.d.ts",
+        "../node_modules/@jest/types/build/transform.d.ts"
       ],
       "../node_modules/@types/babel__core/index.d.ts": [
         "../node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../node_modules/@babel/types/lib/index-ts3.7.d.ts",
+        "../node_modules/@babel/types/lib/index.d.ts",
         "../node_modules/@types/babel__generator/index.d.ts",
         "../node_modules/@types/babel__template/index.d.ts",
         "../node_modules/@types/babel__traverse/index.d.ts"
       ],
       "../node_modules/@types/babel__generator/index.d.ts": [
-        "../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../node_modules/@types/babel__template/index.d.ts": [
         "../node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../node_modules/@types/babel__traverse/index.d.ts": [
-        "../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../node_modules/@types/graceful-fs/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
-      "../node_modules/@types/history/LocationUtils.d.ts": [
+      "../node_modules/@types/history/createbrowserhistory.d.ts": [
+        "../node_modules/@types/history/domutils.d.ts",
         "../node_modules/@types/history/index.d.ts"
       ],
-      "../node_modules/@types/history/PathUtils.d.ts": [
+      "../node_modules/@types/history/createhashhistory.d.ts": [
+        "../node_modules/@types/history/domutils.d.ts",
         "../node_modules/@types/history/index.d.ts"
       ],
-      "../node_modules/@types/history/createBrowserHistory.d.ts": [
-        "../node_modules/@types/history/DOMUtils.d.ts",
-        "../node_modules/@types/history/index.d.ts"
-      ],
-      "../node_modules/@types/history/createHashHistory.d.ts": [
-        "../node_modules/@types/history/DOMUtils.d.ts",
-        "../node_modules/@types/history/index.d.ts"
-      ],
-      "../node_modules/@types/history/createMemoryHistory.d.ts": [
-        "../node_modules/@types/history/DOMUtils.d.ts",
+      "../node_modules/@types/history/creatememoryhistory.d.ts": [
+        "../node_modules/@types/history/domutils.d.ts",
         "../node_modules/@types/history/index.d.ts"
       ],
       "../node_modules/@types/history/index.d.ts": [
-        "../node_modules/@types/history/LocationUtils.d.ts",
-        "../node_modules/@types/history/PathUtils.d.ts",
-        "../node_modules/@types/history/createBrowserHistory.d.ts",
-        "../node_modules/@types/history/createHashHistory.d.ts",
-        "../node_modules/@types/history/createMemoryHistory.d.ts"
+        "../node_modules/@types/history/createbrowserhistory.d.ts",
+        "../node_modules/@types/history/createhashhistory.d.ts",
+        "../node_modules/@types/history/creatememoryhistory.d.ts",
+        "../node_modules/@types/history/locationutils.d.ts",
+        "../node_modules/@types/history/pathutils.d.ts"
+      ],
+      "../node_modules/@types/history/locationutils.d.ts": [
+        "../node_modules/@types/history/index.d.ts"
+      ],
+      "../node_modules/@types/history/pathutils.d.ts": [
+        "../node_modules/@types/history/index.d.ts"
       ],
       "../node_modules/@types/istanbul-lib-report/index.d.ts": [
         "../node_modules/@types/istanbul-lib-coverage/index.d.ts"
@@ -1555,6 +1504,7 @@
       ],
       "../node_modules/@types/node/child_process.d.ts": [
         "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/net.d.ts",
         "../node_modules/@types/node/stream.d.ts"
       ],
@@ -1562,6 +1512,14 @@
         "../node_modules/@types/node/child_process.d.ts",
         "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/net.d.ts"
+      ],
+      "../node_modules/@types/node/console.d.ts": [
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/node/constants.d.ts": [
+        "../node_modules/@types/node/crypto.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/os.d.ts"
       ],
       "../node_modules/@types/node/crypto.d.ts": [
         "../node_modules/@types/node/stream.d.ts"
@@ -1576,11 +1534,14 @@
       ],
       "../node_modules/@types/node/fs.d.ts": [
         "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs/promises.d.ts",
         "../node_modules/@types/node/stream.d.ts",
         "../node_modules/@types/node/url.d.ts"
       ],
+      "../node_modules/@types/node/fs/promises.d.ts": [
+        "../node_modules/@types/node/fs.d.ts"
+      ],
       "../node_modules/@types/node/http.d.ts": [
-        "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/net.d.ts",
         "../node_modules/@types/node/stream.d.ts",
         "../node_modules/@types/node/url.d.ts"
@@ -1605,6 +1566,9 @@
       ],
       "../node_modules/@types/node/inspector.d.ts": [
         "../node_modules/@types/node/events.d.ts"
+      ],
+      "../node_modules/@types/node/module.d.ts": [
+        "../node_modules/@types/node/url.d.ts"
       ],
       "../node_modules/@types/node/net.d.ts": [
         "../node_modules/@types/node/dns.d.ts",
@@ -1635,7 +1599,7 @@
         "../node_modules/@types/node/net.d.ts",
         "../node_modules/@types/node/stream.d.ts"
       ],
-      "../node_modules/@types/node/ts3.3/base.d.ts": [
+      "../node_modules/@types/node/ts3.4/base.d.ts": [
         "../node_modules/@types/node/async_hooks.d.ts",
         "../node_modules/@types/node/buffer.d.ts",
         "../node_modules/@types/node/child_process.d.ts",
@@ -1648,6 +1612,7 @@
         "../node_modules/@types/node/domain.d.ts",
         "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/fs/promises.d.ts",
         "../node_modules/@types/node/globals.d.ts",
         "../node_modules/@types/node/http.d.ts",
         "../node_modules/@types/node/http2.d.ts",
@@ -1678,7 +1643,7 @@
       ],
       "../node_modules/@types/node/ts3.6/base.d.ts": [
         "../node_modules/@types/node/globals.global.d.ts",
-        "../node_modules/@types/node/ts3.3/base.d.ts",
+        "../node_modules/@types/node/ts3.4/base.d.ts",
         "../node_modules/@types/node/wasi.d.ts"
       ],
       "../node_modules/@types/node/tty.d.ts": [
@@ -1692,8 +1657,8 @@
       ],
       "../node_modules/@types/node/worker_threads.d.ts": [
         "../node_modules/@types/node/events.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/url.d.ts",
         "../node_modules/@types/node/vm.d.ts"
       ],
       "../node_modules/@types/node/zlib.d.ts": [
@@ -1911,17 +1876,6 @@
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/@types/node/inspector.d.ts"
       ],
-      "../node_modules/expect/build/index.d.ts": [
-        "../node_modules/expect/build/types.d.ts"
-      ],
-      "../node_modules/expect/build/jestMatchersObject.d.ts": [
-        "../node_modules/expect/build/types.d.ts"
-      ],
-      "../node_modules/expect/build/types.d.ts": [
-        "../node_modules/@jest/types/build/index.d.ts",
-        "../node_modules/expect/build/jestMatchersObject.d.ts",
-        "../node_modules/jest-matcher-utils/build/index.d.ts"
-      ],
       "../node_modules/jest-changed-files/build/index.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-changed-files/build/types.d.ts"
@@ -1929,50 +1883,38 @@
       "../node_modules/jest-changed-files/build/types.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts"
       ],
-      "../node_modules/jest-diff/build/diffLines.d.ts": [
-        "../node_modules/jest-diff/build/cleanupSemantic.d.ts",
-        "../node_modules/jest-diff/build/types.d.ts"
+      "../node_modules/jest-cli/build/cli/index.d.ts": [
+        "../node_modules/@jest/types/build/index.d.ts"
       ],
-      "../node_modules/jest-diff/build/index.d.ts": [
-        "../node_modules/jest-diff/build/cleanupSemantic.d.ts",
-        "../node_modules/jest-diff/build/diffLines.d.ts",
-        "../node_modules/jest-diff/build/printDiffs.d.ts",
-        "../node_modules/jest-diff/build/types.d.ts"
-      ],
-      "../node_modules/jest-diff/build/printDiffs.d.ts": [
-        "../node_modules/jest-diff/build/cleanupSemantic.d.ts",
-        "../node_modules/jest-diff/build/types.d.ts"
-      ],
-      "../node_modules/jest-haste-map/build/HasteFS.d.ts": [
-        "../node_modules/@jest/types/build/index.d.ts",
-        "../node_modules/jest-haste-map/build/types.d.ts"
-      ],
-      "../node_modules/jest-haste-map/build/ModuleMap.d.ts": [
-        "../node_modules/@jest/types/build/index.d.ts",
-        "../node_modules/jest-haste-map/build/types.d.ts"
+      "../node_modules/jest-cli/build/index.d.ts": [
+        "../node_modules/jest-cli/build/cli/index.d.ts"
       ],
       "../node_modules/jest-haste-map/build/constants.d.ts": [
+        "../node_modules/jest-haste-map/build/types.d.ts"
+      ],
+      "../node_modules/jest-haste-map/build/hastefs.d.ts": [
+        "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-haste-map/build/types.d.ts"
       ],
       "../node_modules/jest-haste-map/build/index.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/index.d.ts",
-        "../node_modules/jest-haste-map/build/HasteFS.d.ts",
-        "../node_modules/jest-haste-map/build/ModuleMap.d.ts",
         "../node_modules/jest-haste-map/build/constants.d.ts",
+        "../node_modules/jest-haste-map/build/hastefs.d.ts",
+        "../node_modules/jest-haste-map/build/modulemap.d.ts",
+        "../node_modules/jest-haste-map/build/types.d.ts"
+      ],
+      "../node_modules/jest-haste-map/build/modulemap.d.ts": [
+        "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-haste-map/build/types.d.ts"
       ],
       "../node_modules/jest-haste-map/build/types.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/index.d.ts",
-        "../node_modules/jest-haste-map/build/HasteFS.d.ts",
-        "../node_modules/jest-haste-map/build/ModuleMap.d.ts"
-      ],
-      "../node_modules/jest-matcher-utils/build/index.d.ts": [
-        "../node_modules/@jest/types/node_modules/chalk/index.d.ts",
-        "../node_modules/jest-diff/build/index.d.ts"
+        "../node_modules/jest-haste-map/build/hastefs.d.ts",
+        "../node_modules/jest-haste-map/build/modulemap.d.ts"
       ],
       "../node_modules/jest-message-util/build/index.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
@@ -1984,17 +1926,17 @@
       "../node_modules/jest-mock/build/index.d.ts": [
         "../node_modules/@types/node/index.d.ts"
       ],
-      "../node_modules/jest-resolve/build/ModuleNotFoundError.d.ts": [
-        "../node_modules/@jest/types/build/index.d.ts"
-      ],
       "../node_modules/jest-resolve/build/index.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-haste-map/build/index.d.ts",
-        "../node_modules/jest-resolve/build/ModuleNotFoundError.d.ts",
-        "../node_modules/jest-resolve/build/shouldLoadAsEsm.d.ts",
+        "../node_modules/jest-resolve/build/modulenotfounderror.d.ts",
+        "../node_modules/jest-resolve/build/shouldloadasesm.d.ts",
         "../node_modules/jest-resolve/build/types.d.ts"
       ],
-      "../node_modules/jest-resolve/build/shouldLoadAsEsm.d.ts": [
+      "../node_modules/jest-resolve/build/modulenotfounderror.d.ts": [
+        "../node_modules/@jest/types/build/index.d.ts"
+      ],
+      "../node_modules/jest-resolve/build/shouldloadasesm.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts"
       ],
       "../node_modules/jest-resolve/build/types.d.ts": [
@@ -2020,14 +1962,13 @@
       ],
       "../node_modules/jest-runtime/build/index.d.ts": [
         "../node_modules/@jest/environment/build/index.d.ts",
-        "../node_modules/@jest/globals/build/index.d.ts",
         "../node_modules/@jest/source-map/build/index.d.ts",
         "../node_modules/@jest/test-result/build/index.d.ts",
         "../node_modules/@jest/transform/build/index.d.ts",
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-haste-map/build/index.d.ts",
         "../node_modules/jest-resolve/build/index.d.ts",
-        "../node_modules/jest-resolve/build/shouldLoadAsEsm.d.ts",
+        "../node_modules/jest-resolve/build/shouldloadasesm.d.ts",
         "../node_modules/jest-runtime/build/cli/args.d.ts",
         "../node_modules/jest-runtime/build/types.d.ts"
       ],
@@ -2038,50 +1979,44 @@
       ],
       "../node_modules/jest/build/jest.d.ts": [
         "../node_modules/@jest/core/build/jest.d.ts",
-        "../node_modules/jest/node_modules/jest-cli/build/index.d.ts"
-      ],
-      "../node_modules/jest/node_modules/jest-cli/build/cli/index.d.ts": [
-        "../node_modules/@jest/types/build/index.d.ts"
-      ],
-      "../node_modules/jest/node_modules/jest-cli/build/index.d.ts": [
-        "../node_modules/jest/node_modules/jest-cli/build/cli/index.d.ts"
-      ],
-      "../src/Agent.ts": [
-        "../node_modules/firebase/index.d.ts",
-        "../src/types.ts",
-        "../src/utils/loadScript.ts",
-        "../src/utils/object.ts"
-      ],
-      "../src/Observer.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "../src/types.ts",
-        "../src/typings.d.ts",
-        "../src/utils/constants.ts"
-      ],
-      "../src/Source.ts": [
-        "../node_modules/@types/history/index.d.ts",
-        "../src/Agent.ts",
-        "../src/types.ts",
-        "../src/utils/dom.ts",
-        "../src/utils/param.ts"
+        "../node_modules/jest-cli/build/index.d.ts"
       ],
       "../src/actions.ts": [
         "../src/types.ts",
         "../src/utils/constants.ts"
       ],
+      "../src/agent.ts": [
+        "../node_modules/firebase/index.d.ts",
+        "../src/types.ts",
+        "../src/utils/loadscript.ts",
+        "../src/utils/object.ts"
+      ],
       "../src/hooks.ts": [
         "../node_modules/@types/history/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../src/Observer.ts",
-        "../src/Source.ts"
+        "../src/observer.ts",
+        "../src/source.ts"
       ],
       "../src/index.ts": [
-        "../src/Agent.ts",
-        "../src/Observer.ts",
-        "../src/Source.ts",
         "../src/actions.ts",
+        "../src/agent.ts",
         "../src/hooks.ts",
+        "../src/observer.ts",
+        "../src/source.ts",
         "../src/types.ts"
+      ],
+      "../src/observer.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/types.ts",
+        "../src/typings.d.ts",
+        "../src/utils/constants.ts"
+      ],
+      "../src/source.ts": [
+        "../node_modules/@types/history/index.d.ts",
+        "../src/agent.ts",
+        "../src/types.ts",
+        "../src/utils/dom.ts",
+        "../src/utils/param.ts"
       ],
       "../src/typings.d.ts": [
         "../node_modules/firebase/index.d.ts"
@@ -2094,61 +2029,60 @@
     },
     "exportedModulesMap": {
       "../node_modules/@babel/parser/typings/babel-parser.d.ts": [
-        "../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../node_modules/@babel/types/lib/index.d.ts"
       ],
-      "../node_modules/@jest/console/build/BufferedConsole.d.ts": [
+      "../node_modules/@jest/console/build/bufferedconsole.d.ts": [
+        "../node_modules/@jest/console/build/types.d.ts",
+        "../node_modules/@types/node/console.d.ts"
+      ],
+      "../node_modules/@jest/console/build/customconsole.d.ts": [
         "../node_modules/@jest/console/build/types.d.ts",
         "../node_modules/@types/node/console.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
-      "../node_modules/@jest/console/build/CustomConsole.d.ts": [
-        "../node_modules/@jest/console/build/types.d.ts",
-        "../node_modules/@types/node/console.d.ts",
-        "../node_modules/@types/node/index.d.ts"
-      ],
-      "../node_modules/@jest/console/build/NullConsole.d.ts": [
-        "../node_modules/@jest/console/build/CustomConsole.d.ts"
-      ],
-      "../node_modules/@jest/console/build/getConsoleOutput.d.ts": [
+      "../node_modules/@jest/console/build/getconsoleoutput.d.ts": [
         "../node_modules/@jest/console/build/types.d.ts",
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-message-util/build/index.d.ts"
       ],
       "../node_modules/@jest/console/build/index.d.ts": [
-        "../node_modules/@jest/console/build/BufferedConsole.d.ts",
-        "../node_modules/@jest/console/build/CustomConsole.d.ts",
-        "../node_modules/@jest/console/build/NullConsole.d.ts",
-        "../node_modules/@jest/console/build/getConsoleOutput.d.ts",
+        "../node_modules/@jest/console/build/bufferedconsole.d.ts",
+        "../node_modules/@jest/console/build/customconsole.d.ts",
+        "../node_modules/@jest/console/build/getconsoleoutput.d.ts",
+        "../node_modules/@jest/console/build/nullconsole.d.ts",
         "../node_modules/@jest/console/build/types.d.ts"
       ],
-      "../node_modules/@jest/core/build/SearchSource.d.ts": [
-        "../node_modules/@jest/core/build/types.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts",
-        "../node_modules/jest-changed-files/build/index.d.ts",
-        "../node_modules/jest-runner/build/index.d.ts",
-        "../node_modules/jest-runtime/build/index.d.ts"
-      ],
-      "../node_modules/@jest/core/build/TestScheduler.d.ts": [
-        "../node_modules/@jest/core/build/TestWatcher.d.ts",
-        "../node_modules/@jest/reporters/build/index.d.ts",
-        "../node_modules/@jest/test-result/build/index.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts",
-        "../node_modules/jest-runner/build/index.d.ts"
-      ],
-      "../node_modules/@jest/core/build/TestWatcher.d.ts": [
-        "../node_modules/@types/node/events.d.ts",
-        "../node_modules/@types/node/index.d.ts"
+      "../node_modules/@jest/console/build/nullconsole.d.ts": [
+        "../node_modules/@jest/console/build/customconsole.d.ts"
       ],
       "../node_modules/@jest/core/build/cli/index.d.ts": [
         "../node_modules/@jest/test-result/build/index.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
       "../node_modules/@jest/core/build/jest.d.ts": [
-        "../node_modules/@jest/core/build/SearchSource.d.ts",
-        "../node_modules/@jest/core/build/TestScheduler.d.ts",
-        "../node_modules/@jest/core/build/TestWatcher.d.ts",
         "../node_modules/@jest/core/build/cli/index.d.ts",
+        "../node_modules/@jest/core/build/searchsource.d.ts",
+        "../node_modules/@jest/core/build/testscheduler.d.ts",
+        "../node_modules/@jest/core/build/testwatcher.d.ts",
         "../node_modules/@jest/core/build/version.d.ts"
+      ],
+      "../node_modules/@jest/core/build/searchsource.d.ts": [
+        "../node_modules/@jest/core/build/types.d.ts",
+        "../node_modules/@jest/types/build/index.d.ts",
+        "../node_modules/jest-changed-files/build/index.d.ts",
+        "../node_modules/jest-runner/build/index.d.ts",
+        "../node_modules/jest-runtime/build/index.d.ts"
+      ],
+      "../node_modules/@jest/core/build/testscheduler.d.ts": [
+        "../node_modules/@jest/core/build/testwatcher.d.ts",
+        "../node_modules/@jest/reporters/build/index.d.ts",
+        "../node_modules/@jest/test-result/build/index.d.ts",
+        "../node_modules/@jest/types/build/index.d.ts",
+        "../node_modules/jest-runner/build/index.d.ts"
+      ],
+      "../node_modules/@jest/core/build/testwatcher.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/index.d.ts"
       ],
       "../node_modules/@jest/core/build/types.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
@@ -2163,94 +2097,89 @@
         "../node_modules/jest-mock/build/index.d.ts"
       ],
       "../node_modules/@jest/fake-timers/build/index.d.ts": [
-        "../node_modules/@jest/fake-timers/build/legacyFakeTimers.d.ts",
-        "../node_modules/@jest/fake-timers/build/modernFakeTimers.d.ts"
+        "../node_modules/@jest/fake-timers/build/legacyfaketimers.d.ts",
+        "../node_modules/@jest/fake-timers/build/modernfaketimers.d.ts"
       ],
-      "../node_modules/@jest/fake-timers/build/legacyFakeTimers.d.ts": [
+      "../node_modules/@jest/fake-timers/build/legacyfaketimers.d.ts": [
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/jest-message-util/build/index.d.ts",
         "../node_modules/jest-mock/build/index.d.ts"
       ],
-      "../node_modules/@jest/fake-timers/build/modernFakeTimers.d.ts": [
+      "../node_modules/@jest/fake-timers/build/modernfaketimers.d.ts": [
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/jest-message-util/build/index.d.ts"
       ],
-      "../node_modules/@jest/globals/build/index.d.ts": [
-        "../node_modules/@jest/environment/build/index.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts",
-        "../node_modules/expect/build/index.d.ts"
-      ],
-      "../node_modules/@jest/reporters/build/BaseReporter.d.ts": [
+      "../node_modules/@jest/reporters/build/base_reporter.d.ts": [
         "../node_modules/@jest/reporters/build/types.d.ts",
         "../node_modules/@jest/test-result/build/index.d.ts"
       ],
-      "../node_modules/@jest/reporters/build/CoverageReporter.d.ts": [
-        "../node_modules/@jest/reporters/build/BaseReporter.d.ts",
+      "../node_modules/@jest/reporters/build/coverage_reporter.d.ts": [
+        "../node_modules/@jest/reporters/build/base_reporter.d.ts",
         "../node_modules/@jest/reporters/build/types.d.ts",
         "../node_modules/@jest/test-result/build/index.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
-      "../node_modules/@jest/reporters/build/CoverageWorker.d.ts": [
-        "../node_modules/@jest/reporters/build/generateEmptyCoverage.d.ts",
+      "../node_modules/@jest/reporters/build/coverage_worker.d.ts": [
+        "../node_modules/@jest/reporters/build/generateemptycoverage.d.ts",
         "../node_modules/@jest/reporters/build/types.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
-      "../node_modules/@jest/reporters/build/DefaultReporter.d.ts": [
-        "../node_modules/@jest/reporters/build/BaseReporter.d.ts",
-        "../node_modules/@jest/reporters/build/types.d.ts",
-        "../node_modules/@jest/test-result/build/index.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts"
-      ],
-      "../node_modules/@jest/reporters/build/NotifyReporter.d.ts": [
-        "../node_modules/@jest/reporters/build/BaseReporter.d.ts",
+      "../node_modules/@jest/reporters/build/default_reporter.d.ts": [
+        "../node_modules/@jest/reporters/build/base_reporter.d.ts",
         "../node_modules/@jest/reporters/build/types.d.ts",
         "../node_modules/@jest/test-result/build/index.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
-      "../node_modules/@jest/reporters/build/SummaryReporter.d.ts": [
-        "../node_modules/@jest/reporters/build/BaseReporter.d.ts",
-        "../node_modules/@jest/reporters/build/types.d.ts",
-        "../node_modules/@jest/test-result/build/index.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts"
-      ],
-      "../node_modules/@jest/reporters/build/VerboseReporter.d.ts": [
-        "../node_modules/@jest/reporters/build/DefaultReporter.d.ts",
-        "../node_modules/@jest/reporters/build/types.d.ts",
-        "../node_modules/@jest/test-result/build/index.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts"
-      ],
-      "../node_modules/@jest/reporters/build/generateEmptyCoverage.d.ts": [
+      "../node_modules/@jest/reporters/build/generateemptycoverage.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/@types/istanbul-lib-coverage/index.d.ts",
         "../node_modules/collect-v8-coverage/index.d.ts"
       ],
       "../node_modules/@jest/reporters/build/index.d.ts": [
-        "../node_modules/@jest/reporters/build/BaseReporter.d.ts",
-        "../node_modules/@jest/reporters/build/CoverageReporter.d.ts",
-        "../node_modules/@jest/reporters/build/DefaultReporter.d.ts",
-        "../node_modules/@jest/reporters/build/NotifyReporter.d.ts",
-        "../node_modules/@jest/reporters/build/SummaryReporter.d.ts",
-        "../node_modules/@jest/reporters/build/VerboseReporter.d.ts",
+        "../node_modules/@jest/reporters/build/base_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/coverage_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/default_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/notify_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/summary_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/types.d.ts",
+        "../node_modules/@jest/reporters/build/verbose_reporter.d.ts",
+        "../node_modules/@jest/test-result/build/index.d.ts",
+        "../node_modules/@jest/types/build/config.d.ts",
+        "../node_modules/@jest/types/build/index.d.ts"
+      ],
+      "../node_modules/@jest/reporters/build/notify_reporter.d.ts": [
+        "../node_modules/@jest/reporters/build/base_reporter.d.ts",
         "../node_modules/@jest/reporters/build/types.d.ts",
         "../node_modules/@jest/test-result/build/index.d.ts",
-        "../node_modules/@jest/types/build/Config.d.ts",
+        "../node_modules/@jest/types/build/index.d.ts"
+      ],
+      "../node_modules/@jest/reporters/build/summary_reporter.d.ts": [
+        "../node_modules/@jest/reporters/build/base_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/types.d.ts",
+        "../node_modules/@jest/test-result/build/index.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
       "../node_modules/@jest/reporters/build/types.d.ts": [
-        "../node_modules/@jest/reporters/build/CoverageWorker.d.ts",
+        "../node_modules/@jest/reporters/build/coverage_worker.d.ts",
         "../node_modules/@jest/test-result/build/index.d.ts",
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-haste-map/build/index.d.ts",
         "../node_modules/jest-resolve/build/index.d.ts"
       ],
-      "../node_modules/@jest/source-map/build/getCallsite.d.ts": [
+      "../node_modules/@jest/reporters/build/verbose_reporter.d.ts": [
+        "../node_modules/@jest/reporters/build/default_reporter.d.ts",
+        "../node_modules/@jest/reporters/build/types.d.ts",
+        "../node_modules/@jest/test-result/build/index.d.ts",
+        "../node_modules/@jest/types/build/index.d.ts"
+      ],
+      "../node_modules/@jest/source-map/build/getcallsite.d.ts": [
         "../node_modules/callsites/index.d.ts"
       ],
       "../node_modules/@jest/source-map/build/index.d.ts": [
-        "../node_modules/@jest/source-map/build/getCallsite.d.ts",
+        "../node_modules/@jest/source-map/build/getcallsite.d.ts",
         "../node_modules/@jest/source-map/build/types.d.ts"
       ],
-      "../node_modules/@jest/test-result/build/formatTestResults.d.ts": [
+      "../node_modules/@jest/test-result/build/formattestresults.d.ts": [
         "../node_modules/@jest/test-result/build/types.d.ts"
       ],
       "../node_modules/@jest/test-result/build/helpers.d.ts": [
@@ -2258,7 +2187,7 @@
         "../node_modules/@jest/types/build/index.d.ts"
       ],
       "../node_modules/@jest/test-result/build/index.d.ts": [
-        "../node_modules/@jest/test-result/build/formatTestResults.d.ts",
+        "../node_modules/@jest/test-result/build/formattestresults.d.ts",
         "../node_modules/@jest/test-result/build/helpers.d.ts",
         "../node_modules/@jest/test-result/build/types.d.ts"
       ],
@@ -2268,90 +2197,90 @@
         "../node_modules/@types/istanbul-lib-coverage/index.d.ts",
         "../node_modules/collect-v8-coverage/index.d.ts"
       ],
-      "../node_modules/@jest/transform/build/ScriptTransformer.d.ts": [
+      "../node_modules/@jest/transform/build/index.d.ts": [
+        "../node_modules/@jest/transform/build/enhanceunexpectedtokenmessage.d.ts",
+        "../node_modules/@jest/transform/build/scripttransformer.d.ts",
+        "../node_modules/@jest/transform/build/shouldinstrument.d.ts",
+        "../node_modules/@jest/transform/build/types.d.ts"
+      ],
+      "../node_modules/@jest/transform/build/scripttransformer.d.ts": [
         "../node_modules/@jest/transform/build/types.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
-      "../node_modules/@jest/transform/build/index.d.ts": [
-        "../node_modules/@jest/transform/build/ScriptTransformer.d.ts",
-        "../node_modules/@jest/transform/build/enhanceUnexpectedTokenMessage.d.ts",
-        "../node_modules/@jest/transform/build/shouldInstrument.d.ts",
-        "../node_modules/@jest/transform/build/types.d.ts"
-      ],
-      "../node_modules/@jest/transform/build/shouldInstrument.d.ts": [
+      "../node_modules/@jest/transform/build/shouldinstrument.d.ts": [
         "../node_modules/@jest/transform/build/types.d.ts",
         "../node_modules/@jest/types/build/index.d.ts"
       ],
       "../node_modules/@jest/transform/build/types.d.ts": [
-        "../node_modules/@jest/transform/node_modules/source-map/source-map.d.ts",
-        "../node_modules/@jest/types/build/index.d.ts"
+        "../node_modules/@jest/types/build/index.d.ts",
+        "../node_modules/source-map/source-map.d.ts"
       ],
-      "../node_modules/@jest/types/build/Circus.d.ts": [
-        "../node_modules/@jest/types/build/Global.d.ts",
+      "../node_modules/@jest/types/build/circus.d.ts": [
+        "../node_modules/@jest/types/build/global.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
-      "../node_modules/@jest/types/build/Config.d.ts": [
-        "../node_modules/@jest/types/node_modules/chalk/index.d.ts",
+      "../node_modules/@jest/types/build/config.d.ts": [
         "../node_modules/@types/istanbul-reports/index.d.ts",
         "../node_modules/@types/node/index.d.ts",
-        "../node_modules/@types/yargs/index.d.ts"
+        "../node_modules/@types/yargs/index.d.ts",
+        "../node_modules/chalk/index.d.ts"
       ],
-      "../node_modules/@jest/types/build/Global.d.ts": [
+      "../node_modules/@jest/types/build/global.d.ts": [
         "../node_modules/@types/istanbul-lib-coverage/index.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
       "../node_modules/@jest/types/build/index.d.ts": [
-        "../node_modules/@jest/types/build/Circus.d.ts",
-        "../node_modules/@jest/types/build/Config.d.ts",
-        "../node_modules/@jest/types/build/Global.d.ts",
-        "../node_modules/@jest/types/build/TestResult.d.ts",
-        "../node_modules/@jest/types/build/Transform.d.ts"
+        "../node_modules/@jest/types/build/circus.d.ts",
+        "../node_modules/@jest/types/build/config.d.ts",
+        "../node_modules/@jest/types/build/global.d.ts",
+        "../node_modules/@jest/types/build/testresult.d.ts",
+        "../node_modules/@jest/types/build/transform.d.ts"
       ],
       "../node_modules/@types/babel__core/index.d.ts": [
         "../node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../node_modules/@babel/types/lib/index-ts3.7.d.ts",
+        "../node_modules/@babel/types/lib/index.d.ts",
         "../node_modules/@types/babel__generator/index.d.ts",
         "../node_modules/@types/babel__template/index.d.ts",
         "../node_modules/@types/babel__traverse/index.d.ts"
       ],
       "../node_modules/@types/babel__generator/index.d.ts": [
-        "../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../node_modules/@types/babel__template/index.d.ts": [
         "../node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../node_modules/@types/babel__traverse/index.d.ts": [
-        "../node_modules/@babel/types/lib/index-ts3.7.d.ts"
+        "../node_modules/@babel/types/lib/index.d.ts"
       ],
       "../node_modules/@types/graceful-fs/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/index.d.ts"
       ],
-      "../node_modules/@types/history/LocationUtils.d.ts": [
+      "../node_modules/@types/history/createbrowserhistory.d.ts": [
+        "../node_modules/@types/history/domutils.d.ts",
         "../node_modules/@types/history/index.d.ts"
       ],
-      "../node_modules/@types/history/PathUtils.d.ts": [
+      "../node_modules/@types/history/createhashhistory.d.ts": [
+        "../node_modules/@types/history/domutils.d.ts",
         "../node_modules/@types/history/index.d.ts"
       ],
-      "../node_modules/@types/history/createBrowserHistory.d.ts": [
-        "../node_modules/@types/history/DOMUtils.d.ts",
-        "../node_modules/@types/history/index.d.ts"
-      ],
-      "../node_modules/@types/history/createHashHistory.d.ts": [
-        "../node_modules/@types/history/DOMUtils.d.ts",
-        "../node_modules/@types/history/index.d.ts"
-      ],
-      "../node_modules/@types/history/createMemoryHistory.d.ts": [
-        "../node_modules/@types/history/DOMUtils.d.ts",
+      "../node_modules/@types/history/creatememoryhistory.d.ts": [
+        "../node_modules/@types/history/domutils.d.ts",
         "../node_modules/@types/history/index.d.ts"
       ],
       "../node_modules/@types/history/index.d.ts": [
-        "../node_modules/@types/history/LocationUtils.d.ts",
-        "../node_modules/@types/history/PathUtils.d.ts",
-        "../node_modules/@types/history/createBrowserHistory.d.ts",
-        "../node_modules/@types/history/createHashHistory.d.ts",
-        "../node_modules/@types/history/createMemoryHistory.d.ts"
+        "../node_modules/@types/history/createbrowserhistory.d.ts",
+        "../node_modules/@types/history/createhashhistory.d.ts",
+        "../node_modules/@types/history/creatememoryhistory.d.ts",
+        "../node_modules/@types/history/locationutils.d.ts",
+        "../node_modules/@types/history/pathutils.d.ts"
+      ],
+      "../node_modules/@types/history/locationutils.d.ts": [
+        "../node_modules/@types/history/index.d.ts"
+      ],
+      "../node_modules/@types/history/pathutils.d.ts": [
+        "../node_modules/@types/history/index.d.ts"
       ],
       "../node_modules/@types/istanbul-lib-report/index.d.ts": [
         "../node_modules/@types/istanbul-lib-coverage/index.d.ts"
@@ -2365,6 +2294,7 @@
       ],
       "../node_modules/@types/node/child_process.d.ts": [
         "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/net.d.ts",
         "../node_modules/@types/node/stream.d.ts"
       ],
@@ -2372,6 +2302,14 @@
         "../node_modules/@types/node/child_process.d.ts",
         "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/net.d.ts"
+      ],
+      "../node_modules/@types/node/console.d.ts": [
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/node/constants.d.ts": [
+        "../node_modules/@types/node/crypto.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/os.d.ts"
       ],
       "../node_modules/@types/node/crypto.d.ts": [
         "../node_modules/@types/node/stream.d.ts"
@@ -2386,11 +2324,14 @@
       ],
       "../node_modules/@types/node/fs.d.ts": [
         "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs/promises.d.ts",
         "../node_modules/@types/node/stream.d.ts",
         "../node_modules/@types/node/url.d.ts"
       ],
+      "../node_modules/@types/node/fs/promises.d.ts": [
+        "../node_modules/@types/node/fs.d.ts"
+      ],
       "../node_modules/@types/node/http.d.ts": [
-        "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/net.d.ts",
         "../node_modules/@types/node/stream.d.ts",
         "../node_modules/@types/node/url.d.ts"
@@ -2415,6 +2356,9 @@
       ],
       "../node_modules/@types/node/inspector.d.ts": [
         "../node_modules/@types/node/events.d.ts"
+      ],
+      "../node_modules/@types/node/module.d.ts": [
+        "../node_modules/@types/node/url.d.ts"
       ],
       "../node_modules/@types/node/net.d.ts": [
         "../node_modules/@types/node/dns.d.ts",
@@ -2445,7 +2389,7 @@
         "../node_modules/@types/node/net.d.ts",
         "../node_modules/@types/node/stream.d.ts"
       ],
-      "../node_modules/@types/node/ts3.3/base.d.ts": [
+      "../node_modules/@types/node/ts3.4/base.d.ts": [
         "../node_modules/@types/node/async_hooks.d.ts",
         "../node_modules/@types/node/buffer.d.ts",
         "../node_modules/@types/node/child_process.d.ts",
@@ -2458,6 +2402,7 @@
         "../node_modules/@types/node/domain.d.ts",
         "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/fs/promises.d.ts",
         "../node_modules/@types/node/globals.d.ts",
         "../node_modules/@types/node/http.d.ts",
         "../node_modules/@types/node/http2.d.ts",
@@ -2488,7 +2433,7 @@
       ],
       "../node_modules/@types/node/ts3.6/base.d.ts": [
         "../node_modules/@types/node/globals.global.d.ts",
-        "../node_modules/@types/node/ts3.3/base.d.ts",
+        "../node_modules/@types/node/ts3.4/base.d.ts",
         "../node_modules/@types/node/wasi.d.ts"
       ],
       "../node_modules/@types/node/tty.d.ts": [
@@ -2502,8 +2447,8 @@
       ],
       "../node_modules/@types/node/worker_threads.d.ts": [
         "../node_modules/@types/node/events.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/url.d.ts",
         "../node_modules/@types/node/vm.d.ts"
       ],
       "../node_modules/@types/node/zlib.d.ts": [
@@ -2721,17 +2666,6 @@
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/@types/node/inspector.d.ts"
       ],
-      "../node_modules/expect/build/index.d.ts": [
-        "../node_modules/expect/build/types.d.ts"
-      ],
-      "../node_modules/expect/build/jestMatchersObject.d.ts": [
-        "../node_modules/expect/build/types.d.ts"
-      ],
-      "../node_modules/expect/build/types.d.ts": [
-        "../node_modules/@jest/types/build/index.d.ts",
-        "../node_modules/expect/build/jestMatchersObject.d.ts",
-        "../node_modules/jest-matcher-utils/build/index.d.ts"
-      ],
       "../node_modules/jest-changed-files/build/index.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-changed-files/build/types.d.ts"
@@ -2739,50 +2673,38 @@
       "../node_modules/jest-changed-files/build/types.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts"
       ],
-      "../node_modules/jest-diff/build/diffLines.d.ts": [
-        "../node_modules/jest-diff/build/cleanupSemantic.d.ts",
-        "../node_modules/jest-diff/build/types.d.ts"
+      "../node_modules/jest-cli/build/cli/index.d.ts": [
+        "../node_modules/@jest/types/build/index.d.ts"
       ],
-      "../node_modules/jest-diff/build/index.d.ts": [
-        "../node_modules/jest-diff/build/cleanupSemantic.d.ts",
-        "../node_modules/jest-diff/build/diffLines.d.ts",
-        "../node_modules/jest-diff/build/printDiffs.d.ts",
-        "../node_modules/jest-diff/build/types.d.ts"
-      ],
-      "../node_modules/jest-diff/build/printDiffs.d.ts": [
-        "../node_modules/jest-diff/build/cleanupSemantic.d.ts",
-        "../node_modules/jest-diff/build/types.d.ts"
-      ],
-      "../node_modules/jest-haste-map/build/HasteFS.d.ts": [
-        "../node_modules/@jest/types/build/index.d.ts",
-        "../node_modules/jest-haste-map/build/types.d.ts"
-      ],
-      "../node_modules/jest-haste-map/build/ModuleMap.d.ts": [
-        "../node_modules/@jest/types/build/index.d.ts",
-        "../node_modules/jest-haste-map/build/types.d.ts"
+      "../node_modules/jest-cli/build/index.d.ts": [
+        "../node_modules/jest-cli/build/cli/index.d.ts"
       ],
       "../node_modules/jest-haste-map/build/constants.d.ts": [
+        "../node_modules/jest-haste-map/build/types.d.ts"
+      ],
+      "../node_modules/jest-haste-map/build/hastefs.d.ts": [
+        "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-haste-map/build/types.d.ts"
       ],
       "../node_modules/jest-haste-map/build/index.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/index.d.ts",
-        "../node_modules/jest-haste-map/build/HasteFS.d.ts",
-        "../node_modules/jest-haste-map/build/ModuleMap.d.ts",
         "../node_modules/jest-haste-map/build/constants.d.ts",
+        "../node_modules/jest-haste-map/build/hastefs.d.ts",
+        "../node_modules/jest-haste-map/build/modulemap.d.ts",
+        "../node_modules/jest-haste-map/build/types.d.ts"
+      ],
+      "../node_modules/jest-haste-map/build/modulemap.d.ts": [
+        "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-haste-map/build/types.d.ts"
       ],
       "../node_modules/jest-haste-map/build/types.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/index.d.ts",
-        "../node_modules/jest-haste-map/build/HasteFS.d.ts",
-        "../node_modules/jest-haste-map/build/ModuleMap.d.ts"
-      ],
-      "../node_modules/jest-matcher-utils/build/index.d.ts": [
-        "../node_modules/@jest/types/node_modules/chalk/index.d.ts",
-        "../node_modules/jest-diff/build/index.d.ts"
+        "../node_modules/jest-haste-map/build/hastefs.d.ts",
+        "../node_modules/jest-haste-map/build/modulemap.d.ts"
       ],
       "../node_modules/jest-message-util/build/index.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
@@ -2794,17 +2716,17 @@
       "../node_modules/jest-mock/build/index.d.ts": [
         "../node_modules/@types/node/index.d.ts"
       ],
-      "../node_modules/jest-resolve/build/ModuleNotFoundError.d.ts": [
-        "../node_modules/@jest/types/build/index.d.ts"
-      ],
       "../node_modules/jest-resolve/build/index.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-haste-map/build/index.d.ts",
-        "../node_modules/jest-resolve/build/ModuleNotFoundError.d.ts",
-        "../node_modules/jest-resolve/build/shouldLoadAsEsm.d.ts",
+        "../node_modules/jest-resolve/build/modulenotfounderror.d.ts",
+        "../node_modules/jest-resolve/build/shouldloadasesm.d.ts",
         "../node_modules/jest-resolve/build/types.d.ts"
       ],
-      "../node_modules/jest-resolve/build/shouldLoadAsEsm.d.ts": [
+      "../node_modules/jest-resolve/build/modulenotfounderror.d.ts": [
+        "../node_modules/@jest/types/build/index.d.ts"
+      ],
+      "../node_modules/jest-resolve/build/shouldloadasesm.d.ts": [
         "../node_modules/@jest/types/build/index.d.ts"
       ],
       "../node_modules/jest-resolve/build/types.d.ts": [
@@ -2830,14 +2752,13 @@
       ],
       "../node_modules/jest-runtime/build/index.d.ts": [
         "../node_modules/@jest/environment/build/index.d.ts",
-        "../node_modules/@jest/globals/build/index.d.ts",
         "../node_modules/@jest/source-map/build/index.d.ts",
         "../node_modules/@jest/test-result/build/index.d.ts",
         "../node_modules/@jest/transform/build/index.d.ts",
         "../node_modules/@jest/types/build/index.d.ts",
         "../node_modules/jest-haste-map/build/index.d.ts",
         "../node_modules/jest-resolve/build/index.d.ts",
-        "../node_modules/jest-resolve/build/shouldLoadAsEsm.d.ts",
+        "../node_modules/jest-resolve/build/shouldloadasesm.d.ts",
         "../node_modules/jest-runtime/build/cli/args.d.ts",
         "../node_modules/jest-runtime/build/types.d.ts"
       ],
@@ -2848,41 +2769,35 @@
       ],
       "../node_modules/jest/build/jest.d.ts": [
         "../node_modules/@jest/core/build/jest.d.ts",
-        "../node_modules/jest/node_modules/jest-cli/build/index.d.ts"
-      ],
-      "../node_modules/jest/node_modules/jest-cli/build/cli/index.d.ts": [
-        "../node_modules/@jest/types/build/index.d.ts"
-      ],
-      "../node_modules/jest/node_modules/jest-cli/build/index.d.ts": [
-        "../node_modules/jest/node_modules/jest-cli/build/cli/index.d.ts"
-      ],
-      "../src/Agent.ts": [
-        "../src/types.ts"
-      ],
-      "../src/Observer.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "../src/types.ts",
-        "../src/typings.d.ts"
-      ],
-      "../src/Source.ts": [
-        "../node_modules/@types/history/index.d.ts",
-        "../src/Agent.ts",
-        "../src/types.ts"
+        "../node_modules/jest-cli/build/index.d.ts"
       ],
       "../src/actions.ts": [
+        "../src/types.ts"
+      ],
+      "../src/agent.ts": [
         "../src/types.ts"
       ],
       "../src/hooks.ts": [
         "../node_modules/@types/history/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../src/Source.ts"
+        "../src/source.ts"
       ],
       "../src/index.ts": [
-        "../src/Agent.ts",
-        "../src/Observer.ts",
-        "../src/Source.ts",
         "../src/actions.ts",
+        "../src/agent.ts",
         "../src/hooks.ts",
+        "../src/observer.ts",
+        "../src/source.ts",
+        "../src/types.ts"
+      ],
+      "../src/observer.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/types.ts",
+        "../src/typings.d.ts"
+      ],
+      "../src/source.ts": [
+        "../node_modules/@types/history/index.d.ts",
+        "../src/agent.ts",
         "../src/types.ts"
       ],
       "../src/typings.d.ts": [
@@ -2894,68 +2809,66 @@
     },
     "semanticDiagnosticsPerFile": [
       "../node_modules/@babel/parser/typings/babel-parser.d.ts",
-      "../node_modules/@babel/types/lib/index-ts3.7.d.ts",
-      "../node_modules/@jest/console/build/BufferedConsole.d.ts",
-      "../node_modules/@jest/console/build/CustomConsole.d.ts",
-      "../node_modules/@jest/console/build/NullConsole.d.ts",
-      "../node_modules/@jest/console/build/getConsoleOutput.d.ts",
+      "../node_modules/@babel/types/lib/index.d.ts",
+      "../node_modules/@jest/console/build/bufferedconsole.d.ts",
+      "../node_modules/@jest/console/build/customconsole.d.ts",
+      "../node_modules/@jest/console/build/getconsoleoutput.d.ts",
       "../node_modules/@jest/console/build/index.d.ts",
+      "../node_modules/@jest/console/build/nullconsole.d.ts",
       "../node_modules/@jest/console/build/types.d.ts",
-      "../node_modules/@jest/core/build/SearchSource.d.ts",
-      "../node_modules/@jest/core/build/TestScheduler.d.ts",
-      "../node_modules/@jest/core/build/TestWatcher.d.ts",
       "../node_modules/@jest/core/build/cli/index.d.ts",
       "../node_modules/@jest/core/build/jest.d.ts",
+      "../node_modules/@jest/core/build/searchsource.d.ts",
+      "../node_modules/@jest/core/build/testscheduler.d.ts",
+      "../node_modules/@jest/core/build/testwatcher.d.ts",
       "../node_modules/@jest/core/build/types.d.ts",
       "../node_modules/@jest/core/build/version.d.ts",
       "../node_modules/@jest/environment/build/index.d.ts",
       "../node_modules/@jest/fake-timers/build/index.d.ts",
-      "../node_modules/@jest/fake-timers/build/legacyFakeTimers.d.ts",
-      "../node_modules/@jest/fake-timers/build/modernFakeTimers.d.ts",
-      "../node_modules/@jest/globals/build/index.d.ts",
-      "../node_modules/@jest/reporters/build/BaseReporter.d.ts",
-      "../node_modules/@jest/reporters/build/CoverageReporter.d.ts",
-      "../node_modules/@jest/reporters/build/CoverageWorker.d.ts",
-      "../node_modules/@jest/reporters/build/DefaultReporter.d.ts",
-      "../node_modules/@jest/reporters/build/NotifyReporter.d.ts",
-      "../node_modules/@jest/reporters/build/SummaryReporter.d.ts",
-      "../node_modules/@jest/reporters/build/VerboseReporter.d.ts",
-      "../node_modules/@jest/reporters/build/generateEmptyCoverage.d.ts",
+      "../node_modules/@jest/fake-timers/build/legacyfaketimers.d.ts",
+      "../node_modules/@jest/fake-timers/build/modernfaketimers.d.ts",
+      "../node_modules/@jest/reporters/build/base_reporter.d.ts",
+      "../node_modules/@jest/reporters/build/coverage_reporter.d.ts",
+      "../node_modules/@jest/reporters/build/coverage_worker.d.ts",
+      "../node_modules/@jest/reporters/build/default_reporter.d.ts",
+      "../node_modules/@jest/reporters/build/generateemptycoverage.d.ts",
       "../node_modules/@jest/reporters/build/index.d.ts",
+      "../node_modules/@jest/reporters/build/notify_reporter.d.ts",
+      "../node_modules/@jest/reporters/build/summary_reporter.d.ts",
       "../node_modules/@jest/reporters/build/types.d.ts",
-      "../node_modules/@jest/source-map/build/getCallsite.d.ts",
+      "../node_modules/@jest/reporters/build/verbose_reporter.d.ts",
+      "../node_modules/@jest/source-map/build/getcallsite.d.ts",
       "../node_modules/@jest/source-map/build/index.d.ts",
       "../node_modules/@jest/source-map/build/types.d.ts",
-      "../node_modules/@jest/test-result/build/formatTestResults.d.ts",
+      "../node_modules/@jest/test-result/build/formattestresults.d.ts",
       "../node_modules/@jest/test-result/build/helpers.d.ts",
       "../node_modules/@jest/test-result/build/index.d.ts",
       "../node_modules/@jest/test-result/build/types.d.ts",
-      "../node_modules/@jest/transform/build/ScriptTransformer.d.ts",
-      "../node_modules/@jest/transform/build/enhanceUnexpectedTokenMessage.d.ts",
+      "../node_modules/@jest/transform/build/enhanceunexpectedtokenmessage.d.ts",
       "../node_modules/@jest/transform/build/index.d.ts",
-      "../node_modules/@jest/transform/build/shouldInstrument.d.ts",
+      "../node_modules/@jest/transform/build/scripttransformer.d.ts",
+      "../node_modules/@jest/transform/build/shouldinstrument.d.ts",
       "../node_modules/@jest/transform/build/types.d.ts",
-      "../node_modules/@jest/transform/node_modules/source-map/source-map.d.ts",
-      "../node_modules/@jest/types/build/Circus.d.ts",
-      "../node_modules/@jest/types/build/Config.d.ts",
-      "../node_modules/@jest/types/build/Global.d.ts",
-      "../node_modules/@jest/types/build/TestResult.d.ts",
-      "../node_modules/@jest/types/build/Transform.d.ts",
+      "../node_modules/@jest/types/build/circus.d.ts",
+      "../node_modules/@jest/types/build/config.d.ts",
+      "../node_modules/@jest/types/build/global.d.ts",
       "../node_modules/@jest/types/build/index.d.ts",
-      "../node_modules/@jest/types/node_modules/chalk/index.d.ts",
+      "../node_modules/@jest/types/build/testresult.d.ts",
+      "../node_modules/@jest/types/build/transform.d.ts",
       "../node_modules/@types/babel__core/index.d.ts",
       "../node_modules/@types/babel__generator/index.d.ts",
       "../node_modules/@types/babel__template/index.d.ts",
       "../node_modules/@types/babel__traverse/index.d.ts",
+      "../node_modules/@types/color-name/index.d.ts",
       "../node_modules/@types/estree/index.d.ts",
       "../node_modules/@types/graceful-fs/index.d.ts",
-      "../node_modules/@types/history/DOMUtils.d.ts",
-      "../node_modules/@types/history/LocationUtils.d.ts",
-      "../node_modules/@types/history/PathUtils.d.ts",
-      "../node_modules/@types/history/createBrowserHistory.d.ts",
-      "../node_modules/@types/history/createHashHistory.d.ts",
-      "../node_modules/@types/history/createMemoryHistory.d.ts",
+      "../node_modules/@types/history/createbrowserhistory.d.ts",
+      "../node_modules/@types/history/createhashhistory.d.ts",
+      "../node_modules/@types/history/creatememoryhistory.d.ts",
+      "../node_modules/@types/history/domutils.d.ts",
       "../node_modules/@types/history/index.d.ts",
+      "../node_modules/@types/history/locationutils.d.ts",
+      "../node_modules/@types/history/pathutils.d.ts",
       "../node_modules/@types/istanbul-lib-coverage/index.d.ts",
       "../node_modules/@types/istanbul-lib-report/index.d.ts",
       "../node_modules/@types/istanbul-reports/index.d.ts",
@@ -2975,6 +2888,7 @@
       "../node_modules/@types/node/domain.d.ts",
       "../node_modules/@types/node/events.d.ts",
       "../node_modules/@types/node/fs.d.ts",
+      "../node_modules/@types/node/fs/promises.d.ts",
       "../node_modules/@types/node/globals.d.ts",
       "../node_modules/@types/node/globals.global.d.ts",
       "../node_modules/@types/node/http.d.ts",
@@ -2997,7 +2911,7 @@
       "../node_modules/@types/node/timers.d.ts",
       "../node_modules/@types/node/tls.d.ts",
       "../node_modules/@types/node/trace_events.d.ts",
-      "../node_modules/@types/node/ts3.3/base.d.ts",
+      "../node_modules/@types/node/ts3.4/base.d.ts",
       "../node_modules/@types/node/ts3.6/base.d.ts",
       "../node_modules/@types/node/tty.d.ts",
       "../node_modules/@types/node/url.d.ts",
@@ -3062,33 +2976,26 @@
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
       "../node_modules/callsites/index.d.ts",
+      "../node_modules/chalk/index.d.ts",
       "../node_modules/collect-v8-coverage/index.d.ts",
       "../node_modules/csstype/index.d.ts",
       "../node_modules/emittery/index.d.ts",
-      "../node_modules/expect/build/index.d.ts",
-      "../node_modules/expect/build/jestMatchersObject.d.ts",
-      "../node_modules/expect/build/types.d.ts",
       "../node_modules/firebase/index.d.ts",
       "../node_modules/jest-changed-files/build/index.d.ts",
       "../node_modules/jest-changed-files/build/types.d.ts",
-      "../node_modules/jest-diff/build/cleanupSemantic.d.ts",
-      "../node_modules/jest-diff/build/diffLines.d.ts",
-      "../node_modules/jest-diff/build/index.d.ts",
-      "../node_modules/jest-diff/build/printDiffs.d.ts",
-      "../node_modules/jest-diff/build/types.d.ts",
-      "../node_modules/jest-haste-map/build/HasteFS.d.ts",
-      "../node_modules/jest-haste-map/build/ModuleMap.d.ts",
+      "../node_modules/jest-cli/build/cli/index.d.ts",
+      "../node_modules/jest-cli/build/index.d.ts",
       "../node_modules/jest-haste-map/build/constants.d.ts",
+      "../node_modules/jest-haste-map/build/hastefs.d.ts",
       "../node_modules/jest-haste-map/build/index.d.ts",
+      "../node_modules/jest-haste-map/build/modulemap.d.ts",
       "../node_modules/jest-haste-map/build/types.d.ts",
-      "../node_modules/jest-matcher-utils/build/index.d.ts",
-      "../node_modules/jest-matcher-utils/node_modules/chalk/index.d.ts",
       "../node_modules/jest-message-util/build/index.d.ts",
       "../node_modules/jest-message-util/build/types.d.ts",
       "../node_modules/jest-mock/build/index.d.ts",
-      "../node_modules/jest-resolve/build/ModuleNotFoundError.d.ts",
       "../node_modules/jest-resolve/build/index.d.ts",
-      "../node_modules/jest-resolve/build/shouldLoadAsEsm.d.ts",
+      "../node_modules/jest-resolve/build/modulenotfounderror.d.ts",
+      "../node_modules/jest-resolve/build/shouldloadasesm.d.ts",
       "../node_modules/jest-resolve/build/types.d.ts",
       "../node_modules/jest-runner/build/index.d.ts",
       "../node_modules/jest-runner/build/types.d.ts",
@@ -3096,8 +3003,7 @@
       "../node_modules/jest-runtime/build/index.d.ts",
       "../node_modules/jest-runtime/build/types.d.ts",
       "../node_modules/jest/build/jest.d.ts",
-      "../node_modules/jest/node_modules/jest-cli/build/cli/index.d.ts",
-      "../node_modules/jest/node_modules/jest-cli/build/index.d.ts",
+      "../node_modules/source-map/source-map.d.ts",
       "../node_modules/tslib/tslib.d.ts",
       "../node_modules/typescript/lib/lib.dom.d.ts",
       "../node_modules/typescript/lib/lib.es2015.collection.d.ts",
@@ -3128,17 +3034,17 @@
       "../node_modules/typescript/lib/lib.es2020.bigint.d.ts",
       "../node_modules/typescript/lib/lib.es5.d.ts",
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
-      "../src/Agent.ts",
-      "../src/Observer.ts",
-      "../src/Source.ts",
       "../src/actions.ts",
+      "../src/agent.ts",
       "../src/hooks.ts",
       "../src/index.ts",
+      "../src/observer.ts",
+      "../src/source.ts",
       "../src/types.ts",
       "../src/typings.d.ts",
       "../src/utils/constants.ts",
       "../src/utils/dom.ts",
-      "../src/utils/loadScript.ts",
+      "../src/utils/loadscript.ts",
       "../src/utils/object.ts",
       "../src/utils/param.ts"
     ]

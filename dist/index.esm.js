@@ -1151,8 +1151,8 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
     value: function transit(event) {
       var fromScene = event.fromScene,
           toScene = event.toScene;
-      this.client.push(['setReferrerUrl', "".concat(fromScene.hostname).concat(fromScene.pathname)]);
-      this.client.push(['setCustomUrl', "".concat(toScene.hostname).concat(fromScene.pathname)]);
+      this.client.push(['setReferrerUrl', fromScene.pathname]);
+      this.client.push(['setCustomUrl', toScene.pathname]);
       this.client.push(['setDocumentTitle', toScene.title]);
       this.client.push(['setGenerationTimeMs', 0]);
       this.requestTrackPageView();
@@ -1878,16 +1878,9 @@ var lib = {
   stringify: stringify
 };
 
-var rnds8Pool = new Uint8Array(256); // # of random values to pre-allocate
-
-var poolPtr = rnds8Pool.length;
+var rnds8 = new Uint8Array(16);
 function rng() {
-  if (poolPtr > rnds8Pool.length - 16) {
-    crypto.randomFillSync(rnds8Pool);
-    poolPtr = 0;
-  }
-
-  return rnds8Pool.slice(poolPtr, poolPtr += 16);
+  return crypto.randomFillSync(rnds8);
 }
 
 var REGEX = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
@@ -2169,7 +2162,7 @@ var DefaultSource = /*#__PURE__*/function () {
     key: "track",
     value: function track(event) {
       var trackingParams = event.trackingParams;
-      var defaultParams = trackingParams !== null && trackingParams !== void 0 && trackingParams.hasOwnProperty('productName') ? {} : createDefaultEventParams();
+      var defaultParams = (trackingParams === null || trackingParams === void 0 ? void 0 : trackingParams.hasOwnProperty('productName')) ? {} : createDefaultEventParams();
 
       var mergedTrackingParams = _objectSpread$1(_objectSpread$1({}, defaultParams), trackingParams);
 
@@ -2212,7 +2205,7 @@ var ACTION_BUTTON_CLICK = 'ButtonClick';
 var ACTION_TAB_CLICK = 'TabClick';
 var ACTION_PROFILE_CLICK = 'ProfileClick';
 var ACTION_LINK_CLICK = 'LinkClick';
-var ACTION_ENTER = 'enter';
+var ACTION_ENTER = 'enter/scroll';
 var __CLIENT__ = typeof window !== 'undefined' && typeof window.document !== 'undefined';
 
 /**
@@ -3384,7 +3377,7 @@ function usePageTransitionListener(trackingSource, history) {
 function createButtonClickAction(buttonName, link) {
   return {
     eventName: EVENT_NAME_CLICK,
-    category: CATEGORY_DEFAULT,
+    category: 'PageSurfing',
     trackingParams: {
       action: ACTION_BUTTON_CLICK,
       name: buttonName,
@@ -3413,7 +3406,7 @@ function createPageLeaveAction() {
 function createTabClickAction(link, tabName) {
   return {
     eventName: EVENT_NAME_CLICK,
-    category: CATEGORY_DEFAULT,
+    category: 'PageSurfing',
     trackingParams: {
       action: ACTION_TAB_CLICK,
       page: link,
@@ -3424,7 +3417,7 @@ function createTabClickAction(link, tabName) {
 function createProfileClickAction(userID, liveStatus, profileType) {
   return {
     eventName: EVENT_NAME_CLICK,
-    category: CATEGORY_DEFAULT,
+    category: liveStatus ? 'LiveStream' : 'Profile',
     trackingParams: {
       action: ACTION_PROFILE_CLICK,
       type: profileType,
@@ -3438,7 +3431,7 @@ function createProfileClickAction(userID, liveStatus, profileType) {
 function createSearchAction(keyword, count) {
   return {
     eventName: EVENT_NAME_SEARCH,
-    category: CATEGORY_DEFAULT,
+    category: 'Content',
     trackingParams: {
       searchString: keyword,
       resultCount: count
@@ -3448,7 +3441,7 @@ function createSearchAction(keyword, count) {
 function createVoteAction(voteTopic) {
   return {
     eventName: EVENT_NAME_CLICK,
-    category: CATEGORY_DEFAULT,
+    category: 'Interaction_vote',
     trackingParams: {
       action: ACTION_BUTTON_CLICK,
       name: voteTopic,
@@ -3459,7 +3452,7 @@ function createVoteAction(voteTopic) {
 function createLeaderboardSectionViewAction(rank) {
   return {
     eventName: EVENT_NAME_SECTION_VIEW,
-    category: CATEGORY_DEFAULT,
+    category: 'PageSurfing',
     trackingParams: {
       action: ACTION_ENTER,
       section: 'leaderboardItem',
@@ -3470,7 +3463,7 @@ function createLeaderboardSectionViewAction(rank) {
 function createLinkClickAction(link, linkName) {
   return {
     eventName: EVENT_NAME_CLICK,
-    category: CATEGORY_DEFAULT,
+    category: 'PageSurfing',
     trackingParams: {
       action: ACTION_LINK_CLICK,
       url: link,
@@ -3481,7 +3474,7 @@ function createLinkClickAction(link, linkName) {
 function createSectionViewAction(section, customPath) {
   return {
     eventName: EVENT_NAME_SECTION_VIEW,
-    category: CATEGORY_DEFAULT,
+    category: 'PageSurfing',
     trackingParams: {
       action: ACTION_ENTER,
       section: section,
