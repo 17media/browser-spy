@@ -33,17 +33,17 @@ describe('Tracking actions testing', () => {
     const buttonName = 'buttonName';
     const link = 'link';
 
-    const expectResult: EventAction = {
-      eventName: EVENT_NAME_CLICK,
-      category: CATEGORY_DEFAULT,
-      trackingParams: {
-        action: ACTION_BUTTON_CLICK,
-        name: buttonName,
-        page: link,
-      },
-    };
-
-    expect(createButtonClickAction(buttonName, link)).toEqual(expectResult);
+    expect(createButtonClickAction(buttonName, link)).toMatchInlineSnapshot(`
+      Object {
+        "category": "PageSurfing",
+        "eventName": "click",
+        "trackingParams": Object {
+          "action": "ButtonClick",
+          "name": "buttonName",
+          "page": "link",
+        },
+      }
+    `);
   });
 
   test('[createPageEnterAction] Should return the correct action.', () => {
@@ -52,43 +52,44 @@ describe('Tracking actions testing', () => {
     const utmMedium = 'utmMedium';
     const utmSource = 'utmSource';
 
-    const expectResult: EventAction = {
-      eventName: EVENT_NAME_ENTER,
-      category: CATEGORY_DEFAULT,
-      trackingParams: {
-        utmCampaign,
-        utmContent,
-        utmMedium,
-        utmSource,
-      },
-    };
-
-    expect(createPageEnterAction(utmCampaign, utmContent, utmMedium, utmSource)).toEqual(expectResult);
+    expect(createPageEnterAction(utmCampaign, utmContent, utmMedium, utmSource)).toMatchInlineSnapshot(`
+      Object {
+        "category": "default",
+        "eventName": "enter",
+        "trackingParams": Object {
+          "utmCampaign": "utmCampaign",
+          "utmContent": "utmContent",
+          "utmMedium": "utmMedium",
+          "utmSource": "utmSource",
+        },
+      }
+    `);
   });
 
   test('[createPageLeaveAction] Should return the correct action.', () => {
-    const expectResult: EventAction = {
-      eventName: EVENT_NAME_LEAVE,
-      category: CATEGORY_DEFAULT,
-    };
-
-    expect(createPageLeaveAction()).toEqual(expectResult);
+    expect(createPageLeaveAction()).toMatchInlineSnapshot(`
+      Object {
+        "category": "default",
+        "eventName": "leave",
+      }
+    `);
   });
 
   test('[createTabClickAction] Should return the correct action.', () => {
     const link = 'link';
     const tabName = 'tabName';
-    const expectResult: EventAction = {
-      eventName: EVENT_NAME_CLICK,
-      category: CATEGORY_DEFAULT,
-      trackingParams: {
-        action: ACTION_TAB_CLICK,
-        page: link,
-        name: tabName,
-      },
-    };
 
-    expect(createTabClickAction(link, tabName)).toEqual(expectResult);
+    expect(createTabClickAction(link, tabName)).toMatchInlineSnapshot(`
+      Object {
+        "category": "PageSurfing",
+        "eventName": "click",
+        "trackingParams": Object {
+          "action": "TabClick",
+          "name": "tabName",
+          "page": "link",
+        },
+      }
+    `);
   });
 
   test('[createProfileClickAction] Should return the correct action.', () => {
@@ -96,96 +97,100 @@ describe('Tracking actions testing', () => {
     const userID = 'userID';
     const liveStatus = true;
 
-    const expectResult: EventAction = {
-      eventName: EVENT_NAME_CLICK,
-      category: CATEGORY_DEFAULT,
-      trackingParams: {
-        action: ACTION_PROFILE_CLICK,
-        type: profileType,
-        streamerId: userID,
-        liveStatus: liveStatus,
-        leaderboardId: '',
-        hasDeeplink: false,
-      },
-    };
-
-    expect(createProfileClickAction(userID, liveStatus, profileType)).toEqual(expectResult);
+    expect(createProfileClickAction(userID, liveStatus, profileType)).toMatchInlineSnapshot(`
+      Object {
+        "category": "LiveStream",
+        "eventName": "click",
+        "trackingParams": Object {
+          "action": "ProfileClick",
+          "hasDeeplink": false,
+          "leaderboardId": "",
+          "liveStatus": true,
+          "streamerId": "userID",
+          "type": "topavatar",
+        },
+      }
+    `);
   });
 
   test('[createSearchAction] Should return the correct action.', () => {
     const keyword = 'keyword';
     const count = 0;
-    const expectResult: EventAction = {
-      eventName: EVENT_NAME_SEARCH,
-      category: CATEGORY_DEFAULT,
-      trackingParams: {
-        searchString: keyword,
-        resultCount: count,
-      },
-    };
-
-    expect(createSearchAction(keyword, count)).toEqual(expectResult);
+    expect(createSearchAction(keyword, count)).toMatchInlineSnapshot(`
+      Object {
+        "category": "Content",
+        "eventName": "search",
+        "trackingParams": Object {
+          "resultCount": 0,
+          "searchString": "keyword",
+        },
+      }
+    `);
   });
 
   test('[createVoteAction] Should return the correct action.', () => {
     const voteTopic = 'voteTopic';
-    const expectResult: EventAction = {
-      eventName: EVENT_NAME_CLICK,
-      category: CATEGORY_DEFAULT,
-      trackingParams: {
-        action: ACTION_BUTTON_CLICK,
-        name: voteTopic,
-        type: 'vote',
-      },
-    };
 
-    expect(createVoteAction(voteTopic)).toEqual(expectResult);
+    expect(createVoteAction(voteTopic)).toMatchInlineSnapshot(`
+      Object {
+        "category": "Interaction_vote",
+        "eventName": "click",
+        "trackingParams": Object {
+          "action": "ButtonClick",
+          "name": "voteTopic",
+          "type": "vote",
+        },
+      }
+    `);
   });
 
   test('[createLeaderboardSectionViewAction] Should return the correct action.', () => {
     const rank = 0;
-    const expectResult: EventAction = {
-      eventName: EVENT_NAME_SECTION_VIEW,
-      category: CATEGORY_DEFAULT,
-      trackingParams: {
-        action: ACTION_ENTER,
-        section: 'leaderboardItem',
-        rank,
-      },
-    };
 
-    expect(createLeaderboardSectionViewAction(rank)).toEqual(expectResult);
+    expect(createLeaderboardSectionViewAction(rank)).toMatchInlineSnapshot(`
+      Object {
+        "category": "PageSurfing",
+        "eventName": "section_view",
+        "trackingParams": Object {
+          "action": "enter/scroll",
+          "rank": 0,
+          "section": "leaderboardItem",
+        },
+      }
+    `);
   });
 
   test('[createLinkClickAction] Should return the correct action.', () => {
     const link = 'link';
     const linkName = 'linkName';
-    const expectResult: EventAction = {
-      eventName: EVENT_NAME_CLICK,
-      category: CATEGORY_DEFAULT,
-      trackingParams: {
-        action: ACTION_LINK_CLICK,
-        url: link,
-        name: linkName,
-      },
-    };
 
-    expect(createLinkClickAction(link, linkName)).toEqual(expectResult);
+    expect(createLinkClickAction(link, linkName)).toMatchInlineSnapshot(`
+      Object {
+        "category": "PageSurfing",
+        "eventName": "click",
+        "trackingParams": Object {
+          "action": "LinkClick",
+          "name": "linkName",
+          "url": "link",
+        },
+      }
+    `);
   });
 
   test('[createSectionViewAction] Should return the correct action.', () => {
     const section = 'buttons';
     const customPath = undefined;
-    const expectResult: EventAction = {
-      eventName: EVENT_NAME_SECTION_VIEW,
-      category: CATEGORY_DEFAULT,
-      trackingParams: {
-        action: ACTION_ENTER,
-        section,
-        customPath,
-      },
-    };
 
-    expect(createSectionViewAction(section, customPath)).toEqual(expectResult);
+    expect(createSectionViewAction(section, customPath)).toMatchInlineSnapshot(`
+      Object {
+        "category": "PageSurfing",
+        "eventName": "section_view",
+        "trackingParams": Object {
+          "action": "enter/scroll",
+          "customPath": undefined,
+          "section": "buttons",
+        },
+      }
+    `);
   });
 });
