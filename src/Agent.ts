@@ -163,8 +163,8 @@ export class MatomoAgent extends Agent {
 
   private transit(event: TransitionEvent) {
     const { fromScene, toScene } = event;
-    this.client.push(['setReferrerUrl', `${fromScene.hostname}${fromScene.pathname}`]);
-    this.client.push(['setCustomUrl', `${toScene.hostname}${fromScene.pathname}`]);
+    this.client.push(['setReferrerUrl', fromScene.pathname]);
+    this.client.push(['setCustomUrl', toScene.pathname]);
     this.client.push(['setDocumentTitle', toScene.title]);
     this.client.push(['setGenerationTimeMs', 0]);
     this.requestTrackPageView();

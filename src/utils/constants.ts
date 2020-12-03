@@ -10,6 +10,6 @@ export const ACTION_BUTTON_CLICK = 'ButtonClick';
 export const ACTION_TAB_CLICK = 'TabClick';
 export const ACTION_PROFILE_CLICK = 'ProfileClick';
 export const ACTION_LINK_CLICK = 'LinkClick';
-export const ACTION_ENTER = 'enter';
+export const ACTION_ENTER = 'enter/scroll';
 
 export const __CLIENT__ = typeof window !== 'undefined' && typeof window.document !== 'undefined';

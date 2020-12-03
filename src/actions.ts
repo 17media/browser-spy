@@ -21,7 +21,7 @@ type ProfileName = 'topavatar' | 'avatar';
 export function createButtonClickAction(buttonName: string, link: string): EventAction {
   return {
     eventName: EVENT_NAME_CLICK,
-    category: CATEGORY_DEFAULT,
+    category: 'PageSurfing',
     trackingParams: {
       action: ACTION_BUTTON_CLICK,
       name: buttonName,
@@ -58,7 +58,7 @@ export function createPageLeaveAction(): EventAction {
 export function createTabClickAction(link: string, tabName: string): EventAction {
   return {
     eventName: EVENT_NAME_CLICK,
-    category: CATEGORY_DEFAULT,
+    category: 'PageSurfing',
     trackingParams: {
       action: ACTION_TAB_CLICK,
       page: link,
@@ -70,7 +70,7 @@ export function createTabClickAction(link: string, tabName: string): EventAction
 export function createProfileClickAction(userID: string, liveStatus: boolean, profileType: ProfileName): EventAction {
   return {
     eventName: EVENT_NAME_CLICK,
-    category: CATEGORY_DEFAULT,
+    category: liveStatus ? 'LiveStream' : 'Profile',
     trackingParams: {
       action: ACTION_PROFILE_CLICK,
       type: profileType,
@@ -85,7 +85,7 @@ export function createProfileClickAction(userID: string, liveStatus: boolean, pr
 export function createSearchAction(keyword: string, count: number): EventAction {
   return {
     eventName: EVENT_NAME_SEARCH,
-    category: CATEGORY_DEFAULT,
+    category: 'Content',
     trackingParams: {
       searchString: keyword,
       resultCount: count,
@@ -96,7 +96,7 @@ export function createSearchAction(keyword: string, count: number): EventAction 
 export function createVoteAction(voteTopic: string): EventAction {
   return {
     eventName: EVENT_NAME_CLICK,
-    category: CATEGORY_DEFAULT,
+    category: 'Interaction_vote',
     trackingParams: {
       action: ACTION_BUTTON_CLICK,
       name: voteTopic,
@@ -108,7 +108,7 @@ export function createVoteAction(voteTopic: string): EventAction {
 export function createLeaderboardSectionViewAction(rank: number): EventAction {
   return {
     eventName: EVENT_NAME_SECTION_VIEW,
-    category: CATEGORY_DEFAULT,
+    category: 'PageSurfing',
     trackingParams: {
       action: ACTION_ENTER,
       section: 'leaderboardItem',
@@ -120,7 +120,7 @@ export function createLeaderboardSectionViewAction(rank: number): EventAction {
 export function createLinkClickAction(link: string, linkName: string): EventAction {
   return {
     eventName: EVENT_NAME_CLICK,
-    category: CATEGORY_DEFAULT,
+    category: 'PageSurfing',
     trackingParams: {
       action: ACTION_LINK_CLICK,
       url: link,
@@ -132,7 +132,7 @@ export function createLinkClickAction(link: string, linkName: string): EventActi
 export function createSectionViewAction(section: SectionName, customPath?: string): EventAction {
   return {
     eventName: EVENT_NAME_SECTION_VIEW,
-    category: CATEGORY_DEFAULT,
+    category: 'PageSurfing',
     trackingParams: {
       action: ACTION_ENTER,
       section,
