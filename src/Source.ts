@@ -3,6 +3,7 @@ import { Agent } from 'Agent';
 import { History } from 'history';
 import * as dom from 'utils/dom';
 import { createScene, createDefaultEventParams } from 'utils/param';
+import { TrackingEvent as V2TrackingEvent, isTrackingEvent as isV2TrackingEvent } from './TrackingEvent';
 
 export interface Source {
   addAgent(agent: Agent): void;
@@ -108,7 +109,11 @@ export class DefaultSource implements Source {
     this.report(event);
   }
 
-  track(event: Omit<TrackingEvent, 'type'>) {
+  track(event: Omit<TrackingEvent, 'type'> | V2TrackingEvent) {
+    if (isV2TrackingEvent(event)) {
+      this.report(event);
+      return;
+    }
     const { trackingParams } = event;
     const defaultParams = trackingParams?.hasOwnProperty('productName') ? {} : createDefaultEventParams();
     const mergedTrackingParams = {

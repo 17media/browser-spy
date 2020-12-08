@@ -1,6 +1,8 @@
 import qs from 'qs';
 import { v4 } from 'uuid';
 import { Scene, DefaultEventParams, RefinedEventPathname, TrackingToken } from 'types';
+import { TrackingEvent as V2TrackingEvent } from '../TrackingEvent';
+import { matomoCustomDimensionMap } from './constants';
 
 function getUserID() {
   const qsUserID = qs.parse(window.location.search, { ignoreQueryPrefix: true }).userID;
@@ -67,4 +69,14 @@ export function createDefaultEventParams(): DefaultEventParams {
     eventId,
     guestSessionId: trackingToken,
   };
+}
+
+export function createMatomoCustomDimensions(event: V2TrackingEvent) {
+  const dimensions: Record<string, unknown> = {};
+  for (const key in event.payload) {
+    const dimensionKey = matomoCustomDimensionMap[key];
+    if (!dimensionKey) continue;
+    dimensions[dimensionKey] = event.payload[key as keyof typeof event.payload];
+  }
+  return dimensions;
 }

@@ -1,3 +1,5 @@
+import { TrackingEvent as V2TrackingEvent } from './TrackingEvent';
+
 export enum Threshold {
   'MIN' = 0,
   'HALF' = 0.5,
@@ -58,8 +60,9 @@ export interface TrackingEventParams {
 }
 export interface TrackingEvent {
   type: 'tracking';
-  eventName: string;
   category: string;
+  eventName: string;
+  action?: string;
   trackingParams?: TrackingEventParams;
 }
 
@@ -85,7 +88,7 @@ export interface RefinedEventPathname {
 
 export type ElementMap = Map<Element, Function>;
 
-export type SpyEvent = TrackingEvent | TransitionEvent | LoginEvent;
+export type SpyEvent = TrackingEvent | TransitionEvent | LoginEvent | V2TrackingEvent;
 
 export type EventCallback<T> = (event: T) => void;
 

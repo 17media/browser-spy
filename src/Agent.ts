@@ -4,6 +4,8 @@ import { loadScript, loadScripts } from 'utils/loadScript';
 import * as object from 'utils/object';
 import { TrackingEvent, TransitionEvent, LoginEvent, SpyEvent } from 'types';
 import type { analytics } from 'firebase';
+import { isTrackingEvent as isV2TrackingEvent, TrackingEvent as V2TrackingEvent } from './TrackingEvent';
+import * as params from './utils/param';
 
 enum AgentState {
   Uninitialized,
@@ -103,7 +105,13 @@ export class FirebaseAgent extends Agent {
     this.client.setCurrentScreen(event.toScene.title, { global: true });
   }
 
-  private track(event: TrackingEvent) {
+  private track(event: TrackingEvent | V2TrackingEvent) {
+    if (isV2TrackingEvent(event)) {
+      const { name, payload } = event;
+      object.trim(payload);
+      this.client.logEvent(name, object.convertParamsToSankecase(payload));
+      return;
+    }
     const { eventName, trackingParams = {} } = event;
     object.trim(trackingParams);
     this.client.logEvent(eventName, object.convertParamsToSankecase(trackingParams));
@@ -172,15 +180,29 @@ export class MatomoAgent extends Agent {
     this.client.push(['trackAllContentImpressions']);
   }
 
-  private track(event: TrackingEvent) {
-    /**
-     * ref : https://developer.matomo.org/guides/tracking-javascript
-     * trackEvent(category, action, [name], [value]) -
-     * Log an event with an event category (Videos, Music, Games...), an event action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...), and an optional event name and optional numeric value.
-     */
-    const { eventName, category, trackingParams = {} } = event;
-    const { name = '', value = '' } = trackingParams;
-    this.client.push(['trackEvent', category, eventName, name, value]);
+  private track(event: TrackingEvent | V2TrackingEvent) {
+    if (isV2TrackingEvent(event)) {
+      const { category, action, name } = event;
+      const dimensions = params.createMatomoCustomDimensions(event);
+      this.client.push(['trackEvent', category, action, name, '', dimensions]);
+      return;
+    }
+    // matomo support only v2 event
+    // /**
+    //  * ref : https://developer.matomo.org/guides/tracking-javascript
+    //  * trackEvent(category, action, [name], [value]) -
+    //  * Log an event with an event category (Videos, Music, Games...), an event action (Play, Pause, Duration, Add Playlist, Downloaded, Clicked...), and an optional event name and optional numeric value.
+    //  */
+    // const { eventName, category, trackingParams = {} } = event;
+    // const { name = '', value = '' } = trackingParams;
+    // const dimensions = {};
+    // /**
+    //  * _paq.push(['trackEvent', category, action, name, value, {dimension1: 'DimensionValue'}]);
+    //  * _paq.push(['trackSiteSearch', keyword, category, resultsCount, {dimension1: 'DimensionValue'}]);
+    //  * _paq.push(['trackLink', url, linkType, {dimension1: 'DimensionValue'}]);
+    //  * _paq.push(['trackGoal', idGoal, customRevenue, {dimension1: 'DimensionValue'}]);
+    //  */
+    // this.client.push(['trackEvent', category, eventName, name, value, dimensions]);
   }
 
   private requestTrackPageView() {

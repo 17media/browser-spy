@@ -161,9 +161,34 @@
         "signature": "-9512092476",
         "affectsGlobalScope": false
       },
+      "../src/trackingevent.ts": {
+        "version": 1,
+        "signature": "28348020562",
+        "affectsGlobalScope": false
+      },
       "../src/types.ts": {
         "version": 1,
-        "signature": "-19348249463",
+        "signature": "-3907718905",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/qs/index.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/uuid/index.d.ts": {
+        "version": 1,
+        "signature": 1,
+        "affectsGlobalScope": false
+      },
+      "../src/utils/constants.ts": {
+        "version": 1,
+        "signature": "8891838296",
+        "affectsGlobalScope": false
+      },
+      "../src/utils/param.ts": {
+        "version": 1,
+        "signature": "7436754203",
         "affectsGlobalScope": false
       },
       "../src/agent.ts": {
@@ -211,24 +236,9 @@
         "signature": "-7731984387",
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/qs/index.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/uuid/index.d.ts": {
-        "version": 1,
-        "signature": 1,
-        "affectsGlobalScope": false
-      },
-      "../src/utils/param.ts": {
-        "version": 1,
-        "signature": "10025179993",
-        "affectsGlobalScope": false
-      },
       "../src/source.ts": {
         "version": 1,
-        "signature": "-21059709029",
+        "signature": "32068668518",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/react/global.d.ts": {
@@ -251,11 +261,6 @@
         "signature": 1,
         "affectsGlobalScope": true
       },
-      "../src/utils/constants.ts": {
-        "version": 1,
-        "signature": "4136853280",
-        "affectsGlobalScope": false
-      },
       "../src/observer.ts": {
         "version": 1,
         "signature": "-110472313506",
@@ -271,9 +276,14 @@
         "signature": "-68477752871",
         "affectsGlobalScope": false
       },
+      "../src/createtrackingevent.ts": {
+        "version": 1,
+        "signature": "-5074633248",
+        "affectsGlobalScope": false
+      },
       "../src/index.ts": {
         "version": 1,
-        "signature": "-15686350711",
+        "signature": "7527240396",
         "affectsGlobalScope": false
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
@@ -1987,9 +1997,15 @@
       ],
       "../src/agent.ts": [
         "../node_modules/firebase/index.d.ts",
+        "../src/trackingevent.ts",
         "../src/types.ts",
         "../src/utils/loadscript.ts",
-        "../src/utils/object.ts"
+        "../src/utils/object.ts",
+        "../src/utils/param.ts"
+      ],
+      "../src/createtrackingevent.ts": [
+        "../src/trackingevent.ts",
+        "../src/utils/param.ts"
       ],
       "../src/hooks.ts": [
         "../node_modules/@types/history/index.d.ts",
@@ -2000,10 +2016,12 @@
       "../src/index.ts": [
         "../src/actions.ts",
         "../src/agent.ts",
+        "../src/createtrackingevent.ts",
         "../src/hooks.ts",
         "../src/observer.ts",
         "../src/source.ts",
-        "../src/types.ts"
+        "../src/types.ts",
+        "../src/utils/param.ts"
       ],
       "../src/observer.ts": [
         "../node_modules/@types/react/index.d.ts",
@@ -2014,9 +2032,13 @@
       "../src/source.ts": [
         "../node_modules/@types/history/index.d.ts",
         "../src/agent.ts",
+        "../src/trackingevent.ts",
         "../src/types.ts",
         "../src/utils/dom.ts",
         "../src/utils/param.ts"
+      ],
+      "../src/types.ts": [
+        "../src/trackingevent.ts"
       ],
       "../src/typings.d.ts": [
         "../node_modules/firebase/index.d.ts"
@@ -2024,7 +2046,9 @@
       "../src/utils/param.ts": [
         "../node_modules/@types/qs/index.d.ts",
         "../node_modules/@types/uuid/index.d.ts",
-        "../src/types.ts"
+        "../src/trackingevent.ts",
+        "../src/types.ts",
+        "../src/utils/constants.ts"
       ]
     },
     "exportedModulesMap": {
@@ -2777,6 +2801,9 @@
       "../src/agent.ts": [
         "../src/types.ts"
       ],
+      "../src/createtrackingevent.ts": [
+        "../src/trackingevent.ts"
+      ],
       "../src/hooks.ts": [
         "../node_modules/@types/history/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
@@ -2785,10 +2812,12 @@
       "../src/index.ts": [
         "../src/actions.ts",
         "../src/agent.ts",
+        "../src/createtrackingevent.ts",
         "../src/hooks.ts",
         "../src/observer.ts",
         "../src/source.ts",
-        "../src/types.ts"
+        "../src/types.ts",
+        "../src/utils/param.ts"
       ],
       "../src/observer.ts": [
         "../node_modules/@types/react/index.d.ts",
@@ -2798,12 +2827,17 @@
       "../src/source.ts": [
         "../node_modules/@types/history/index.d.ts",
         "../src/agent.ts",
+        "../src/trackingevent.ts",
         "../src/types.ts"
+      ],
+      "../src/types.ts": [
+        "../src/trackingevent.ts"
       ],
       "../src/typings.d.ts": [
         "../node_modules/firebase/index.d.ts"
       ],
       "../src/utils/param.ts": [
+        "../src/trackingevent.ts",
         "../src/types.ts"
       ]
     },
@@ -3036,10 +3070,12 @@
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "../src/actions.ts",
       "../src/agent.ts",
+      "../src/createtrackingevent.ts",
       "../src/hooks.ts",
       "../src/index.ts",
       "../src/observer.ts",
       "../src/source.ts",
+      "../src/trackingevent.ts",
       "../src/types.ts",
       "../src/typings.d.ts",
       "../src/utils/constants.ts",
