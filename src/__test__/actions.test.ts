@@ -152,7 +152,7 @@ describe('Tracking actions testing', () => {
         "category": "PageSurfing",
         "eventName": "section_view",
         "trackingParams": Object {
-          "action": "enter/scroll",
+          "action": "scroll",
           "rank": 0,
           "section": "leaderboardItem",
         },
@@ -186,7 +186,7 @@ describe('Tracking actions testing', () => {
         "category": "PageSurfing",
         "eventName": "section_view",
         "trackingParams": Object {
-          "action": "enter/scroll",
+          "action": "scroll",
           "customPath": undefined,
           "section": "buttons",
         },
