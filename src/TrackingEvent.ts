@@ -1,5 +1,4 @@
 interface BaseEvent<Payload> {
-  eventType: string;
   type: 'tracking';
   category: string;
   action: string;

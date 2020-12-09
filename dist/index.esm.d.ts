@@ -1,7 +1,6 @@
 import { History } from "history";
 import { RefObject } from "react";
 interface BaseEvent<Payload> {
-    eventType: string;
     type: "tracking";
     category: string;
     action: string;
