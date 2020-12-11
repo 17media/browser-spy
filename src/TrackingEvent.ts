@@ -153,7 +153,8 @@ export type TrackingEvent =
   | ClickStreamerEvent
   | LinkEvent
   | PageViewEvent
-  | SectionViewEvent;
+  | SectionViewEvent
+  | SearchUserEvent;
 
 export function isTrackingEvent(value: unknown): value is TrackingEvent {
   if (typeof value !== 'object') return false;
