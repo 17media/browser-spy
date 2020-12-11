@@ -134,6 +134,17 @@ export interface SectionViewEvent extends BaseEvent<SectionViewEventPayload> {
   action: 'scroll';
 }
 
+interface SearchUserEventPayload extends BasePayload {
+  searchString: string;
+  resultCount: number;
+}
+
+export interface SearchUserEvent extends BaseEvent<SearchUserEventPayload> {
+  category: 'Content';
+  action: 'search';
+  name: 'search_user';
+}
+
 export type TrackingEvent =
   | ClickButtonEvent
   | ClickTabEvent
@@ -142,7 +153,8 @@ export type TrackingEvent =
   | ClickStreamerEvent
   | LinkEvent
   | PageViewEvent
-  | SectionViewEvent;
+  | SectionViewEvent
+  | SearchUserEvent;
 
 export function isTrackingEvent(value: unknown): value is TrackingEvent {
   if (typeof value !== 'object') return false;
