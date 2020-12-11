@@ -118,7 +118,16 @@ interface SectionViewEvent extends BaseEvent<SectionViewEventPayload> {
     category: "PageSurfing";
     action: "scroll";
 }
-type TrackingEvent = ClickButtonEvent | ClickTabEvent | ClickLeaderboardButtonEvent | ClickTopStreamerEvent | ClickStreamerEvent | LinkEvent | PageViewEvent | SectionViewEvent;
+interface SearchUserEventPayload extends BasePayload {
+    searchString: string;
+    resultCount: number;
+}
+interface SearchUserEvent extends BaseEvent<SearchUserEventPayload> {
+    category: "Content";
+    action: "search";
+    name: "search_user";
+}
+type TrackingEvent = ClickButtonEvent | ClickTabEvent | ClickLeaderboardButtonEvent | ClickTopStreamerEvent | ClickStreamerEvent | LinkEvent | PageViewEvent | SectionViewEvent | SearchUserEvent;
 type V2TrackingEvent = TrackingEvent;
 declare enum Threshold {
     "MIN" = 0,
