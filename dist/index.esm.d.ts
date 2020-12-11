@@ -54,11 +54,12 @@ interface ClickTopStreamerEventPayload extends BasePayload {
     streamerId: string;
     type: "topavatar";
     liveStatus: boolean;
-    // //如果有勾選“Open 17 app when clicking avatar if enable.”則為true,反之則為false
+    // 如果有勾選“Open 17 app when clicking avatar if enable.”則為true,反之則為false
     hasDeeplink: boolean;
 }
 interface ClickTopStreamerEvent extends BaseEvent<ClickTopStreamerEventPayload> {
-    category: "LiveStream";
+    // 直撥中 = LiveStream, 非直撥中 = Profile
+    category: "LiveStream" | "Profile";
     action: "click";
     name: "avatar_top";
 }
@@ -68,11 +69,14 @@ interface ClickStreamerEventPayload extends BasePayload {
     streamerId: string;
     type: "avatar";
     liveStatus: boolean;
+    // 如果有勾選“Open 17 app when clicking avatar if enable.”則為true,反之則為false
+    hasDeeplink: boolean;
 }
 interface ClickStreamerEvent extends BaseEvent<ClickStreamerEventPayload> {
-    category: "LiveStream";
+    // 直撥中 = LiveStream, 非直撥中 = Profile
+    category: "LiveStream" | "Profile";
     action: "click";
-    name: "avatar_top";
+    name: "avatar_streamer";
 }
 interface LinkEventPayload extends BasePayload {
     action: "LinkClick";
