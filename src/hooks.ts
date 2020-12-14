@@ -42,7 +42,7 @@ export function usePageTransitionListener(trackingSource: DefaultSource, history
   useEffect(() => {
     // Regist history (for page_view & screen_view)
     trackingSource.spyTransition(history);
-    history.listen(() => {
+    return history.listen(() => {
       resetSectionObserverStatus();
     });
   }, [history]);
