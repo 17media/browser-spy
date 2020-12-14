@@ -17,6 +17,10 @@ export interface BasePayload {
   timestamp?: string;
   codename?: string;
   guestSessionId?: string;
+  sourceUrl?: string;
+  componentId?: string;
+  componentType?: string;
+  traceId?: string;
 }
 
 interface ClickButtonEventPayload extends BasePayload {

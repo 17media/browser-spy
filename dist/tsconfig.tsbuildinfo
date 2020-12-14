@@ -162,8 +162,8 @@
         "affectsGlobalScope": false
       },
       "../src/trackingevent.ts": {
-        "version": 1,
-        "signature": "69949727099",
+        "version": 2,
+        "signature": "80457106564",
         "affectsGlobalScope": false
       },
       "../src/types.ts": {
@@ -193,7 +193,7 @@
       },
       "../src/agent.ts": {
         "version": 1,
-        "signature": "-31951521637",
+        "signature": "-57266381044",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/history/domutils.d.ts": {

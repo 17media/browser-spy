@@ -1238,6 +1238,7 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
     _this3 = _super2.call(this);
     _this3.config = config;
     _this3.trackPageViewTimer = 0;
+    _this3.currentScene = null;
     return _this3;
   }
 
@@ -1304,6 +1305,7 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
       this.requestTrackPageView();
       this.client.push(['enableLinkTracking']);
       this.client.push(['trackAllContentImpressions']);
+      this.currentScene = toScene;
     }
   }, {
     key: "track",
@@ -1312,6 +1314,11 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
         var category = event.category,
             action = event.action,
             name = event.name;
+
+        if (this.currentScene) {
+          event.payload.sourceUrl = this.currentScene.pathname;
+        }
+
         var dimensions = createMatomoCustomDimensions(event);
         this.client.push(['trackEvent', category, action, name, '', dimensions]);
         return;

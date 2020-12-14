@@ -2,7 +2,7 @@
 
 import { loadScript, loadScripts } from 'utils/loadScript';
 import * as object from 'utils/object';
-import { TrackingEvent, TransitionEvent, LoginEvent, SpyEvent } from 'types';
+import { TrackingEvent, TransitionEvent, LoginEvent, SpyEvent, Scene } from 'types';
 import type { analytics } from 'firebase';
 import { isTrackingEvent as isV2TrackingEvent, TrackingEvent as V2TrackingEvent } from './TrackingEvent';
 import * as params from './utils/param';
@@ -136,6 +136,8 @@ export class MatomoAgent extends Agent {
 
   private trackPageViewTimer = 0;
 
+  private currentScene: Scene | null = null;
+
   constructor(readonly config: MatomoAgentConfig) {
     super();
   }
@@ -178,11 +180,15 @@ export class MatomoAgent extends Agent {
     this.requestTrackPageView();
     this.client.push(['enableLinkTracking']);
     this.client.push(['trackAllContentImpressions']);
+    this.currentScene = toScene;
   }
 
   private track(event: TrackingEvent | V2TrackingEvent) {
     if (isV2TrackingEvent(event)) {
       const { category, action, name } = event;
+      if (this.currentScene) {
+        event.payload.sourceUrl = this.currentScene.pathname;
+      }
       const dimensions = params.createMatomoCustomDimensions(event);
       this.client.push(['trackEvent', category, action, name, '', dimensions]);
       return;
