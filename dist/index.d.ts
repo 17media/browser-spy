@@ -22,6 +22,8 @@ interface BasePayload {
     componentId?: string;
     componentType?: string;
     traceId?: string;
+    genericJson?: string;
+    genericText?: string;
 }
 interface ClickButtonEventPayload extends BasePayload {
     action: "ButtonClick";

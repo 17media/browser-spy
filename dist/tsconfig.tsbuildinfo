@@ -162,8 +162,8 @@
         "affectsGlobalScope": false
       },
       "../src/trackingevent.ts": {
-        "version": 2,
-        "signature": "80457106564",
+        "version": 1,
+        "signature": "86141406375",
         "affectsGlobalScope": false
       },
       "../src/types.ts": {
