@@ -6,6 +6,7 @@ import { TrackingEvent, TransitionEvent, LoginEvent, SpyEvent, Scene } from 'typ
 import type { analytics } from 'firebase';
 import { isTrackingEvent as isV2TrackingEvent, TrackingEvent as V2TrackingEvent } from './TrackingEvent';
 import * as params from './utils/param';
+import { IS_MOBILE } from './utils/constants';
 
 enum AgentState {
   Uninitialized,
@@ -189,6 +190,7 @@ export class MatomoAgent extends Agent {
       if (this.currentScene) {
         event.payload.sourceUrl = this.currentScene.pathname;
       }
+      event.payload.genericText = IS_MOBILE ? 'Event_Mobile' : 'Event_Web';
       const dimensions = params.createMatomoCustomDimensions(event);
       this.client.push(['trackEvent', category, action, name, '', dimensions]);
       return;

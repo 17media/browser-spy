@@ -1,3 +1,5 @@
+import isMobile from './isMobile';
+
 export const EVENT_NAME_CLICK = 'click';
 export const EVENT_NAME_ENTER = 'enter';
 export const EVENT_NAME_LEAVE = 'leave';
@@ -31,3 +33,5 @@ export const matomoCustomDimensionMap: Record<string, string | undefined> = {
   sourceUrl: 'dimension24',
   user: 'dimension25',
 };
+
+export const IS_MOBILE = isMobile();
