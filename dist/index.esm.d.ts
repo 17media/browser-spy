@@ -24,6 +24,8 @@ interface BasePayload {
     traceId?: string;
     genericJson?: string;
     genericText?: string;
+    contentId?: string;
+    contentType?: string;
 }
 interface ClickButtonEventPayload extends BasePayload {
     action: "ButtonClick";
@@ -253,10 +255,11 @@ declare class MatomoAgent extends Agent {
     readonly config: MatomoAgentConfig;
     private get client();
     private trackPageViewTimer;
-    private currentScene;
+    private campaignID;
     constructor(config: MatomoAgentConfig);
     doInitialize(): Promise<void>;
     report(event: SpyEvent): void;
+    setCampaignID(campaignID: string): void;
     private login;
     private transit;
     private track;

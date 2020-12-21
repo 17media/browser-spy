@@ -137,7 +137,7 @@ export class MatomoAgent extends Agent {
 
   private trackPageViewTimer = 0;
 
-  private currentScene: Scene | null = null;
+  private campaignID = '';
 
   constructor(readonly config: MatomoAgentConfig) {
     super();
@@ -165,6 +165,10 @@ export class MatomoAgent extends Agent {
     }
   }
 
+  setCampaignID(campaignID: string) {
+    this.campaignID = campaignID;
+  }
+
   private login(event: LoginEvent) {
     const { userId } = event;
     if (userId) this.client.push(['setUserId', userId]);
@@ -181,16 +185,16 @@ export class MatomoAgent extends Agent {
     this.requestTrackPageView();
     this.client.push(['enableLinkTracking']);
     this.client.push(['trackAllContentImpressions']);
-    this.currentScene = toScene;
   }
 
   private track(event: TrackingEvent | V2TrackingEvent) {
     if (isV2TrackingEvent(event)) {
       const { category, action, name } = event;
-      if (this.currentScene) {
-        event.payload.sourceUrl = this.currentScene.pathname;
-      }
       event.payload.genericText = IS_MOBILE ? 'Event_Mobile' : 'Event_Web';
+      if (this.campaignID) {
+        event.payload.contentType = 'Event';
+        event.payload.contentId = this.campaignID;
+      }
       const dimensions = params.createMatomoCustomDimensions(event);
       this.client.push(['trackEvent', category, action, name, '', dimensions]);
       return;

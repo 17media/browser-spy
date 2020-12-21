@@ -23,6 +23,8 @@ export interface BasePayload {
   traceId?: string;
   genericJson?: string;
   genericText?: string;
+  contentId?: string;
+  contentType?: string;
 }
 
 interface ClickButtonEventPayload extends BasePayload {

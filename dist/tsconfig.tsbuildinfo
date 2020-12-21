@@ -163,7 +163,7 @@
       },
       "../src/trackingevent.ts": {
         "version": 1,
-        "signature": "86141406375",
+        "signature": "-7353360874",
         "affectsGlobalScope": false
       },
       "../src/types.ts": {
@@ -181,9 +181,14 @@
         "signature": 1,
         "affectsGlobalScope": false
       },
+      "../src/utils/ismobile.ts": {
+        "version": 1,
+        "signature": "-12931086358",
+        "affectsGlobalScope": false
+      },
       "../src/utils/constants.ts": {
         "version": 1,
-        "signature": "8891838296",
+        "signature": "-507655261",
         "affectsGlobalScope": false
       },
       "../src/utils/param.ts": {
@@ -193,7 +198,7 @@
       },
       "../src/agent.ts": {
         "version": 1,
-        "signature": "-57266381044",
+        "signature": "-37089084959",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/history/domutils.d.ts": {
@@ -1999,6 +2004,7 @@
         "../node_modules/firebase/index.d.ts",
         "../src/trackingevent.ts",
         "../src/types.ts",
+        "../src/utils/constants.ts",
         "../src/utils/loadscript.ts",
         "../src/utils/object.ts",
         "../src/utils/param.ts"
@@ -2042,6 +2048,9 @@
       ],
       "../src/typings.d.ts": [
         "../node_modules/firebase/index.d.ts"
+      ],
+      "../src/utils/constants.ts": [
+        "../src/utils/ismobile.ts"
       ],
       "../src/utils/param.ts": [
         "../node_modules/@types/qs/index.d.ts",
@@ -3080,6 +3089,7 @@
       "../src/typings.d.ts",
       "../src/utils/constants.ts",
       "../src/utils/dom.ts",
+      "../src/utils/ismobile.ts",
       "../src/utils/loadscript.ts",
       "../src/utils/object.ts",
       "../src/utils/param.ts"
