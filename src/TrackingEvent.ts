@@ -153,6 +153,12 @@ export interface SearchUserEvent extends BaseEvent<SearchUserEventPayload> {
   name: 'search_user';
 }
 
+export interface PageEvent extends BaseEvent<BasePayload> {
+  category: '';
+  action: '';
+  name: '';
+}
+
 export type TrackingEvent =
   | ClickButtonEvent
   | ClickTabEvent
@@ -160,6 +166,7 @@ export type TrackingEvent =
   | ClickTopStreamerEvent
   | ClickStreamerEvent
   | LinkEvent
+  | PageEvent
   | PageViewEvent
   | SectionViewEvent
   | SearchUserEvent;

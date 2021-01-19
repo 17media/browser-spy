@@ -7,6 +7,7 @@ import type { analytics } from 'firebase';
 import { isTrackingEvent as isV2TrackingEvent, TrackingEvent as V2TrackingEvent } from './TrackingEvent';
 import * as params from './utils/param';
 import { IS_MOBILE } from './utils/constants';
+import { createTrackingEvent } from './createTrackingEvent';
 
 enum AgentState {
   Uninitialized,
@@ -217,10 +218,22 @@ export class MatomoAgent extends Agent {
     // this.client.push(['trackEvent', category, eventName, name, value, dimensions]);
   }
 
-  private requestTrackPageView() {
+  private requestTrackPageView(
+    event: V2TrackingEvent = createTrackingEvent({
+      category: '',
+      action: '',
+      name: '',
+      payload: {},
+    }),
+  ) {
     if (this.trackPageViewTimer) clearTimeout(this.trackPageViewTimer);
     this.trackPageViewTimer = setTimeout(() => {
-      this.client.push(['trackPageView']);
+      if (isV2TrackingEvent(event)) {
+        const dimensions = params.createMatomoCustomDimensions(event);
+        this.client.push(['trackPageView', null, dimensions]);
+      } else {
+        this.client.push(['trackPageView']);
+      }
       this.trackPageViewTimer = 0;
     });
   }
