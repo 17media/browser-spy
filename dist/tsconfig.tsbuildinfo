@@ -163,7 +163,7 @@
       },
       "../src/trackingevent.ts": {
         "version": 1,
-        "signature": "-7353360874",
+        "signature": "46205242634",
         "affectsGlobalScope": false
       },
       "../src/types.ts": {
@@ -194,6 +194,11 @@
       "../src/utils/param.ts": {
         "version": 1,
         "signature": "7436754203",
+        "affectsGlobalScope": false
+      },
+      "../src/createtrackingevent.ts": {
+        "version": 1,
+        "signature": "-5074633248",
         "affectsGlobalScope": false
       },
       "../src/agent.ts": {
@@ -279,11 +284,6 @@
       "../src/actions.ts": {
         "version": 1,
         "signature": "-68477752871",
-        "affectsGlobalScope": false
-      },
-      "../src/createtrackingevent.ts": {
-        "version": 1,
-        "signature": "-5074633248",
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
@@ -2002,6 +2002,7 @@
       ],
       "../src/agent.ts": [
         "../node_modules/firebase/index.d.ts",
+        "../src/createtrackingevent.ts",
         "../src/trackingevent.ts",
         "../src/types.ts",
         "../src/utils/constants.ts",

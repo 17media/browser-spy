@@ -135,7 +135,12 @@ interface SearchUserEvent extends BaseEvent<SearchUserEventPayload> {
     action: "search";
     name: "search_user";
 }
-type TrackingEvent = ClickButtonEvent | ClickTabEvent | ClickLeaderboardButtonEvent | ClickTopStreamerEvent | ClickStreamerEvent | LinkEvent | PageViewEvent | SectionViewEvent | SearchUserEvent;
+interface PageEvent extends BaseEvent<BasePayload> {
+    category: "";
+    action: "";
+    name: "";
+}
+type TrackingEvent = ClickButtonEvent | ClickTabEvent | ClickLeaderboardButtonEvent | ClickTopStreamerEvent | ClickStreamerEvent | LinkEvent | PageEvent | PageViewEvent | SectionViewEvent | SearchUserEvent;
 type V2TrackingEvent = TrackingEvent;
 declare enum Threshold {
     "MIN" = 0,

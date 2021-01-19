@@ -1034,6 +1034,17 @@ function createMatomoCustomDimensions(event) {
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function createTrackingEvent(event) {
+  return _objectSpread(_objectSpread({}, event), {}, {
+    payload: _objectSpread(_objectSpread({}, createDefaultEventParams()), event.payload),
+    type: 'tracking',
+    $$type: 'TrackingEvent'
+  });
+}
+
+function ownKeys$1(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread$1(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$1(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$1(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
@@ -1204,7 +1215,7 @@ var FirebaseAgent = /*#__PURE__*/function (_Agent) {
       var title = toScene.title,
           hostname = toScene.hostname,
           pathname = toScene.pathname;
-      this.client.logEvent('page_view', _objectSpread({
+      this.client.logEvent('page_view', _objectSpread$1({
         page_title: title,
         page_location: hostname,
         page_path: pathname
@@ -1365,9 +1376,21 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
     value: function requestTrackPageView() {
       var _this4 = this;
 
+      var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : createTrackingEvent({
+        category: '',
+        action: '',
+        name: '',
+        payload: {}
+      });
       if (this.trackPageViewTimer) clearTimeout(this.trackPageViewTimer);
       this.trackPageViewTimer = setTimeout(function () {
-        _this4.client.push(['trackPageView']);
+        if (isTrackingEvent(event)) {
+          var dimensions = createMatomoCustomDimensions(event);
+
+          _this4.client.push(['trackPageView', null, dimensions]);
+        } else {
+          _this4.client.push(['trackPageView']);
+        }
 
         _this4.trackPageViewTimer = 0;
       });
@@ -1476,9 +1499,9 @@ function getContent(element) {
   return element.innerText;
 }
 
-function ownKeys$1(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+function ownKeys$2(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread$1(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$1(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$1(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread$2(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$2(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$2(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 var DefaultSource = /*#__PURE__*/function () {
   function DefaultSource() {
     _classCallCheck(this, DefaultSource);
@@ -1550,7 +1573,7 @@ var DefaultSource = /*#__PURE__*/function () {
           _this3.track({
             eventName: 'pageView',
             category: 'default',
-            trackingParams: _objectSpread$1({
+            trackingParams: _objectSpread$2({
               url: window.location.href,
               duration: duration
             }, params)
@@ -1578,7 +1601,7 @@ var DefaultSource = /*#__PURE__*/function () {
         _this4.track({
           eventName: 'pageView',
           category: 'default',
-          trackingParams: _objectSpread$1({
+          trackingParams: _objectSpread$2({
             url: url,
             duration: duration
           }, params)
@@ -1619,10 +1642,10 @@ var DefaultSource = /*#__PURE__*/function () {
       var trackingParams = event.trackingParams;
       var defaultParams = (trackingParams === null || trackingParams === void 0 ? void 0 : trackingParams.hasOwnProperty('productName')) ? {} : createDefaultEventParams();
 
-      var mergedTrackingParams = _objectSpread$1(_objectSpread$1({}, defaultParams), trackingParams);
+      var mergedTrackingParams = _objectSpread$2(_objectSpread$2({}, defaultParams), trackingParams);
 
       event.trackingParams = mergedTrackingParams;
-      this.report(_objectSpread$1({
+      this.report(_objectSpread$2({
         type: 'tracking'
       }, event));
     }
@@ -1934,17 +1957,6 @@ function createSectionViewAction(section, customPath) {
       customPath: customPath
     }
   };
-}
-
-function ownKeys$2(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread$2(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys$2(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys$2(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-function createTrackingEvent(event) {
-  return _objectSpread$2(_objectSpread$2({}, event), {}, {
-    payload: _objectSpread$2(_objectSpread$2({}, createDefaultEventParams()), event.payload),
-    type: 'tracking',
-    $$type: 'TrackingEvent'
-  });
 }
 
 export { Agent, DefaultSource, FirebaseAgent, MatomoAgent, Threshold, completeSectionObserver, createButtonClickAction, createDefaultEventParams, createLeaderboardSectionViewAction, createLinkClickAction, createPageEnterAction, createPageLeaveAction, createProfileClickAction, createSearchAction, createSectionViewAction, createTabClickAction, createTrackingEvent as createV2TrackingEvent, createVoteAction, halfSectionObserver, minSectionObserver, rankSectionObserver, registCompleteSectionObserver, registHalfSectionObserver, registMinSectionObserver, registRankSectionObserver, resetSectionObserverStatus, useCompleteSectionTracking, useHalfSectionTracking, useMinSectionTracking, usePageTransitionListener, useRankSectionTracking };
