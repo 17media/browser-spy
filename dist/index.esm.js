@@ -1385,6 +1385,13 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
       if (this.trackPageViewTimer) clearTimeout(this.trackPageViewTimer);
       this.trackPageViewTimer = setTimeout(function () {
         if (isTrackingEvent(event)) {
+          event.payload.genericText = IS_MOBILE ? 'Event_Mobile' : 'Event_Web';
+
+          if (_this4.campaignID) {
+            event.payload.contentType = 'Event';
+            event.payload.contentId = _this4.campaignID;
+          }
+
           var dimensions = createMatomoCustomDimensions(event);
 
           _this4.client.push(['trackPageView', null, dimensions]);

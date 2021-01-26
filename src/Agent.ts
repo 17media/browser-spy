@@ -229,6 +229,11 @@ export class MatomoAgent extends Agent {
     if (this.trackPageViewTimer) clearTimeout(this.trackPageViewTimer);
     this.trackPageViewTimer = setTimeout(() => {
       if (isV2TrackingEvent(event)) {
+        event.payload.genericText = IS_MOBILE ? 'Event_Mobile' : 'Event_Web';
+        if (this.campaignID) {
+          event.payload.contentType = 'Event';
+          event.payload.contentId = this.campaignID;
+        }
         const dimensions = params.createMatomoCustomDimensions(event);
         this.client.push(['trackPageView', null, dimensions]);
       } else {
