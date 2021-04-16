@@ -153,6 +153,16 @@ export interface SearchUserEvent extends BaseEvent<SearchUserEventPayload> {
   name: 'search_user';
 }
 
+interface InteractionClaimEventPayload extends BasePayload {
+  sourceUrl: string;
+}
+
+export interface InteractionClaimEvent extends BaseEvent<InteractionClaimEventPayload> {
+  category: 'Interaction_Claim';
+  action: 'click';
+  name: 'button_claim';
+}
+
 export interface PageEvent extends BaseEvent<BasePayload> {
   category: '';
   action: '';
