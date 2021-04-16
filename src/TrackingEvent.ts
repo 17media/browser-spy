@@ -179,7 +179,8 @@ export type TrackingEvent =
   | PageEvent
   | PageViewEvent
   | SectionViewEvent
-  | SearchUserEvent;
+  | SearchUserEvent
+  | InteractionClaimEvent;
 
 export function isTrackingEvent(value: unknown): value is TrackingEvent {
   if (typeof value !== 'object') return false;
