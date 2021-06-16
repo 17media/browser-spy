@@ -1281,7 +1281,7 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
                 this.client.push(['enableLinkTracking']);
                 this.client.push(['trackAllContentImpressions']);
                 _context3.next = 7;
-                return loadScript("".concat(this.config.endpoint, "piwik.js"));
+                return loadScript("".concat(this.config.endpoint, "matomo.js"));
 
               case 7:
               case "end":

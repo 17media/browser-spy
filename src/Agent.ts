@@ -150,7 +150,7 @@ export class MatomoAgent extends Agent {
     this.client.push(['trackPageView']);
     this.client.push(['enableLinkTracking']);
     this.client.push(['trackAllContentImpressions']);
-    await loadScript(`${this.config.endpoint}piwik.js`);
+    await loadScript(`${this.config.endpoint}matomo.js`);
   }
 
   report(event: SpyEvent) {
