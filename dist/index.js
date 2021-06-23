@@ -1081,36 +1081,38 @@ var Agent = /*#__PURE__*/function () {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
+                console.log('agent initialize');
+
                 if (!(this.state !== AgentState.Uninitialized)) {
-                  _context.next = 2;
+                  _context.next = 3;
                   break;
                 }
 
                 return _context.abrupt("return");
 
-              case 2:
+              case 3:
                 this.state = AgentState.Initializing;
-                _context.prev = 3;
-                _context.next = 6;
+                _context.prev = 4;
+                _context.next = 7;
                 return this.doInitialize();
 
-              case 6:
+              case 7:
                 this.state = AgentState.Initialized;
-                _context.next = 13;
+                _context.next = 14;
                 break;
 
-              case 9:
-                _context.prev = 9;
-                _context.t0 = _context["catch"](3);
+              case 10:
+                _context.prev = 10;
+                _context.t0 = _context["catch"](4);
                 console.error(_context.t0);
                 this.state = AgentState.InitializeFail;
 
-              case 13:
+              case 14:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[3, 9]]);
+        }, _callee, this, [[4, 10]]);
       }));
 
       function initialize() {
@@ -1283,15 +1285,16 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
+                console.log('doInitialize');
                 this.client.push(['setTrackerUrl', "".concat(this.config.endpoint, "matomo.php")]);
                 this.client.push(['setSiteId', this.config.siteId]);
                 this.client.push(['trackPageView']);
                 this.client.push(['enableLinkTracking']);
                 this.client.push(['trackAllContentImpressions']);
-                _context3.next = 7;
+                _context3.next = 8;
                 return loadScript("".concat(this.config.endpoint, "matomo.js"));
 
-              case 7:
+              case 8:
               case "end":
                 return _context3.stop();
             }
@@ -1334,6 +1337,7 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
   }, {
     key: "transit",
     value: function transit(event) {
+      console.log('transit', event);
       var fromScene = event.fromScene,
           toScene = event.toScene;
       this.client.push(['setReferrerUrl', fromScene.pathname]);
@@ -1348,6 +1352,7 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
     key: "track",
     value: function track(event) {
       if (isTrackingEvent(event)) {
+        console.log('track v2', event);
         var category = event.category,
             action = event.action,
             name = event.name;

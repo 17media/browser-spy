@@ -22,6 +22,7 @@ export abstract class Agent {
   protected state = AgentState.Uninitialized;
 
   async initialize() {
+    console.log('agent initialize');
     if (this.state !== AgentState.Uninitialized) return;
 
     this.state = AgentState.Initializing;
@@ -145,6 +146,7 @@ export class MatomoAgent extends Agent {
   }
 
   async doInitialize() {
+    console.log('doInitialize');
     this.client.push(['setTrackerUrl', `${this.config.endpoint}matomo.php`]);
     this.client.push(['setSiteId', this.config.siteId]);
     this.client.push(['trackPageView']);
@@ -178,6 +180,7 @@ export class MatomoAgent extends Agent {
   }
 
   private transit(event: TransitionEvent) {
+    console.log('transit', event);
     const { fromScene, toScene } = event;
     this.client.push(['setReferrerUrl', fromScene.pathname]);
     this.client.push(['setCustomUrl', toScene.pathname]);
@@ -190,6 +193,7 @@ export class MatomoAgent extends Agent {
 
   private track(event: TrackingEvent | V2TrackingEvent) {
     if (isV2TrackingEvent(event)) {
+      console.log('track v2', event);
       const { category, action, name } = event;
       event.payload.genericText = IS_MOBILE ? 'Event_Mobile' : 'Event_Web';
       if (this.campaignID) {
