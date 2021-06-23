@@ -1337,8 +1337,6 @@ var MatomoAgent = /*#__PURE__*/function (_Agent2) {
       this.client.push(['setDocumentTitle', toScene.title]);
       this.client.push(['setGenerationTimeMs', 0]);
       this.requestTrackPageView();
-      this.client.push(['enableLinkTracking']);
-      this.client.push(['trackAllContentImpressions']);
     }
   }, {
     key: "track",

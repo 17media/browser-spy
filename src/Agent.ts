@@ -187,8 +187,6 @@ export class MatomoAgent extends Agent {
     this.client.push(['setDocumentTitle', toScene.title]);
     this.client.push(['setGenerationTimeMs', 0]);
     this.requestTrackPageView();
-    this.client.push(['enableLinkTracking']);
-    this.client.push(['trackAllContentImpressions']);
   }
 
   private track(event: TrackingEvent | V2TrackingEvent) {
