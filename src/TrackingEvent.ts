@@ -169,6 +169,18 @@ export interface PageEvent extends BaseEvent<BasePayload> {
   name: '';
 }
 
+interface ClickFollowerEventPayload extends BasePayload {
+  action: 'ButtonClick';
+  name: string;
+  type: string;
+}
+
+export interface ClickFollowerEvent extends BaseEvent<ClickFollowerEventPayload> {
+  category: 'Content';
+  action: 'following';
+  name: 'following_user';
+}
+
 export type TrackingEvent =
   | ClickButtonEvent
   | ClickTabEvent
@@ -180,7 +192,8 @@ export type TrackingEvent =
   | PageViewEvent
   | SectionViewEvent
   | SearchUserEvent
-  | InteractionClaimEvent;
+  | InteractionClaimEvent
+  | ClickFollowerEvent;
 
 export function isTrackingEvent(value: unknown): value is TrackingEvent {
   if (typeof value !== 'object') return false;
